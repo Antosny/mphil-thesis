@@ -1,0 +1,157 @@
+\chapter{Selective Transfer Learning for Collaborative Filtering}
+\label{chp:STLCF}
+
+\hspace{0.1in}
+\section{Illustration of the STLCF settings}
+A common assumption in previous transfer learning literature under the context of recommendation system is that the knowledge in source domain is always helpful in target domain tasks. In other words, they assume that all source domains have equally positive impacts on the target domain and the user or item preferences (depending on what is shared between the target domain and the source domains) are consistent in both source and target domains.
+Such an assumption is widely adopted in several works, such as Collective Matrix Factorization (CMF)~\cite{/kdd/SinghG08} and its extensions.
+
+Clearly, the above assumption is too strong for many real-world applications.
+Take the ratings of traditional Chinese music for example. In a Chinese local music rating web site, Chinese users may be critical for the traditional Chinese music; while in an international music rating web site, the ratings on those traditional Chinese music could be diverse due to the culture differences: those users with Chinese culture background would give trustful ratings, others could be inaccurate.
+Now, suppose there is a new Chinese local music rating web site, which is the target domain, and we try to transfer knowledge from both the existing Chinese local web site and the international web site to help the target domain rating prediction task. In this case, it would not be wise to treat the data from these two existing web sites equally. In addition, it would cause negative transfer if we use the entire data sets from the international Web sites without selection.
+Therefore, we should carefully analyze the source domain at both domain level and the instance level before applied to the target domain.
+
+
+\hspace{0.1in}
+\section{Logic behind STLCF}
+As we have discussed, using the source domain data without selection may harm the target domain learning.
+By proposing the selective knowledge transfer with the novel factors (empirical error and variance of empirical error), we come up with the details of Selective Transfer Learning framework for CF in this section.
+
+As illustrated in the second example in Figure \ref{fig:illustration} where the domains have mutual user set, we would like to transfer knowledge of those items' records that consistently reflect the user's preferences. Because of our finding that the consistent records have small empirical error and variance, the selection shall consider these two factors.
+We embed these two factors into a boosting framework, where the source data with small empirical error and variance receive higher weights since they are consistent with the target data.
+This boosting framework models the cross-domain CF from two aspects:
+\begin{itemize}
+\item on one hand, we take more care of those mis-predicted target instances, following the traditional boosting logic;
+\item on the other hand, we automatically identify the consistency of the source domains during the learning process and selective use those source domains with more trustful information.
+\end{itemize}
+
+Based on the above consideration, our boosting based selective transfer learning framework for the collaborative filtering (STLCF) focuses on two levels: both domain level and instance level.
+At the domain level, STLCF boosts each source domain based on a notion of transferability proposed by Eaton \etal~\cite{/ecml/Eaton2008Modeling}. STLCF increases the weights of all instances from a source domain if the source domain shows positive transferability, and decreases all weights if the source domain shows negative transferability. Simultaneously at instance level, STLCF adaptively increases the weight of mis-predicted instances to emphasize learning on those ``tough" instances. Effectively, this adjusts the distribution of instance weights within each source domain. A formal description of the framework is given in Algorithm \ref{algorithm:VPB-TLCF}.
+
+\hspace{0.1in}
+\section{Selective Transfer Learning for Collaborative Filtering}
+\subsection{Algorithm for STLCF}
+
+\begin{algorithm}[tb]
+\caption{Algorithm for Selective TLCF.}
+\begin{algorithmic}
+
+\STATE {\bfseries Input:} $\X^{d}$, $\X^{s}$, $T$\\
+$\X^{d} \in \mathbb{R}^{m\times n^d}$: the target training data \\
+$\X^{s} \in \mathbb{R}^{m\times n^s}$: the auxiliary source data\\
+$G$: the weighted TLCF model wTGPLSA\\
+$T$: number of boosting iterations \\
+
+\STATE {\bfseries Initialize:} Initialize $\W^s : w_i^s\leftarrow\frac{1}{n^s}$, $\W^d : w_i^d\leftarrow\frac{1}{n^d}$
+
+\FOR{ $iter$ = 1 to $T$}
+
+\STATE {\bfseries Step 1:} Apply $G$ to generate a weak learner $G(\X^{d}, \X^{s}, \W^{d}, \W^{s})$ that minimize Eq.(\ref{eq:tplsa_likelihood}) %where $Z$ is the latent topic distribution for each rating
+
+\STATE {\bfseries Step 2:} Get weak hypothesis for both the $d$ and $s$ domains $h^{iter} : \X^{d}, \X^{s}\rightarrow \hat \X^{d}, \hat \X^{s}$
+
+\STATE {\bfseries Step 3:} Calculate empirical error $E^{d}$ and $E^{s}$ using Eq.(\ref{eq:vpb_loss})
+
+\STATE {\bfseries Step 4:} Calculate fitness weight $\beta^{s_k}$ for each source domain $s_k$ using Eq.(\ref{eq:beta})
+
+\STATE {\bfseries Step 5:} Choose model weight $\alpha^{iter}$ via Eq.(\ref{eq:alpha})
+
+\STATE {\bfseries Step 6:} Update source item weight $\W^{s}$ via Eq.(\ref{eq:wi_s})
+
+\STATE {\bfseries Step 7:} Update target item weight $\W^{d}$  via Eq.(\ref{eq:wi})
+
+\ENDFOR
+
+\STATE {\bfseries Output:} Hypothesis $Z = H(\X^{(d)}) = \Sigma_{t=1}^T \alpha^t h^t(\X^{(d)})$
+
+\end{algorithmic}
+\label{algorithm:VPB-TLCF}
+\end{algorithm}
+
+As shown in Algorithm \ref{algorithm:VPB-TLCF}, in each iteration, we apply base model TGPLSA over weighted instances to build a weak learner $G(\cdot)$ and hypothesis $h^{iter}$. Then to update the source and target item weights, domain level fitness weight $\beta^{s_k}$ is chosen for each source domain $s_k$ based on domain level consistency ~\cite{/ecml/Eaton2008Modeling}. And $\alpha^{iter}$ for base model is also updated, considering empirical errors and variances. Accordingly, the weights of mis-predicted target items are increased and the weights of those less helpful source domains are decreased in each iteration. The final ensemble is given by an additive model, which gives larger weights to the hypotheses with lower errors.
+We provide a detailed derivation of STLCF in the rest of this section.
+
+\hspace{0.05in}
+\subsection{Derivation of STLCF}
+\label{sec:derivationSTLCF}
+\subsubsection{Target Function of a Single Weak Learner in STLCF}
+In previous works in collaborative filtering, the mean absolute error (MAE) is usually chosen as the loss function. In addition to the MAE loss, if we tolerate some prediction error $\tau$, we define:
+\begin{equation}
+l_1(\X_{* i},\hat \X_{* i})=\left\{ \begin{aligned}
+         &-1, & \!\!\!\sum_{x_{ui}\in\X_{* i}}\!|\hat x_{ui}\!-\!x_{ui}| \!\leq\! \tau \cdot nnz(\X_{* i})\\
+         &+1, & \!\!\!\sum_{x_{ui}\in\X_{* i}}\!|\hat x_{ui}\!-\!x_{ui}| \!>\! \tau \cdot nnz(\X_{* i})\\
+                          \end{aligned} \right.
+\end{equation}
+where $nnz(\cdot)$ is the number of observed ratings. $\X_{* i}$ and $\hat \X_{* i}$ denote the true values and predictions respectively.
+We may also define the item level MAE error for target domain with respect to $\tau$ as:
+\begin{eqnarray}\label{eq:mae_loss}
+    \epsilon^{d}_i = l_1(\X^{d}_{* i}, \hat \X^{d}_{* i})
+\end{eqnarray}
+To facilitate the optimization, we consider the following exponential loss for empirical risk minimization:
+\begin{eqnarray}\label{eq:exp_loss}
+    l_2(i) = l_2(\X^{d}_{* i}, \hat \X^{d}_{* i}) = e^{\epsilon^{d}_i}
+\end{eqnarray}
+%Moreover, to guarantee the model robustness, we punish large variance of the empirical errors. So we apply the sample variance penalization principle to reformulate the loss function.
+As stated in previous section, the lower variance of empirical errors can provide more confident consistency estimation, we combine these factors and reformulate the loss function:
+\begin{eqnarray}\label{eq:vpb_loss}
+    \Loss =
+    %\sum_{i=1}^{n^d} e^{-\epsilon_i^d}+\gamma\sqrt{\sum_{i>j}^{n^d} (e^{-\epsilon_i^d}-e^{-\epsilon_j^d})^2}
+    \sum_{i=1}^{n^d} l_2(i) + \gamma\sqrt{\sum_{i>j}^{n^d} (l_2(i)-l_2(j))^2}
+\end{eqnarray}
+Above all, the model minimize the above quantity for some scalar $\gamma>0$:
+
+\hspace{0.03in}
+\subsubsection{Additive Ensemble of Weak Learners}
+
+Assume that the function of interest $\mathcal{H}$ for prediction is composed of the hypothesis $h^t$ from each weak learner. The function to be output would consist of the following additive model over the hypothesis from the weak learners:
+\begin{eqnarray}
+    \hat x^d_{ui} = f(x^d_{ui}) = \sum_{t=1} \alpha^t h^t(x^d_{ui})
+\end{eqnarray}
+where $\alpha^t \in \mathbb{R}^+$.
+
+Since we are interested in building an additive model, we assume that we already have a function $h(\cdot)$. Subsequently, we derive a greedy algorithm to obtain a weak learner $G^t(\cdot)$ and a positive scalar $\alpha^t$ such that $f(\cdot) = h(\cdot) + \alpha^t G^t(\cdot)$.
+
+\hspace{0.03in}
+\subsubsection{Derivation of Weak Learners}
+In the following derivation, for the convince of presentation, we omit the model index $t$, and use $G$ to represent $G^t$, $\alpha$ to represent $\alpha^t$.
+
+By defining $\gamma_1=(1+(n-1)\gamma)$, $\gamma_2=(2-2\gamma)$, $\alpha$,
+ $w_i^d=e^{l_1(h(\X^d_{*i}),\X^d_{*i})}$ and $G_i^d=l_1(G(\X^d_{*i}),\X^d_{*i})$, Eq.(\ref{eq:vpb_loss}) can be equivalently posed as optimizing the following loss with respect to $\alpha$:
+\begin{eqnarray}\label{eq:add}
+    \\
+    \nonumber
+    \Loss
+    &=&\gamma_1(\sum_{i\in I} (w_i^d)^2 e^{2\alpha}+\sum_{i\in J} (w_i^d)^2 e^{-2\alpha})+\gamma_2\!\!\!\!\!\sum_{i>j:i,j\in I}^{n^d}\!\!\!\!\! w_i^d w_j^d e^{2\alpha}\\ \nonumber
+    & &+\gamma_2\!\!\!\!\!\sum_{i>j:i,j\in J}^{n^d}\!\!\!\!\! w_i^d w_j^d e^{-2\alpha}+\gamma_2\!\!\!\!\!\!\!\!\sum_{i>j:i\in I,j\in J or i\in J, j\in I}^{n^d}\!\!\!\!\!\!\!\!\!\!\!\! w_i^d w_j^d
+\end{eqnarray}
+For brevity, we define the following sets of indices as $I=\{i:G^d_i=+1\}$ and $J=\{i:G^d_i=-1\}$. Here $J$ denotes the set of items whose prediction by $G(\cdot)$ falls into the fault tolerable range, while $I$ denotes the rest set. By making the last transformation in Eq.(\ref{eq:add}) equal to zero, we get:
+\begin{eqnarray}\label{eq:alpha}
+    \\
+    \nonumber
+    \alpha =\frac{1}{4}\log\left(\frac{(1-\gamma)(\sum_{i\in I}w_i^d)^2+\gamma n^d\sum_{i\in I}(w_i^d)^2}{(1-\gamma)(\sum_{i\in J}w_i^d)^2+\gamma n^d\sum_{i\in J}(w_i^d)^2}\right)
+\end{eqnarray}
+If we set $\gamma=0$, then it is reduced to the form of AdaBoost:
+\begin{eqnarray}\label{eq:adaboost_alpha}
+    \\
+    \nonumber
+    \alpha =\frac{1}{4}\log\left(\frac{(\sum_{i\in I}w_i^d)^2}{(\sum_{i\in J}w_i^d)^2}\right)=\frac{1}{2}\log\left(\frac{(\sum_{i\in I}w_i^d)}{(\sum_{i\in J}w_i^d)}\right)
+\end{eqnarray}
+Finally, the updating rule for $w_i^d$ is
+\begin{eqnarray}\label{eq:wi}
+    w_i^d \leftarrow w_i^d e^{(-\alpha G_i^d)}
+\end{eqnarray}
+And for the instance weight $w_i^d$ in the source domain, we can also adopt the similar updating rule in Eq.(\ref{eq:wi}).
+
+Other than the instance level selection discussed above, we also want to perform the domain level selection to penalize those domains that are likely to be irrelevant, so that the domains with more relevant instances speak loudly.
+Following the idea of task-based boosting ~\cite{/aaai/Eatond11}, we further introduce a re-weighting factor $\beta$ for each source domain to control the knowledge transfer. So we formulate the updating rule for $w_i^s$ to be:
+\begin{eqnarray}\label{eq:wi_s}
+    w_i^s \leftarrow w_i^s e^{(-\alpha G_i^s-\beta)}
+\end{eqnarray}
+where $\beta$ can be set greedily in proportion to the performance gain of the single source domain transfer learning:
+\begin{eqnarray}\label{eq:beta}
+    \beta = \frac{\sum w^d_i (\varepsilon_i - \vec{\varepsilon}_i)}{||\W^d||_1}
+\end{eqnarray}
+where $\varepsilon_i$ is the training error of the transfer learning model, and $\vec{\varepsilon}_i$ is the training error of the non-transfer learning model, which utilizes only the observed target domain data. 
+
+\subsection{STLCF framework as a Whole}
+To sum up, STLCF is a boosting based ensemble method, using certain generative single models as weak learner. We have seen an instance of generative model (TGPLSA) in Chapter \ref{chp:gplsa}. The ensemble function has been given as an weighted sum of several weak learners. We also presented the detailed update rules for each weak learner in Section \ref{sec:derivationSTLCF}.

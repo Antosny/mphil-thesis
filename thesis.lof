@@ -1,0 +1,16 @@
+\addvspace {1pt}
+\addvspace {1pt}
+\addvspace {1pt}
+\contentsline {figure}{\numberline {3.1}{\ignorespaces Illustration of Selective Transfer Learning with multiple sources.}}{14}
+\contentsline {figure}{\numberline {3.2}{\ignorespaces The graphical model for TGPLSA with one source domain and one target domain.}}{17}
+\contentsline {figure}{\numberline {3.3}{\ignorespaces A demonstration of how the matrices are accessed during the computations of the GPLSA model}}{20}
+\addvspace {1pt}
+\addvspace {1pt}
+\contentsline {figure}{\numberline {5.1}{\ignorespaces Change of the RMSEs with different $\tau $s. (Douban book to Movie)}}{36}
+\contentsline {figure}{\numberline {5.2}{\ignorespaces Change of the RMSEs with different $\tau $s. (Netflix to Douban Movie)}}{37}
+\contentsline {figure}{\numberline {5.3}{\ignorespaces Change of the RMSEs with different $\gamma $s. (Douban book to Movie)}}{37}
+\contentsline {figure}{\numberline {5.4}{\ignorespaces Change of the RMSEs with different $\gamma $s. (Netflix to Douban Movie)}}{38}
+\contentsline {figure}{\numberline {5.5}{\ignorespaces Change of the RMSEs when more and more weak learners join in the committee.}}{39}
+\contentsline {figure}{\numberline {5.6}{\ignorespaces Change of $\alpha $s when more and more weak learners join in the committee.}}{39}
+\contentsline {figure}{\numberline {5.7}{\ignorespaces Change of the RMSEs with different numbers of latent topics.}}{40}
+\addvspace {1pt}

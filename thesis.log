@@ -1,0 +1,761 @@
+This is XeTeX, Version 3.1415926-2.5-0.9999.3 (TeX Live 2013/Debian) (format=xelatex 2014.6.3)  2 SEP 2014 14:55
+entering extended mode
+ restricted \write18 enabled.
+ %&-line parsing enabled.
+**thesis.tex
+(./thesis.tex
+LaTeX2e <2011/06/27>
+Babel <3.9h> and hyphenation patterns for 78 languages loaded.
+(./ustthesis.cls
+Document Class: ustthesis 2002/07/23 v2.1 LaTeX document class
+This class file is adapted from `ustthesis.sty' v1.3 (for LaTeX 2.09).
+Please report any problems to kchan@cs.ust.hk
+(/usr/share/texlive/texmf-dist/tex/latex/base/report.cls
+Document Class: report 2007/10/19 v1.4h Standard LaTeX document class
+(/usr/share/texlive/texmf-dist/tex/latex/base/size12.clo
+File: size12.clo 2007/10/19 v1.4h Standard LaTeX file (size option)
+)
+\c@part=\count80
+\c@chapter=\count81
+\c@section=\count82
+\c@subsection=\count83
+\c@subsubsection=\count84
+\c@paragraph=\count85
+\c@subparagraph=\count86
+\c@figure=\count87
+\c@table=\count88
+\abovecaptionskip=\skip41
+\belowcaptionskip=\skip42
+\bibindent=\dimen102
+)
+\AuthorNameLength=\skip43
+\descriptionmargin=\dimen103
+\maxmem=\skip44
+\currmem=\skip45
+\c@@members=\count89
+\c@@minmembers=\count90
+\c@definition=\count91
+\c@theorem=\count92
+\c@lemma=\count93
+\c@algo=\count94
+\c@conjecture=\count95
+)
+(/usr/share/texlive/texmf-dist/tex/latex/enumitem/enumitem.sty
+Package: enumitem 2011/09/28 v3.5.2 Customized lists
+\enitkv@toks@=\toks14
+\labelindent=\skip46
+\enit@outerparindent=\dimen104
+\enit@toks=\toks15
+\enit@inbox=\box26
+\enitdp@description=\count96
+)
+(/usr/share/texlive/texmf-dist/tex/latex/psnfss/times.sty
+Package: times 2005/04/12 PSNFSS-v9.2a (SPQR) 
+)
+(/usr/share/texlive/texmf-dist/tex/latex/psnfss/helvet.sty
+Package: helvet 2005/04/12 PSNFSS-v9.2a (WaS) 
+
+(/usr/share/texlive/texmf-dist/tex/latex/graphics/keyval.sty
+Package: keyval 1999/03/16 v1.13 key=value parser (DPC)
+\KV@toks@=\toks16
+))
+(/usr/share/texlive/texmf-dist/tex/latex/psnfss/courier.sty
+Package: courier 2005/04/12 PSNFSS-v9.2a (WaS) 
+)
+(/usr/share/texlive/texmf-dist/tex/latex/multirow/multirow.sty
+\bigstrutjot=\dimen105
+)
+(/usr/share/texlive/texmf-dist/tex/latex/graphics/epsfig.sty
+Package: epsfig 1999/02/16 v1.7a (e)psfig emulation (SPQR)
+
+(/usr/share/texlive/texmf-dist/tex/latex/graphics/graphicx.sty
+Package: graphicx 1999/02/16 v1.0f Enhanced LaTeX Graphics (DPC,SPQR)
+
+(/usr/share/texlive/texmf-dist/tex/latex/graphics/graphics.sty
+Package: graphics 2009/02/05 v1.0o Standard LaTeX Graphics (DPC,SPQR)
+
+(/usr/share/texlive/texmf-dist/tex/latex/graphics/trig.sty
+Package: trig 1999/03/16 v1.09 sin cos tan (DPC)
+)
+(/usr/share/texlive/texmf-dist/tex/latex/latexconfig/graphics.cfg
+File: graphics.cfg 2010/04/23 v1.9 graphics configuration of TeX Live
+)
+Package graphics Info: Driver file: xetex.def on input line 91.
+
+(/usr/share/texlive/texmf-dist/tex/xelatex/xetex-def/xetex.def
+File: xetex.def 2013/04/29 v0.96 LaTeX color/graphics driver for XeTeX (RRM/JK)
+
+))
+\Gin@req@height=\dimen106
+\Gin@req@width=\dimen107
+)
+\epsfxsize=\dimen108
+\epsfysize=\dimen109
+)
+(/usr/share/texlive/texmf-dist/tex/latex/tools/verbatim.sty
+Package: verbatim 2003/08/22 v1.5q LaTeX2e package for verbatim enhancements
+\every@verbatim=\toks17
+\verbatim@line=\toks18
+\verbatim@in@stream=\read1
+)
+(/usr/share/texlive/texmf-dist/tex/latex/amsmath/amsmath.sty
+Package: amsmath 2013/01/14 v2.14 AMS math features
+\@mathmargin=\skip47
+
+For additional information on amsmath, use the `?' option.
+(/usr/share/texlive/texmf-dist/tex/latex/amsmath/amstext.sty
+Package: amstext 2000/06/29 v2.01
+
+(/usr/share/texlive/texmf-dist/tex/latex/amsmath/amsgen.sty
+File: amsgen.sty 1999/11/30 v2.0
+\@emptytoks=\toks19
+\ex@=\dimen110
+))
+(/usr/share/texlive/texmf-dist/tex/latex/amsmath/amsbsy.sty
+Package: amsbsy 1999/11/29 v1.2d
+\pmbraise@=\dimen111
+)
+(/usr/share/texlive/texmf-dist/tex/latex/amsmath/amsopn.sty
+Package: amsopn 1999/12/14 v2.01 operator names
+)
+\inf@bad=\count97
+LaTeX Info: Redefining \frac on input line 210.
+\uproot@=\count98
+\leftroot@=\count99
+LaTeX Info: Redefining \overline on input line 306.
+\classnum@=\count100
+\DOTSCASE@=\count101
+LaTeX Info: Redefining \ldots on input line 378.
+LaTeX Info: Redefining \dots on input line 381.
+LaTeX Info: Redefining \cdots on input line 466.
+\Mathstrutbox@=\box27
+\strutbox@=\box28
+\big@size=\dimen112
+LaTeX Font Info:    Redeclaring font encoding OML on input line 566.
+LaTeX Font Info:    Redeclaring font encoding OMS on input line 567.
+\macc@depth=\count102
+\c@MaxMatrixCols=\count103
+\dotsspace@=\muskip10
+\c@parentequation=\count104
+\dspbrk@lvl=\count105
+\tag@help=\toks20
+\row@=\count106
+\column@=\count107
+\maxfields@=\count108
+\andhelp@=\toks21
+\eqnshift@=\dimen113
+\alignsep@=\dimen114
+\tagshift@=\dimen115
+\tagwidth@=\dimen116
+\totwidth@=\dimen117
+\lineht@=\dimen118
+\@envbody=\toks22
+\multlinegap=\skip48
+\multlinetaggap=\skip49
+\mathdisplay@stack=\toks23
+LaTeX Info: Redefining \[ on input line 2665.
+LaTeX Info: Redefining \] on input line 2666.
+)
+(/usr/share/texlive/texmf-dist/tex/latex/amsfonts/amssymb.sty
+Package: amssymb 2013/01/14 v3.01 AMS font symbols
+
+(/usr/share/texlive/texmf-dist/tex/latex/amsfonts/amsfonts.sty
+Package: amsfonts 2013/01/14 v3.01 Basic AMSFonts support
+\symAMSa=\mathgroup4
+\symAMSb=\mathgroup5
+LaTeX Font Info:    Overwriting math alphabet `\mathfrak' in version `bold'
+(Font)                  U/euf/m/n --> U/euf/b/n on input line 106.
+))
+(/usr/share/texlive/texmf-dist/tex/latex/algorithm2e/algorithm2e.sty
+Invalid UTF-8 byte or sequence at line 164 replaced by U+FFFD.
+Invalid UTF-8 byte or sequence at line 414 replaced by U+FFFD.
+Package: algorithm2e 2013/01/06 v5.00 algorithms environments
+\c@AlgoLine=\count109
+
+(/usr/share/texlive/texmf-dist/tex/latex/base/ifthen.sty
+Package: ifthen 2001/05/26 v1.1c Standard LaTeX ifthen package (DPC)
+)
+(/usr/share/texlive/texmf-dist/tex/latex/tools/xspace.sty
+Package: xspace 2009/10/20 v1.13 Space after command names (DPC,MH)
+)
+(/usr/share/texlive/texmf-dist/tex/latex/relsize/relsize.sty
+Package: relsize 2013/03/29 ver 4.1
+)
+********************************************************
+Package `algorithm2e' Release 5.0 -- january 06 2013 --
+- algorithm2e-announce@lirmm.fr mailing list for announcement about releases
+- algorithm2e-discussion@lirmm.fr mailing list for discussion about package
+subscribe by emailing sympa@lirmm.fr with 'subscribe <list> <firstname name>'
+- Author: Christophe Fiorio (cfiorio@um2.fr)
+********************************************************
+\skiptotal=\skip50
+\skiplinenumber=\skip51
+\skiprule=\skip52
+\skiphlne=\skip53
+\skiptext=\skip54
+\skiplength=\skip55
+\algomargin=\skip56
+\skipalgocfslide=\skip57
+\algowidth=\dimen119
+\inoutsize=\dimen120
+\inoutindent=\dimen121
+\interspacetitleruled=\dimen122
+\interspacealgoruled=\dimen123
+\interspacetitleboxruled=\dimen124
+\algocf@inoutbox=\box29
+\algocf@inputbox=\box30
+\AlCapSkip=\skip58
+\AlCapHSkip=\skip59
+\algoskipindent=\skip60
+\algocf@nlbox=\box31
+\algocf@hangingbox=\box32
+\algocf@untilbox=\box33
+\algocf@skipuntil=\skip61
+\algocf@capbox=\box34
+\algoheightruledefault=\skip62
+\algoheightrule=\skip63
+\algotitleheightruledefault=\skip64
+\algotitleheightrule=\skip65
+\c@algocfline=\count110
+\c@algocfproc=\count111
+\c@algocf=\count112
+\algocf@algoframe=\box35
+\algocf@algobox=\box36
+) (/usr/share/texlive/texmf-dist/tex/latex/subfigure/subfigure.sty
+Package: subfigure 2002/03/15 v2.1.5 subfigure package
+
+
+Package subfigure Warning: Your document class has a bad definition
+ of \endfigure, most likely
+ \let\endfigure=\end@float
+ which has now been changed to
+ \def\endfigure{\end@float}
+ because otherwise subsequent changes to \end@float
+ (like done by several packages changing float behaviour)
+ can't take effect on \endfigure.
+ Please complain to your document class author.
+
+
+Package subfigure Warning: Your document class has a bad definition
+ of \endtable, most likely
+ \let\endtable=\end@float
+ which has now been changed to
+ \def\endtable{\end@float}
+ because otherwise subsequent changes to \end@float
+ (like done by several packages changing float behaviour)
+ can't take effect on \endtable.
+ Please complain to your document class author.
+
+\subfigtopskip=\skip66
+\subfigcapskip=\skip67
+\subfigcaptopadj=\dimen125
+\subfigbottomskip=\skip68
+\subfigcapmargin=\dimen126
+\subfiglabelskip=\skip69
+\c@subfigure=\count113
+\c@lofdepth=\count114
+\c@subtable=\count115
+\c@lotdepth=\count116
+****************************************
+* Local config file subfigure.cfg used *
+****************************************
+(/usr/share/texlive/texmf-dist/tex/latex/subfigure/subfigure.cfg)
+\subfig@top=\skip70
+\subfig@bottom=\skip71
+)
+(/usr/share/texlive/texmf-dist/tex/latex/geometry/geometry.sty
+Package: geometry 2010/09/12 v5.6 Page Geometry
+
+(/usr/share/texlive/texmf-dist/tex/generic/oberdiek/ifpdf.sty
+Package: ifpdf 2011/01/30 v2.3 Provides the ifpdf switch (HO)
+Package ifpdf Info: pdfTeX in PDF mode is not detected.
+)
+(/usr/share/texlive/texmf-dist/tex/generic/oberdiek/ifvtex.sty
+Package: ifvtex 2010/03/01 v1.5 Detect VTeX and its facilities (HO)
+Package ifvtex Info: VTeX not detected.
+)
+(/usr/share/texlive/texmf-dist/tex/generic/ifxetex/ifxetex.sty
+Package: ifxetex 2010/09/12 v0.6 Provides ifxetex conditional
+)
+\Gm@cnth=\count117
+\Gm@cntv=\count118
+\c@Gm@tempcnt=\count119
+\Gm@bindingoffset=\dimen127
+\Gm@wd@mp=\dimen128
+\Gm@odd@mp=\dimen129
+\Gm@even@mp=\dimen130
+\Gm@layoutwidth=\dimen131
+\Gm@layoutheight=\dimen132
+\Gm@layouthoffset=\dimen133
+\Gm@layoutvoffset=\dimen134
+\Gm@dimlist=\toks24
+)
+(/usr/share/texlive/texmf-dist/tex/latex/cases/cases.sty
+Package: cases 2002/05/02 ver 2.5 
+)
+(/usr/share/texlive/texmf-dist/tex/latex/url/url.sty
+\Urlmuskip=\muskip11
+Package: url 2013/09/16  ver 3.4  Verb mode for urls, etc.
+)
+(/usr/share/texlive/texmf-dist/tex/latex/algorithms/algorithmic.sty
+Invalid UTF-8 byte or sequence at line 11 replaced by U+FFFD.
+Package: algorithmic 2009/08/24 v0.1 Document Style `algorithmic'
+\c@ALC@unique=\count120
+\c@ALC@line=\count121
+\c@ALC@rem=\count122
+\c@ALC@depth=\count123
+\ALC@tlm=\skip72
+\algorithmicindent=\skip73
+)
+(./symbols.tex)
+\c@example=\count124
+ (./thesis.aux)
+\openout1 = `thesis.aux'.
+
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 68.
+LaTeX Font Info:    ... okay on input line 68.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 68.
+LaTeX Font Info:    ... okay on input line 68.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 68.
+LaTeX Font Info:    ... okay on input line 68.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 68.
+LaTeX Font Info:    ... okay on input line 68.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 68.
+LaTeX Font Info:    ... okay on input line 68.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 68.
+LaTeX Font Info:    ... okay on input line 68.
+LaTeX Font Info:    Try loading font information for OT1+ptm on input line 68.
+
+(/usr/share/texlive/texmf-dist/tex/latex/psnfss/ot1ptm.fd
+File: ot1ptm.fd 2001/06/04 font definitions for OT1/ptm.
+)
+*geometry* driver: auto-detecting
+*geometry* detected driver: xetex
+*geometry* verbose mode - [ preamble ] result:
+* driver: xetex
+* paper: a4paper
+* layout: <same size as paper>
+* layoutoffset:(h,v)=(0.0pt,0.0pt)
+* modes: 
+* h-part:(L,W,R)=(71.13188pt, 455.24411pt, 71.13188pt)
+* v-part:(T,H,B)=(71.13188pt, 702.78308pt, 71.13188pt)
+* \paperwidth=597.50787pt
+* \paperheight=845.04684pt
+* \textwidth=455.24411pt
+* \textheight=702.78308pt
+* \oddsidemargin=-1.1381pt
+* \evensidemargin=-1.1381pt
+* \topmargin=-1.1381pt
+* \headheight=0.0pt
+* \headsep=0.0pt
+* \topskip=12.0pt
+* \footskip=20.0pt
+* \marginparwidth=0.0pt
+* \marginparsep=0.0pt
+* \columnsep=10.0pt
+* \skip\footins=8.0pt plus 2.0pt minus 4.0pt
+* \hoffset=0.0pt
+* \voffset=0.0pt
+* \mag=1000
+* \@twocolumnfalse
+* \@twosidefalse
+* \@mparswitchfalse
+* \@reversemarginfalse
+* (1in=72.27pt=25.4mm, 1cm=28.453pt)
+
+Title page
+[1
+
+
+]
+LaTeX Font Info:    Try loading font information for U+msa on input line 81.
+ (/usr/share/texlive/texmf-dist/tex/latex/amsfonts/umsa.fd
+File: umsa.fd 2013/01/14 v3.01 AMS symbols A
+)
+LaTeX Font Info:    Try loading font information for U+msb on input line 81.
+
+(/usr/share/texlive/texmf-dist/tex/latex/amsfonts/umsb.fd
+File: umsb.fd 2013/01/14 v3.01 AMS symbols B
+)
+Authorization Page
+[2]
+\c@@membersprinted=\count125
+
+Signature Page
+[3]
+Acknowledgments
+(./content/ack.tex) [4
+
+]
+Table of Contents
+(./thesis.toc
+LaTeX Font Info:    Font shape `OT1/ptm/bx/n' in size <12> not available
+(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 1.
+
+Overfull \hbox (23.10692pt too wide) in paragraph at lines 26--26
+ [][]  []\OT1/ptm/m/n/12 Collaborative Fil-ter-ing via Gaus-sian Prob-a-bilis-t
+ic La-tent Se-man-tic Anal-y-sis (GPLSA) 
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 26--26
+ []  
+ []
+
+[5
+
+])
+\tf@toc=\write3
+\openout3 = `thesis.toc'.
+
+ [6]
+List of Figures
+(./thesis.lof)
+\tf@lof=\write4
+\openout4 = `thesis.lof'.
+
+ [7
+
+]
+List of Tables
+(./thesis.lot)
+\tf@lot=\write5
+\openout5 = `thesis.lot'.
+
+
+Abstract
+[8
+
+] (./content/abstract.tex) (./content/intro.tex [9]
+CHAPTER 1.
+LaTeX Font Info:    Font shape `OT1/ptm/bx/n' in size <17.28> not available
+(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 5.
+
+LaTeX Warning: Citation `/ijcai/libin09' on page 1 undefined on input line 11.
+
+
+LaTeX Warning: Citation `/uai/ZhangCY10' on page 1 undefined on input line 11.
+
+
+LaTeX Warning: Citation `DBLP:conf/aaai/EldardiryN11' on page 1 undefined on in
+put line 12.
+
+
+LaTeX Warning: Citation `DBLP:conf/sdm/ShiPGY12' on page 1 undefined on input l
+ine 12.
+
+[1
+
+]
+
+LaTeX Warning: Citation `DBLP:conf/icml/DaiYXY07' on page 2 undefined on input 
+line 16.
+
+
+LaTeX Warning: Citation `zhongqi2013selective' on page 2 undefined on input lin
+e 19.
+
+[2] [3]) (./content/background.tex [4]
+CHAPTER 2.
+LaTeX Font Info:    Font shape `OT1/ptm/bx/it' in size <17.28> not available
+(Font)              Font shape `OT1/ptm/b/it' tried instead on input line 22.
+
+LaTeX Warning: Citation `/ijcai/libin09' on page 5 undefined on input line 22.
+
+
+LaTeX Warning: Citation `/kdd/SinghG08' on page 5 undefined on input line 22.
+
+
+LaTeX Warning: Citation `/aaai/WPan12' on page 5 undefined on input line 23.
+
+
+LaTeX Warning: Citation `rennie2005fast' on page 5 undefined on input line 25.
+
+
+LaTeX Warning: Citation `DBLP:conf/sigir/Hofmann03' on page 5 undefined on inpu
+t line 25.
+
+
+LaTeX Warning: Citation `/nips/SalakhutdinovM07' on page 5 undefined on input l
+ine 26.
+
+[5
+
+]
+LaTeX Font Info:    Font shape `OT1/ptm/bx/n' in size <14.4> not available
+(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 41.
+
+
+LaTeX Warning: Citation `su2009survey' on page 6 undefined on input line 42.
+
+[6]
+
+LaTeX Warning: Citation `/computer/yehuda09matrix' on page 7 undefined on input
+ line 63.
+
+
+LaTeX Warning: Citation `/aaai/WPan12' on page 7 undefined on input line 63.
+
+
+LaTeX Warning: Citation `paterek07' on page 7 undefined on input line 63.
+
+
+LaTeX Warning: Citation `/tist/LibFM-TIST12' on page 7 undefined on input line 
+63.
+
+
+LaTeX Warning: Citation `hofmann04cf' on page 7 undefined on input line 64.
+
+
+LaTeX Warning: Citation `jin:decoupled' on page 7 undefined on input line 64.
+
+
+LaTeX Warning: Citation `pennock00pd' on page 7 undefined on input line 64.
+
+
+LaTeX Warning: Citation `/icml/SalakhutdinovMH07' on page 7 undefined on input 
+line 64.
+
+[7]
+
+LaTeX Warning: Citation `chu2007map' on page 8 undefined on input line 76.
+
+
+LaTeX Warning: Citation `dean2008mapreduce' on page 8 undefined on input line 7
+6.
+
+
+LaTeX Warning: Citation `das2007google' on page 8 undefined on input line 82.
+
+
+LaTeX Warning: Citation `/tkde/sinno09survey' on page 8 undefined on input line
+ 85.
+
+[8]
+
+LaTeX Warning: Citation `/cvpr/YaoD10' on page 9 undefined on input line 87.
+
+
+LaTeX Warning: Citation `/aaai/Eatond11' on page 9 undefined on input line 87.
+
+
+LaTeX Warning: Citation `/jmlr/ShivaswamyJ10a' on page 9 undefined on input lin
+e 87.
+
+
+LaTeX Warning: Citation `/ki/bhaskar06cross' on page 9 undefined on input line 
+92.
+
+
+LaTeX Warning: Citation `/icml/libin09' on page 9 undefined on input line 93.
+
+[9]
+
+LaTeX Warning: Citation `rosenstein2005transfer' on page 10 undefined on input 
+line 102.
+
+
+LaTeX Warning: Citation `ben2003exploiting' on page 10 undefined on input line 
+102.
+
+
+LaTeX Warning: Citation `bakker2003task' on page 10 undefined on input line 102
+.
+
+
+LaTeX Warning: Citation `bakker2003task' on page 10 undefined on input line 102
+.
+
+
+LaTeX Warning: Citation `argyriou2008algorithm' on page 10 undefined on input l
+ine 103.
+
+LaTeX Font Info:    Try loading font information for OT1+pcr on input line 109.
+
+(/usr/share/texlive/texmf-dist/tex/latex/psnfss/ot1pcr.fd
+File: ot1pcr.fd 2001/06/04 font definitions for OT1/pcr.
+)
+Overfull \hbox (26.75589pt too wide) in paragraph at lines 109--109
+[][]$\OT1/pcr/m/n/10 http : / / www . quora . com / What-[]are-[]some-[]softwar
+e-[]libraries-[]for-[]large-[]scale-[]learning$| 
+ []
+
+[10] [11]) (./content/tgplsa.tex [12]
+CHAPTER 3.
+[13
+
+]
+File: fig/illustration.eps Graphic file (type eps)
+ <fig/illustration.eps> [14]
+
+LaTeX Warning: Citation `DBLP:conf/sigir/Hofmann03' on page 15 undefined on inp
+ut line 34.
+
+[15]
+
+LaTeX Warning: Citation `DBLP:conf/sigir/XueDYY08' on page 16 undefined on inpu
+t line 70.
+
+[16]
+File: fig/GM-TGPLSA.eps Graphic file (type eps)
+ <fig/GM-TGPLSA.eps> [17]
+
+LaTeX Warning: Citation `DBLP:conf/sigir/XueDYY08' on page 18 undefined on inpu
+t line 99.
+
+[18]
+
+LaTeX Warning: Citation `white2012hadoop' on page 19 undefined on input line 11
+9.
+
+
+LaTeX Warning: Citation `gropp1999using' on page 19 undefined on input line 119
+.
+
+File: fig/parallelplsa.eps Graphic file (type eps)
+<fig/parallelplsa.eps> [19]) (./content/stlcf.tex [20]
+CHAPTER 4.
+
+LaTeX Warning: Citation `/kdd/SinghG08' on page 21 undefined on input line 7.
+
+[21
+
+]
+
+LaTeX Warning: Citation `/ecml/Eaton2008Modeling' on page 22 undefined on input
+ line 29.
+
+[22]
+Overfull \hbox (17.62482pt too wide) detected at line 69
+[][] 
+ []
+
+
+LaTeX Warning: Citation `/ecml/Eaton2008Modeling' on page 23 undefined on input
+ line 71.
+
+[23] [24] [25]
+
+LaTeX Warning: Citation `/aaai/Eatond11' on page 26 undefined on input line 146
+.
+
+) (./content/experiment.tex [26] [27]
+CHAPTER 5.
+
+Overfull \hbox (8.8045pt too wide) in paragraph at lines 7--19
+\OT1/ptm/m/n/12 We eval-u-ate the pro-posed method on four data sources: Net-fl
+ix[], Douban, IMDB[], and Wikipedia[]
+ []
+
+[28
+
+] [29]
+LaTeX Font Info:    Font shape `OT1/ptm/bx/n' in size <10> not available
+(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 81.
+
+Overfull \hbox (23.84274pt too wide) in paragraph at lines 73--114
+ [] 
+ []
+
+
+LaTeX Warning: Citation `/nips/SalakhutdinovM07' on page 30 undefined on input 
+line 127.
+
+[30]
+
+LaTeX Warning: Citation `DBLP:conf/sigir/Hofmann03' on page 31 undefined on inp
+ut line 128.
+
+
+LaTeX Warning: Citation `/kdd/SinghG08' on page 31 undefined on input line 129.
+
+
+[31]
+LaTeX Font Info:    Font shape `OT1/ptm/bx/n' in size <20.74> not available
+(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 161.
+
+Overfull \hbox (4.52316pt too wide) in paragraph at lines 159--180
+ [] 
+ []
+
+[32] [33] [34] [35]
+File: fig/douban_tau.eps Graphic file (type eps)
+ <fig/douban_tau.eps>
+Overfull \hbox (14.51088pt too wide) in paragraph at lines 263--264
+ [][] 
+ []
+
+File: fig/nf_tau.eps Graphic file (type eps)
+<fig/nf_tau.eps>
+Overfull \hbox (14.51088pt too wide) in paragraph at lines 270--271
+ [][] 
+ []
+
+File: fig/douban_gamma.eps Graphic file (type eps)
+<fig/douban_gamma.eps>
+Overfull \hbox (14.51088pt too wide) in paragraph at lines 277--278
+ [][] 
+ []
+
+File: fig/nf_gamma.eps Graphic file (type eps)
+<fig/nf_gamma.eps>
+Overfull \hbox (14.51088pt too wide) in paragraph at lines 284--285
+ [][] 
+ []
+
+[36]
+File: fig/douban_learners.eps Graphic file (type eps)
+ <fig/douban_learners.eps>
+File: fig/douban_alpha.eps Graphic file (type eps)
+ <fig/douban_alpha.eps> [37]
+File: fig/douban_k.eps Graphic file (type eps)
+ <fig/douban_k.eps>
+Overfull \hbox (37.27448pt too wide) in paragraph at lines 312--313
+[][] 
+ []
+
+) (./content/conclusion.tex [38] [39] [40]
+CHAPTER 6.
+[41
+
+]) (./thesis.bbl
+References
+[42]
+
+LaTeX Warning: Citation `DBLP:conf/icml/2007' on page 43 undefined on input lin
+e 36.
+
+
+LaTeX Warning: Citation `DBLP:conf/aaai/2011' on page 43 undefined on input lin
+e 52.
+
+[43
+
+]
+
+LaTeX Warning: Citation `DBLP:conf/aaai/2011' on page 44 undefined on input lin
+e 64.
+
+[44] [45]
+
+LaTeX Warning: Citation `DBLP:conf/icml/2007' on page 46 undefined on input lin
+e 176.
+
+) [46] (./thesis.aux)
+
+LaTeX Warning: There were undefined references.
+
+
+LaTeX Warning: Label(s) may have changed. Rerun to get cross-references right.
+
+ ) 
+Here is how much of TeX's memory you used:
+ 4642 strings out of 493918
+ 62128 string characters out of 6150564
+ 157192 words of memory out of 5000000
+ 7848 multiletter control sequences out of 15000+600000
+ 26800 words of font info for 87 fonts, out of 8000000 for 9000
+ 1144 hyphenation exceptions out of 8191
+ 32i,12n,26p,1101b,518s stack positions out of 5000i,500n,10000p,200000b,80000s
+
+Output written on thesis.pdf (55 pages).

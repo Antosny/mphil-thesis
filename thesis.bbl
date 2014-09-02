@@ -1,0 +1,220 @@
+\begin{thebibliography}{10}
+
+\bibitem{argyriou2008algorithm}
+Andreas Argyriou, Andreas Maurer, and Massimiliano Pontil.
+\newblock An algorithm for transfer learning in a heterogeneous environment.
+\newblock In {\em Machine Learning and Knowledge Discovery in Databases}, pages
+  71--85. Springer, 2008.
+
+\bibitem{bakker2003task}
+Bart Bakker and Tom Heskes.
+\newblock Task clustering and gating for bayesian multitask learning.
+\newblock {\em The Journal of Machine Learning Research}, 4:83--99, 2003.
+
+\bibitem{ben2003exploiting}
+Shai Ben-David and Reba Schuller.
+\newblock Exploiting task relatedness for multiple task learning.
+\newblock In {\em Learning Theory and Kernel Machines}, pages 567--580.
+  Springer, 2003.
+
+\bibitem{DBLP:conf/aaai/2011}
+Wolfram Burgard and Dan Roth, editors.
+\newblock {\em Proceedings of the Twenty-Fifth AAAI Conference on Artificial
+  Intelligence, AAAI 2011, San Francisco, California, USA, August 7-11, 2011}.
+  AAAI Press, 2011.
+
+\bibitem{chu2007map}
+Cheng Chu, Sang~Kyun Kim, Yi-An Lin, YuanYuan Yu, Gary Bradski, Andrew~Y Ng,
+  and Kunle Olukotun.
+\newblock Map-reduce for machine learning on multicore.
+\newblock {\em Advances in neural information processing systems}, 19:281,
+  2007.
+
+\bibitem{DBLP:conf/icml/DaiYXY07}
+Wenyuan Dai, Qiang Yang, Gui-Rong Xue, and Yong Yu.
+\newblock Boosting for transfer learning.
+\newblock In Ghahramani \cite{DBLP:conf/icml/2007}, pages 193--200.
+
+\bibitem{das2007google}
+Abhinandan~S Das, Mayur Datar, Ashutosh Garg, and Shyam Rajaram.
+\newblock Google news personalization: scalable online collaborative filtering.
+\newblock In {\em Proceedings of the 16th international conference on World
+  Wide Web}, pages 271--280. ACM, 2007.
+
+\bibitem{dean2008mapreduce}
+Jeffrey Dean and Sanjay Ghemawat.
+\newblock Mapreduce: simplified data processing on large clusters.
+\newblock {\em Communications of the ACM}, 51(1):107--113, 2008.
+
+\bibitem{/aaai/Eatond11}
+Eric Eaton and Marie desJardins.
+\newblock Selective transfer between learning tasks using task-based boosting.
+\newblock In Burgard and Roth \cite{DBLP:conf/aaai/2011}.
+
+\bibitem{/ecml/Eaton2008Modeling}
+Eric Eaton, Marie desJardins, and Terran Lane.
+\newblock Modeling transfer relationships between learning tasks for improved
+  inductive transfer.
+\newblock In {\em The European Conference on Machine Learning}, pages 317--332,
+  2008.
+
+\bibitem{DBLP:conf/aaai/EldardiryN11}
+Hoda Eldardiry and Jennifer Neville.
+\newblock Across-model collective ensemble classification.
+\newblock In Burgard and Roth \cite{DBLP:conf/aaai/2011}.
+
+\bibitem{DBLP:conf/icml/2007}
+Zoubin Ghahramani, editor.
+\newblock {\em Machine Learning, Proceedings of the Twenty-Fourth International
+  Conference (ICML 2007), Oregon, USA, June 20-24, 2007}, volume 227 of {\em
+  ACM International Conference Proceeding Series}. ACM, 2007.
+
+\bibitem{gropp1999using}
+William Gropp, Ewing~L Lusk, and Anthony Skjellum.
+\newblock {\em Using MPI-: Portable Parallel Programming with the Message
+  Passing Interface}, volume~1.
+\newblock MIT press, 1999.
+
+\bibitem{DBLP:conf/sigir/Hofmann03}
+Thomas Hofmann.
+\newblock Collaborative filtering via gaussian probabilistic latent semantic
+  analysis.
+\newblock In {\em SIGIR}, pages 259--266, 2003.
+
+\bibitem{hofmann04cf}
+Thomas Hofmann.
+\newblock Latent semantic models for collaborative filtering.
+\newblock {\em ACM Trans. Inf. Syst.}, 22(1):89--115, 2004.
+
+\bibitem{jin:decoupled}
+Rong Jin, Luo Si, Chengxiang Zhai, and Jamie Callan.
+\newblock Collaborative filtering with decoupled models for preferences and
+  ratings.
+\newblock In {\em Proceedings of CIKM 2003}, 2003.
+
+\bibitem{/computer/yehuda09matrix}
+Yehuda Koren, Robert Bell, and Chris Volinsky.
+\newblock Matrix factorization techniques for recommender systems.
+\newblock {\em Computer}, 42(8):30--37, 2009.
+
+\bibitem{/ijcai/libin09}
+Bin Li, Qiang Yang, and Xiangyang Xue.
+\newblock Can movies and books collaborate?: cross-domain collaborative
+  filtering for sparsity reduction.
+\newblock In {\em Proceedings of the 21st international jont conference on
+  Artifical intelligence}, pages 2052--2057, 2009.
+
+\bibitem{/icml/libin09}
+Bin Li, Qiang Yang, and Xiangyang Xue.
+\newblock Transfer learning for collaborative filtering via a rating-matrix
+  generative model.
+\newblock In {\em International Conference on Machine Learning}, volume~26,
+  2009.
+
+\bibitem{zhongqi2013selective}
+Zhongqi Lu, Erheng Zhong, Lili Zhao, Evan Xiang, Weike Pan, and Qiang Yang.
+\newblock Selective transfer learning for cross domain recommendation.
+\newblock In {\em SIAM International Conference on Data Mining}, 2013.
+
+\bibitem{/ki/bhaskar06cross}
+Bhaskar Mehta and Thomas Hofmann.
+\newblock Cross system personalization and collaborative filtering by learning
+  manifold alignments.
+\newblock In {\em KI 2006: Advances in Artificial Intelligence}, pages
+  244--259. 2007.
+
+\bibitem{/tkde/sinno09survey}
+Sinno~Jialin Pan and Qiang Yang.
+\newblock A survey on transfer learning.
+\newblock {\em IEEE Transactions on Knowledge and Data Engineering},
+  22(10):1345--1359, October 2010.
+
+\bibitem{/aaai/WPan12}
+Weike Pan, Evan~W. Xiang, and Qiang Yang.
+\newblock Transfer learning in collaborative filtering with uncertain ratings.
+\newblock In {\em AAAI}, 2012.
+
+\bibitem{paterek07}
+Arkadiusz Paterek.
+\newblock Improving regularized singular value decomposition for collaborative
+  filtering.
+\newblock {\em Proceedings of KDD Cup and Workshop}, 2007.
+
+\bibitem{pennock00pd}
+David~M. Pennock, Eric Horvitz, Steve Lawrence, and C.~Lee Giles.
+\newblock Collaborative filtering by personality diagnosis: A hybrid memory and
+  model-based approach.
+\newblock In {\em Proc. of UAI}, pages 473--480, 2000.
+
+\bibitem{/tist/LibFM-TIST12}
+Steffen Rendle.
+\newblock Factorization machines with libfm.
+\newblock {\em ACM Transactions on Intelligent Systems and Technology (ACM
+  TIST)}, 3:19:1--19:22, May 2012.
+
+\bibitem{rennie2005fast}
+Jasson~DM Rennie and Nathan Srebro.
+\newblock Fast maximum margin matrix factorization for collaborative
+  prediction.
+\newblock In {\em Proceedings of the 22nd international conference on Machine
+  learning}, pages 713--719. ACM, 2005.
+
+\bibitem{rosenstein2005transfer}
+Michael~T Rosenstein, Zvika Marx, Leslie~Pack Kaelbling, and Thomas~G
+  Dietterich.
+\newblock To transfer or not to transfer.
+\newblock In {\em NIPS 2005 Workshop on Transfer Learning}, volume 898, 2005.
+
+\bibitem{/nips/SalakhutdinovM07}
+Ruslan Salakhutdinov and Andriy Mnih.
+\newblock Probabilistic matrix factorization.
+\newblock In {\em NIPS}, 2007.
+
+\bibitem{/icml/SalakhutdinovMH07}
+Ruslan Salakhutdinov, Andriy Mnih, and Geoffrey~E. Hinton.
+\newblock Restricted boltzmann machines for collaborative filtering.
+\newblock In Ghahramani \cite{DBLP:conf/icml/2007}, pages 791--798.
+
+\bibitem{DBLP:conf/sdm/ShiPGY12}
+Xiaoxiao Shi, Jean-Fran\c{c}ois Paiement, David Grangier, and Philip~S. Yu.
+\newblock Learning from heterogeneous sources via gradient boosting consensus.
+\newblock In {\em SDM}, pages 224--235. SIAM / Omnipress, 2012.
+
+\bibitem{/jmlr/ShivaswamyJ10a}
+Pannagadatta~K. Shivaswamy and Tony Jebara.
+\newblock Empirical bernstein boosting.
+\newblock {\em Journal of Machine Learning Research - Proceedings Track},
+  9:733--740, 2010.
+
+\bibitem{/kdd/SinghG08}
+Ajit~Paul Singh and Geoffrey~J. Gordon.
+\newblock Relational learning via collective matrix factorization.
+\newblock In {\em KDD}, pages 650--658, 2008.
+
+\bibitem{su2009survey}
+Xiaoyuan Su and Taghi~M Khoshgoftaar.
+\newblock A survey of collaborative filtering techniques.
+\newblock {\em Advances in Artificial Intelligence}, 2009:4, 2009.
+
+\bibitem{white2012hadoop}
+Tom White.
+\newblock {\em Hadoop: The definitive guide}.
+\newblock O'Reilly Media, Inc., 2012.
+
+\bibitem{DBLP:conf/sigir/XueDYY08}
+Gui-Rong Xue, Wenyuan Dai, Qiang Yang, and Yong Yu.
+\newblock Topic-bridged plsa for cross-domain text classification.
+\newblock In Sung-Hyon Myaeng, Douglas~W. Oard, Fabrizio Sebastiani, Tat-Seng
+  Chua, and Mun-Kew Leong, editors, {\em SIGIR}, pages 627--634. ACM, 2008.
+
+\bibitem{/cvpr/YaoD10}
+Yi~Yao and Gianfranco Doretto.
+\newblock Boosting for transfer learning with multiple sources.
+\newblock In {\em CVPR}, pages 1855--1862, 2010.
+
+\bibitem{/uai/ZhangCY10}
+Yu~Zhang, Bin Cao, and Dit-Yan Yeung.
+\newblock Multi-domain collaborative filtering.
+\newblock In {\em UAI}, pages 725--732, 2010.
+
+\end{thebibliography}

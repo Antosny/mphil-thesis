@@ -1,0 +1,5 @@
+{\bf C}ollaborative {\bf F}iltering (CF) aims to predict users' ratings on items according to historical user-item preference data. In many real-world applications, preference data are usually sparse, which would make models overfit and fail to give accurate predictions.
+Recently, several research works show that by transferring knowledge from some manually selected source domains, the data sparseness problem could be mitigated.
+However for most cases, parts of the source domain data are {\em not consistent} with the observations in the target domain, which may misguide the target domain model building.
+In this paper, we propose a novel criterion based on empirical prediction error and its variance to capture the consistency across domains in CF settings. Consequently, we embed this criterion into a boosting framework to perform {\em selective} knowledge transfer.
+Comparing with several state-of-the-art methods, we show that our proposed selective transfer learning framework can significantly improve the accuracy of rating prediction on several real-world recommendation tasks.

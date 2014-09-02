@@ -1,0 +1,41 @@
+\chapter{Introduction}
+\label{chp:intro}
+
+\hspace{0.1in}
+\section{Motivation}
+Recommendation systems attempt to recommend items (e.g., movies, music, books, news, images, web pages, etc.) that are likely to be of interest to users. As a state-of-the-art technique for recommendation systems, collaborative filtering aims at predicting users' ratings on a set of items based on a collection of historical user-item preference records.
+In the real-world recommendation systems, although the item space is often very large, users usually rate only a small number of items. Thus, the available rating data can be extremely sparse for each user, which is especially true for newly started online services.
+Such data sparsity problem may make CF models overfit the limited observations and result in low-quality predictions.
+
+
+In recent years, different transfer learning techniques have been developed to improve the performance of learning a model via reusing some information from other relevant systems for collaborative filtering~\cite{/ijcai/libin09,/uai/ZhangCY10}.
+And with the increasing understandings of auxiliary data sources, some works (such as ~\cite{DBLP:conf/aaai/EldardiryN11,DBLP:conf/sdm/ShiPGY12}) start to explore the data from multiple source domains to achieve more comprehensive knowledge transfer.
+However, these previous methods over-trust the source data and assume that the source domains follow very similar distributions with the target domain, which is usually not true in the real-world applications, especially under the cross domain CF settings.
+For example, in a local music rating web site, natives may give trustful ratings for the traditional music; while in an international music rating web site, the ratings on those traditional music could be diverse due to the culture differences: those users with good culture background would constantly give trustful ratings, others could be inaccurate. If the target domain task is the music recommendation of a startup local web site, obviously we do not want all the international web site's data as source domain without selection. To better tackle the cross domain CF problems, we face the challenge to tell how consistent the data of target and source domains are and to adopt only those consistent source domain data while transferring knowledge.
+
+Several research works (such as ~\cite{DBLP:conf/icml/DaiYXY07}) have been proposed to perform instance selection across domains for classification tasks based on empirical error. But they cannot be adopted to solve CF problems directly. Especially when the target domain is sparse, because of the limited observations of user's ratings on the items in the target domain, getting a low empirical error occasionally in the target domain does not mean the source domains are truly helpful in building a good model. In other words, the inconsistent knowledge from source domains may dominate the target domain model building and happen to fit the majority of the limited observations in the target domain, which is not desirable.
+
+We take careful analysis on this problem and in our observation on the music rating example, some users, such as the domain experts, follow standard criteria to rate and hence share a consistent distribution over the mutual item set across domains. And further, we find this consistency can be better described by adding the variance of empirical error produced by the model. The smaller the variance of empirical error on predictions for a user, the more likely this user is consistent with those from other domains. And, we would like to adopt those who are more likely to share consistent preferences to perform knowledge transfer across domains.
+Based on this observation, we propose a new criterion using both the empirical error and its variance to capture the consistency between the source and the target domains. As an implementation, we embed this criterion into a boosting framework and propose a novel selective transfer learning approach for collaborative filtering (STLCF) ~\cite{zhongqi2013selective}.
+STLCF works in an iterative way to adjust the importance of source instances, where those source data with low empirical error as well as low variance will be selected to help build target models.
+
+\hspace{0.1in}
+\section{Contributions}
+
+Our main contributions are summarized as follows:
+
+\begin{itemize}[noitemsep,topsep=0pt,parsep=0pt,partopsep=0pt]
+\item First, we find that selecting consistent auxiliary data for the target domain is important for the cross-domain collaborative filtering, while the consistency between source and target domains is influenced by multiple factors. To describe these factors, we propose a novel  criterion to measure the consistency between source and target domains, based on both empirical error and its variance.
+\item Second, we propose a {\em selective} transfer learning framework for collaborative filtering - an extension of the boosting-based transfer learning algorithm that takes the above criterion into consideration while performing knowledge transfer, so that the sparseness issue in the CF problems can be better tackled.
+\item Third, the proposed framework is general, where different base models can be embedded. We propose an implementation based on Gaussian probability latent semantic analysis, which demonstrates the proposed framework can solve the sparseness problem on various real-world applications.
+\item Fourth, we investigate the distributed techniques and designed our proposed STLCF to well fit into them. Therefore, our work can be classified as an instance of large scale transfer learning. The parallel implementation demonstrates the power to handle the real-world tasks.
+\end{itemize}
+
+\hspace{0.1in}
+\section{Thesis Outline}
+
+The rest of the thesis is organized as follows: we first provide the background of the research on Selective Transfer Learning for Cross Domain Recommendation, together with a very brief survey of the field in Chapter \ref{chp:bg}. Then, we discuss the technique grounds of the proposed framework in Chapter \ref{chp:gplsa}. We present the details of our proposed STLCF framework in Chapter \ref{chp:STLCF} and the experiments in Chapter \ref{chp:exp}. Finally, we share our thoughts of possible future work and conclude the thesis in Chapter \ref{chp:conclusion}.
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+

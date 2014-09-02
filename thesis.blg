@@ -1,0 +1,76 @@
+This is BibTeX, Version 0.99d (TeX Live 2013/Debian)
+Capacity: max_strings=35307, hash_size=35307, hash_prime=30011
+The top-level auxiliary file: thesis.aux
+The style file: plain.bst
+Database file #1: reference.bib
+Repeated entry---line 649 of file reference.bib
+ : @inproceedings{DBLP:conf/sigir/Hofmann03
+ :                                         ,
+I'm skipping whatever remains of this entry
+You're missing a field name---line 703 of file reference.bib
+ :  pages = {2052--2057},
+ :                       % location = {Pasadena, California, USA}, %series = {IJCAI'09},
+I'm skipping whatever remains of this entry
+You're missing a field name---line 761 of file reference.bib
+ :  
+ :  %publisher = {Springer-Verlag},
+(Error may have been on previous line)
+I'm skipping whatever remains of this entry
+A bad cross reference---entry "/uai/ZhangCY10"
+refers to entry "DBLP:conf/uai/2010", which doesn't exist
+A bad cross reference---entry "/kdd/SinghG08"
+refers to entry "DBLP:conf/kdd/2008", which doesn't exist
+A bad cross reference---entry "DBLP:conf/sigir/Hofmann03"
+refers to entry "DBLP:conf/sigir/2003", which doesn't exist
+A bad cross reference---entry "/nips/SalakhutdinovM07"
+refers to entry "DBLP:conf/nips/2007", which doesn't exist
+A bad cross reference---entry "/cvpr/YaoD10"
+refers to entry "DBLP:conf/cvpr/2010", which doesn't exist
+Warning--I didn't find a database entry for "DBLP:conf/kdd/2008"
+Warning--I didn't find a database entry for "DBLP:conf/sigir/2003"
+Warning--I didn't find a database entry for "DBLP:conf/nips/2007"
+Warning--I didn't find a database entry for "DBLP:conf/cvpr/2010"
+Warning--I didn't find a database entry for "DBLP:conf/uai/2010"
+Warning--empty publisher in /ki/bhaskar06cross
+You've used 38 entries,
+            2118 wiz_defined-function locations,
+            732 strings with 11000 characters,
+and the built_in function-call counts, 14306 in all, are:
+= -- 1401
+> -- 641
+< -- 24
++ -- 250
+- -- 209
+* -- 917
+:= -- 2229
+add.period$ -- 121
+call.type$ -- 38
+change.case$ -- 212
+chr.to.int$ -- 0
+cite$ -- 39
+duplicate$ -- 621
+empty$ -- 1161
+format.name$ -- 217
+if$ -- 3150
+int.to.chr$ -- 0
+int.to.str$ -- 38
+missing$ -- 38
+newline$ -- 191
+num.names$ -- 84
+pop$ -- 265
+preamble$ -- 1
+purify$ -- 178
+quote$ -- 0
+skip$ -- 483
+stack$ -- 0
+substring$ -- 848
+swap$ -- 204
+text.length$ -- 20
+text.prefix$ -- 0
+top$ -- 0
+type$ -- 146
+warning$ -- 1
+while$ -- 128
+width$ -- 40
+write$ -- 411
+(There were 8 error messages)
