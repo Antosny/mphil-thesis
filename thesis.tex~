@@ -39,7 +39,7 @@
 
 \input{symbols}
 
-\title{Transfer Learning for One-Class Recommendation Based On Matrix Factorization}  % Title of the thesis.
+\title{Transfer Learning for Cross Domain Recommendation With Matrix Factorization}  % Title of the thesis.
 \author{Ruiming Xie}     % Author of the thesis.
 \degree{\MPhil}             % Degree for which the thesis is.
 %% or
