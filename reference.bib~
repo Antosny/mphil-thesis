@@ -249,16 +249,7 @@
   journal   = {Proceedings of KDD Cup and Workshop},
   year      = {2007},
 }
-@INPROCEEDINGS{4781145, 
-author={Rong Pan and Yunhong Zhou and Bin Cao and Liu, N.N. and Lukose, R. and Scholz, M. and Qiang Yang}, 
-booktitle={Data Mining, 2008. ICDM '08. Eighth IEEE International Conference on}, 
-title={One-Class Collaborative Filtering}, 
-year={2008}, 
-month={Dec}, 
-pages={502-511}, 
-keywords={Internet;groupware;information filtering;Web page bookmarking;binary data;bookmark recommendation;news item recommendation;one-class collaborative filtering;training data;DVD;Data mining;Filtering;Fuels;History;International collaboration;Milling machines;Rockets;Sampling methods;Training data;Alternating Least Squares;Collaborative Filtering;Low-Rank Approximations;One-Class}, 
-doi={10.1109/ICDM.2008.16}, 
-ISSN={1550-4786},}
+
 @INPROCEEDINGS{4781121, 
 author={Yifan Hu and Koren, Y. and Volinsky, C.}, 
 booktitle={Data Mining, 2008. ICDM '08. Eighth IEEE International Conference on}, 

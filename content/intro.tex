@@ -6,6 +6,10 @@
 Recommendation systems have become extremely common in recent years, typical recommendation system recommends items (movies, music, books, etc.) that users may be interested in. Collaborative filtering approaches build a model from users' past behavior to predict items that the user may have an interest in. 
 In real-world recommendation systems, users and items are all very large, so users can only rate a small fraction of items. Thus, the user-item matrix can be extremely sparse. What's more, sometimes we can't observe explicit ratings, only implicit feedback is provided(e.g click, pageview and purchase). Such problem may lead to poor performance in CF models.
 
+Recently, different transfer learning methods have been developed to improve the performance of the model.In \cite{/ijcai/libin09, /icml/libin09}, they use a rating-pattern sharing scheme to share user-item ratings pattern across different domains. In \cite{/aaai/WPan12, Pan:2011:TLP:2283696.2283784}, implicit feedback data is available, knowledge is transferred via latent-feature sharing. In \cite{/uai/ZhangCY10, DBLP:conf/aaai/EldardiryN11} they try to exploit correlations among multiple domains.
+However, most of the methods are develeoped for rating prediction problems. For example, in a music & book rating website, a user can have high or low rating for an album. The ratings are usually trustful, thus can be used to recommend books to the same users. But in a website where only implicit feedback is available(e.g advertisement), the behavior can be much more noisy and with less information. So to acheive better performance, we much transfer more knowledge from source domain while be very careful about the noise.
+
+Some works have been done on solving one-class recommendation problem \cite{4781121, 4781145}. 
 
 
 
