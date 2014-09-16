@@ -21,16 +21,15 @@ Further, to make the method online, we develeop a clustering-based matrix factor
 Our main contributions are summarized as follows:
 
 \begin{itemize}[noitemsep,topsep=0pt,parsep=0pt,partopsep=0pt]
-\item First, we find that selecting consistent auxiliary data for the target domain is important for the cross-domain collaborative filtering, while the consistency between source and target domains is influenced by multiple factors. To describe these factors, we propose a novel  criterion to measure the consistency between source and target domains, based on both empirical error and its variance.
-\item Second, we propose a {\em selective} transfer learning framework for collaborative filtering - an extension of the boosting-based transfer learning algorithm that takes the above criterion into consideration while performing knowledge transfer, so that the sparseness issue in the CF problems can be better tackled.
-\item Third, the proposed framework is general, where different base models can be embedded. We propose an implementation based on Gaussian probability latent semantic analysis, which demonstrates the proposed framework can solve the sparseness problem on various real-world applications.
-\item Fourth, we investigate the distributed techniques and designed our proposed STLCF to well fit into them. Therefore, our work can be classified as an instance of large scale transfer learning. The parallel implementation demonstrates the power to handle the real-world tasks.
+\item First, we find that in implicit datasets, more data must be shared to acheive better performance. To transfer more knowledge, a matrix tri-factorization method is proposed to transfer knowledge from user side and item side(TRIMF).
+\item Second, implicit datasets can consist many noises. To transfer useful knowledge, we develop a clustering-pattern transfer function. For each task, a base clustering pattern matrix is provided, the function only do some cluster-level transformation. Thus we can share knowledge more accurately without losing too much information.
+\item Third, we propose a modified version of TRIMF which can be used for large scale recommendation. And it is used in an Internet company, it's performance is among the best in all online algorithms.
 \end{itemize}
 
 \hspace{0.1in}
 \section{Thesis Outline}
 
-The rest of the thesis is organized as follows: we first provide the background of the research on Selective Transfer Learning for Cross Domain Recommendation, together with a very brief survey of the field in Chapter \ref{chp:bg}. Then, we discuss the technique grounds of the proposed framework in Chapter \ref{chp:gplsa}. We present the details of our proposed STLCF framework in Chapter \ref{chp:STLCF} and the experiments in Chapter \ref{chp:exp}. Finally, we share our thoughts of possible future work and conclude the thesis in Chapter \ref{chp:conclusion}.
+The rest of the thesis is organized as follows: we first provide the background of the research on Transfer Learning, Collaborative Filter and Matrix Factorization in Chapter \ref{chp:bg}. Then, we discuss the technique grounds of the proposed matrix tri-factorization method in Chapter \ref{chp:gplsa}. We present the details of our proposed STLCF framework in Chapter \ref{chp:STLCF} and the experiments in Chapter \ref{chp:exp}. Finally, we share our thoughts of possible future work and conclude the thesis in Chapter \ref{chp:conclusion}.
 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
