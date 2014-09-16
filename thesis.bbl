@@ -30,11 +30,6 @@ Cheng Chu, Sang~Kyun Kim, Yi-An Lin, YuanYuan Yu, Gary Bradski, Andrew~Y Ng,
 \newblock {\em Advances in neural information processing systems}, 19:281,
   2007.
 
-\bibitem{DBLP:conf/icml/DaiYXY07}
-Wenyuan Dai, Qiang Yang, Gui-Rong Xue, and Yong Yu.
-\newblock Boosting for transfer learning.
-\newblock In Ghahramani \cite{DBLP:conf/icml/2007}, pages 193--200.
-
 \bibitem{das2007google}
 Abhinandan~S Das, Mayur Datar, Ashutosh Garg, and Shyam Rajaram.
 \newblock Google news personalization: scalable online collaborative filtering.
@@ -86,6 +81,12 @@ Thomas Hofmann.
 \newblock Latent semantic models for collaborative filtering.
 \newblock {\em ACM Trans. Inf. Syst.}, 22(1):89--115, 2004.
 
+\bibitem{4781121}
+Yifan Hu, Y.~Koren, and C.~Volinsky.
+\newblock Collaborative filtering for implicit feedback datasets.
+\newblock In {\em Data Mining, 2008. ICDM '08. Eighth IEEE International
+  Conference on}, pages 263--272, Dec 2008.
+
 \bibitem{jin:decoupled}
 Rong Jin, Luo Si, Chengxiang Zhai, and Jamie Callan.
 \newblock Collaborative filtering with decoupled models for preferences and
@@ -111,11 +112,6 @@ Bin Li, Qiang Yang, and Xiangyang Xue.
 \newblock In {\em International Conference on Machine Learning}, volume~26,
   2009.
 
-\bibitem{zhongqi2013selective}
-Zhongqi Lu, Erheng Zhong, Lili Zhao, Evan Xiang, Weike Pan, and Qiang Yang.
-\newblock Selective transfer learning for cross domain recommendation.
-\newblock In {\em SIAM International Conference on Data Mining}, 2013.
-
 \bibitem{/ki/bhaskar06cross}
 Bhaskar Mehta and Thomas Hofmann.
 \newblock Cross system personalization and collaborative filtering by learning
@@ -123,11 +119,26 @@ Bhaskar Mehta and Thomas Hofmann.
 \newblock In {\em KI 2006: Advances in Artificial Intelligence}, pages
   244--259. 2007.
 
+\bibitem{4781145}
+Rong Pan, Yunhong Zhou, Bin Cao, N.N. Liu, R.~Lukose, M.~Scholz, and Qiang
+  Yang.
+\newblock One-class collaborative filtering.
+\newblock In {\em Data Mining, 2008. ICDM '08. Eighth IEEE International
+  Conference on}, pages 502--511, Dec 2008.
+
 \bibitem{/tkde/sinno09survey}
 Sinno~Jialin Pan and Qiang Yang.
 \newblock A survey on transfer learning.
 \newblock {\em IEEE Transactions on Knowledge and Data Engineering},
   22(10):1345--1359, October 2010.
+
+\bibitem{Pan:2011:TLP:2283696.2283784}
+Weike Pan, Nathan~N. Liu, Evan~W. Xiang, and Qiang Yang.
+\newblock Transfer learning to predict missing ratings via heterogeneous user
+  feedbacks.
+\newblock In {\em Proceedings of the Twenty-Second International Joint
+  Conference on Artificial Intelligence - Volume Volume Three}, IJCAI'11, pages
+  2318--2323. AAAI Press, 2011.
 
 \bibitem{/aaai/WPan12}
 Weike Pan, Evan~W. Xiang, and Qiang Yang.
@@ -174,11 +185,6 @@ Ruslan Salakhutdinov and Andriy Mnih.
 Ruslan Salakhutdinov, Andriy Mnih, and Geoffrey~E. Hinton.
 \newblock Restricted boltzmann machines for collaborative filtering.
 \newblock In Ghahramani \cite{DBLP:conf/icml/2007}, pages 791--798.
-
-\bibitem{DBLP:conf/sdm/ShiPGY12}
-Xiaoxiao Shi, Jean-Fran\c{c}ois Paiement, David Grangier, and Philip~S. Yu.
-\newblock Learning from heterogeneous sources via gradient boosting consensus.
-\newblock In {\em SDM}, pages 224--235. SIAM / Omnipress, 2012.
 
 \bibitem{/jmlr/ShivaswamyJ10a}
 Pannagadatta~K. Shivaswamy and Tony Jebara.

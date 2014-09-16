@@ -3,15 +3,15 @@ Capacity: max_strings=35307, hash_size=35307, hash_prime=30011
 The top-level auxiliary file: thesis.aux
 The style file: plain.bst
 Database file #1: reference.bib
-Repeated entry---line 649 of file reference.bib
+Repeated entry---line 685 of file reference.bib
  : @inproceedings{DBLP:conf/sigir/Hofmann03
  :                                         ,
 I'm skipping whatever remains of this entry
-You're missing a field name---line 703 of file reference.bib
+You're missing a field name---line 739 of file reference.bib
  :  pages = {2052--2057},
  :                       % location = {Pasadena, California, USA}, %series = {IJCAI'09},
 I'm skipping whatever remains of this entry
-You're missing a field name---line 761 of file reference.bib
+You're missing a field name---line 797 of file reference.bib
  :  
  :  %publisher = {Springer-Verlag},
 (Error may have been on previous line)
@@ -34,43 +34,43 @@ Warning--I didn't find a database entry for "DBLP:conf/uai/2010"
 Warning--empty publisher in /ki/bhaskar06cross
 You've used 38 entries,
             2118 wiz_defined-function locations,
-            732 strings with 11000 characters,
-and the built_in function-call counts, 14306 in all, are:
-= -- 1401
-> -- 641
+            729 strings with 10924 characters,
+and the built_in function-call counts, 14569 in all, are:
+= -- 1431
+> -- 640
 < -- 24
 + -- 250
 - -- 209
-* -- 917
-:= -- 2229
+* -- 935
+:= -- 2252
 add.period$ -- 121
 call.type$ -- 38
 change.case$ -- 212
 chr.to.int$ -- 0
 cite$ -- 39
-duplicate$ -- 621
-empty$ -- 1161
-format.name$ -- 217
-if$ -- 3150
+duplicate$ -- 637
+empty$ -- 1192
+format.name$ -- 216
+if$ -- 3221
 int.to.chr$ -- 0
 int.to.str$ -- 38
 missing$ -- 38
 newline$ -- 191
-num.names$ -- 84
-pop$ -- 265
+num.names$ -- 83
+pop$ -- 267
 preamble$ -- 1
 purify$ -- 178
 quote$ -- 0
-skip$ -- 483
+skip$ -- 498
 stack$ -- 0
-substring$ -- 848
-swap$ -- 204
-text.length$ -- 20
+substring$ -- 888
+swap$ -- 217
+text.length$ -- 21
 text.prefix$ -- 0
 top$ -- 0
 type$ -- 146
 warning$ -- 1
-while$ -- 128
+while$ -- 131
 width$ -- 40
-write$ -- 411
+write$ -- 414
 (There were 8 error messages)

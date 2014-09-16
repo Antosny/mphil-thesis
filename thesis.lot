@@ -1,12 +1,12 @@
 \addvspace {1pt}
 \addvspace {1pt}
-\contentsline {table}{\numberline {2.1}{\ignorespaces Overview of STLCF in a big picture of Collaborative Filtering.}}{5}
+\contentsline {table}{\numberline {2.1}{\ignorespaces Overview of STLCF in a big picture of Collaborative Filtering.}}{4}
 \addvspace {1pt}
 \addvspace {1pt}
 \addvspace {1pt}
-\contentsline {table}{\numberline {5.1}{\ignorespaces Datasets in our experiments.}}{29}
-\contentsline {table}{\numberline {5.2}{\ignorespaces Prediction performance of STLCF and the baselines.}}{30}
-\contentsline {table}{\numberline {5.3}{\ignorespaces Prediction performance of STLCF for Long-Tail Users on the D2 to D3 task.}}{33}
-\contentsline {table}{\numberline {5.4}{\ignorespaces Prediction performance of STLCF with multiple source domains containing much irrelevant information.}}{34}
-\contentsline {table}{\numberline {5.5}{\ignorespaces Prediction performance of STLCF with multiple source domains (Douban).}}{34}
+\contentsline {table}{\numberline {5.1}{\ignorespaces Datasets in our experiments.}}{28}
+\contentsline {table}{\numberline {5.2}{\ignorespaces Prediction performance of STLCF and the baselines.}}{29}
+\contentsline {table}{\numberline {5.3}{\ignorespaces Prediction performance of STLCF for Long-Tail Users on the D2 to D3 task.}}{32}
+\contentsline {table}{\numberline {5.4}{\ignorespaces Prediction performance of STLCF with multiple source domains containing much irrelevant information.}}{33}
+\contentsline {table}{\numberline {5.5}{\ignorespaces Prediction performance of STLCF with multiple source domains (Douban).}}{33}
 \addvspace {1pt}
