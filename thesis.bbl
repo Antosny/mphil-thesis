@@ -112,6 +112,12 @@ Bin Li, Qiang Yang, and Xiangyang Xue.
 \newblock In {\em International Conference on Machine Learning}, volume~26,
   2009.
 
+\bibitem{/tist/Lipczak-TIST11-Tag-Rec}
+Marek Lipczak and Evangelos Milios.
+\newblock Efficient tag recommendation for real-life data.
+\newblock {\em ACM Transactions on Intelligent Systems and Technology (ACM
+  TIST)}, 3(1):2:1--2:21, October 2011.
+
 \bibitem{/ki/bhaskar06cross}
 Bhaskar Mehta and Thomas Hofmann.
 \newblock Cross system personalization and collaborative filtering by learning
@@ -140,6 +146,17 @@ Weike Pan, Nathan~N. Liu, Evan~W. Xiang, and Qiang Yang.
   Conference on Artificial Intelligence - Volume Volume Three}, IJCAI'11, pages
   2318--2323. AAAI Press, 2011.
 
+\bibitem{/ijcai/PanLXY11}
+Weike Pan, Nathan~Nan Liu, Evan~Wei Xiang, and Qiang Yang.
+\newblock Transfer learning to predict missing ratings via heterogeneous user
+  feedbacks.
+\newblock In {\em IJCAI}, pages 2318--2323, 2011.
+
+\bibitem{AAAI101649}
+Weike Pan, Evan Xiang, Nathan Liu, and Qiang Yang.
+\newblock Transfer learning in collaborative filtering for sparsity reduction.
+\newblock 2010.
+
 \bibitem{/aaai/WPan12}
 Weike Pan, Evan~W. Xiang, and Qiang Yang.
 \newblock Transfer learning in collaborative filtering with uncertain ratings.
@@ -162,13 +179,6 @@ Steffen Rendle.
 \newblock Factorization machines with libfm.
 \newblock {\em ACM Transactions on Intelligent Systems and Technology (ACM
   TIST)}, 3:19:1--19:22, May 2012.
-
-\bibitem{rennie2005fast}
-Jasson~DM Rennie and Nathan Srebro.
-\newblock Fast maximum margin matrix factorization for collaborative
-  prediction.
-\newblock In {\em Proceedings of the 22nd international conference on Machine
-  learning}, pages 713--719. ACM, 2005.
 
 \bibitem{rosenstein2005transfer}
 Michael~T Rosenstein, Zvika Marx, Leslie~Pack Kaelbling, and Thomas~G
@@ -222,5 +232,11 @@ Yi~Yao and Gianfranco Doretto.
 Yu~Zhang, Bin Cao, and Dit-Yan Yeung.
 \newblock Multi-domain collaborative filtering.
 \newblock In {\em UAI}, pages 725--732, 2010.
+
+\bibitem{/tist/TIST11-Yu-ZHENG-Travel-Rec}
+Yu~Zheng and Xing Xie.
+\newblock Learning travel recommendations from user-generated gps traces.
+\newblock {\em ACM Transactions on Intelligent Systems and Technology (ACM
+  TIST)}, 2(1):2:1--2:29, January 2011.
 
 \end{thebibliography}
