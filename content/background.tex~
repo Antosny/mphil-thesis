@@ -40,7 +40,7 @@ There are three types of CF: memory-based, model-based and hybrid.
 
 \hspace{0.05in}
 \subsection{Memory-based CF}
-This mechanism uses user rating data to compute the similarity between users or items. The similarity is then used for making recommendations. The memory-based method is used in many commercial systems, because it is easy to implement and is effective given plenty of records. Typical examples of this mechanism are neighborhood based CF and item-based/user-based top-N recommendations\cite{su2009survey}.
+This mechanism uses user rating data to compute the similarity between users or items. The similarity is then used for making recommendations. The memory-based method is used in many commercial systems, because it is easy to implement and is effective given plenty of records and doesn't produce a model. Typical examples of this mechanism are neighborhood based CF and item-based/user-based top-N recommendations\cite{su2009survey}.
 
 The advantages of this approach include:
 \begin{itemize}
@@ -74,16 +74,48 @@ There are several advantages with this paradigm:
 
 The disadvantage of this approach is the expensive model building. On the one hand, the modern recommendation system usually have petabytes of records as input; On the other hand, the convergence of most models requires intensive computation. One needs to have a tradeoff between prediction performance and scalability.
 
-Given the accuracy of model-based CF, how to overcome the scalability issue has attracted much concern. With the rapid development of parallel computation, researchers have been exploring the use of parallel system to speed up the complex model building. For example in ~\cite{chu2007map}, the authors showed that a variety of machine learning algorithms including k-means, logistic regression, naive Bayes, SVM, PCA, gaussian discriminant analysis, EM and backpropagation (NN) could be speeded up by Google's map-reduce ~\cite{dean2008mapreduce} paradigm.
+Given the accuracy of model-based CF, how to overcome the scalability issue has attracted much concern. With the rapid development of parallel computation, researchers have been exploring the use of parallel system to speed up the complex model building. For example in ~\cite{chu2007map}, the authors showed that a variety of machine learning algorithms including k-means, logistic regression, naive Bayes, SVM, PCA, gaussian discriminant analysis, EM and backpropagation (NN) could be speeded up by Google's map-reduce ~\cite{dean2008mapreduce} paradigm. In ~\cite{Shalev-Shwartz:2008:SOI:1390156.1390273}, the authors showed there is an inverse dependency of training set size and training speed in SVM(linear kernel). That is, if you get more training instances, you can speed up your training speed.
 
-Being aware of the computational infeasibility for most useful CF models in the real world settings, we would like to adopt the parallel computation framework in our implementation and experiments. We classified our Selective Transfer Learning for CF as model-based CF and use parallel computing to well handle the real world data and complex modeling.
+In our method TRIMF, it's hard to parallellize the update step, so we develop a modified version of TRIMF and put it online.
 
 \hspace{0.05in}
 \subsection{Hybrid models}
-A number of applications \cite{das2007google} combine the memory-based and the model-based CF algorithms. These overcome the limitations of native CF approaches. It improves the prediction performance. Importantly, it overcomes the CF problems such as sparsity and loss of information. However, they have increased complexity and are expensive to implement.
+A number of applications combine the memory-based and the model-based CF algorithms. These overcome the limitations of native CF approaches. It improves the prediction performance. Importantly, it overcomes the CF problems such as sparsity and loss of information. However, they have increased complexity and are expensive to implement. Usually most of the commercial recommender systems are hybrid, for example, Google news recommender system ~\cite{das2007google}.
 
 \hspace{0.1in}
-\section{Transfer Learning} Pan and Yang ~\cite{/tkde/sinno09survey} surveyed the field of transfer learning. A major assumption in many machine learning and data mining algorithms is that the training and future data must be in the same feature space and have the same distribution. However, in many real-world applications, this assumption may not hold. For example, we sometimes have a classification task in one domain of interest, but we only have sufficient training data in another domain of interest, where the latter data may be in a different feature space or follow a different data distribution. In such cases, knowledge transfer, if done successfully, would greatly improve the performance of learning by avoiding much expensive data-labeling effort.
+\section{Matrix Factorization}
+In the mathematical discipline of linear algebra, a matrix decomposition or matrix factorization is a factorization of a matrix into a product of matrices. There are many different matrix decompositions; each finds use among a particular class of problems. In CF, usually user-item matrix is very sparse, we can decompose the original matrix into different low-rank matrix and then recover the dense matrix by multiply the low-rank matrix to produce recommendation results. There are two main methods of matrix factorizaion which are widely applied. 1. Singular value decomposition(SVD), 2. Non-negative matrix factorization(NMF).
+\hspace{0.05in}
+\subsection{Singular Value Decomposition}
+In linear algebra, the singular value decomposition (SVD) is a factorization of a real or complex matrix, with many useful applications in signal processing and statistics.
+
+Formally, the singular value decomposition of an $m * n$ real or complex matrix M is a factorization of the form $M = U \sum V^∗$, where $U$ is an $m * m$ real or complex unitary matrix, $\sum$ is an $m * n$ rectangular diagonal matrix with non-negative real numbers on the diagonal, and $V∗$ is an $n * n$ real or complex unitary matrix. Singular value decomposition is used in recommender systems to predict people's item ratings ~\cite{Sarwar00applicationof}. $\sum$ consists of singular values of $M$, and we can select the k-biggest values and set other entries of $\sum$ to zero. Then put $M' = U \sum V^∗$, $M'$ is our recommendation result.
+
+\hspace{0.05in}
+\subsection{Non-negative Matrix Factorizaion}
+Non-negative matrix factorization (NMF) is a group of algorithms in multivariate analysis and linear algebra where a matrix $V$ is factorized into (usually) two matrices $W$ and $H$, with the property that all three matrices have no negative elements. It can be regard as a latent factor model~\cite{/computer/yehuda09matrix}.
+
+Latent factor models are an alternative approach that tries to explain the ratings by characterizing both items and users on, say, 20 to 100 factors inferred from the ratings patterns. In movie recommendation, the discovered factors might measure obvious dimensions such as comedy versus
+drama, amount of action, or orientation to children. For users, each factor measures how much the user likes movies that score high on the corresponding movie factor. For movies, each factor measures the property of that movie.
+
+NMF decompose an original matrix $V$ into two matrices $W$ and $H$, s.t $V = WH$. $V$ is $m*n$, $W$ is $m*d$, $H$ is $d*n$. Usually $d << m,n$, is the dimension of latent factor, NMF methods put users and items into one common latent space. When judging whether a user likes an item, we can simply calculate by inner product.
+
+\hspace{0.05in}
+\subsection{Non-negative Matrix Tri-factorizaion}
+As a transformation of NMF, Non-negative Matrix Tri-factorizaion(NMTF) decompose a matrix $X$ into three non-negative part : $X = USV$. Instead of mapping users and items to a same latent space, the three parts of NMTF can be interpreted as:
+\begin{itemize}
+\item $U$ users' soft-clustering matrix
+\item $S$ users' clusters vs items' clusters(cluster relationship matrix)
+\item $V$ items' soft-clustering matrix
+\end{itemize}
+
+In ~\cite{Ding05onthe}, the authors proved that NMF is equivalent to k-means clustering. In ~\cite{Ding06orthogonalnonnegative} the authors also proved that NMTF can be regarded as a way of clustering. NMTF is well known in document processing, ~\cite{Li:2009:NMT:1687878.1687914} uses prior knowledge in lexical and NMTF to tackle the sentiment analysis problem, ~\cite{Zhuang:2011:EAW:1952191.1952195} exploits the relationship between word clusters and document classes in text classification problem.
+
+Because the property of NMTF, if we get some prior knowledge(e.g word cluster, document class), we can easily adopt them in the model. Thus can acheive better performance than tradictional NMF methods. Our method(TRIMF) uses NMTF to leverage auxiliary data, align cluster and do cluster-level sharing. NMTF is also very common in the field of transfer learning, where clusters can be shared across different domains.
+
+
+\hspace{0.1in}
+\section{Transfer Learning} Pan and Yang ~\cite{/tkde/sinno09survey} surveyed the field of transfer learning. A major assumption in many machine learning and data mining algorithms is that the training and future data must be in the same feature space and have the same distribution. However, in many real-world applications, this assumption may not hold. For example, we have a task in recommedation, users and items form a joint distribution in training data. But in test data, users may be different with the training as well as items, their relationship may varies too. we sometimes have a classification task in one domain of interest, but we only have sufficient training data in another domain of interest, where the latter data may be in a different feature space or follow a different data distribution. In such cases, knowledge transfer, if done successfully, would greatly improve the performance of learning by avoiding much expensive data-labeling effort.
 
 Recently, researchers propose the MultiSourceTrAdaBoost~\cite{/cvpr/YaoD10} to allow automatically selecting the appropriate data for knowledge transfer from multiple sources. The newest work TransferBoost~\cite{/aaai/Eatond11} was proposed to iteratively construct an ensemble of classifiers via re-weighting source and target instance via both individual and task-based boosting. Moreover, EBBoost~\cite{/jmlr/ShivaswamyJ10a} suggests weight the instance based on the empirical error as well as its variance.
 
@@ -128,3 +160,6 @@ Message Passing Interface (MPI) is a standardized and portable message-passing s
 \item {\bf Performance.} As modern CPUs have become faster, management of their caches and the memory hierarchy has become the key to getting the most out of the machines. Message passing provides a way for the programmer to explicitly associate specific data with processers and thus allow the compiler and cache-management hardware to function fully.
 \end{itemize}
 Due to the flexibility of the protocol provided under MPI, it works well for the code development of learning algorithms. We will use MPI for implementation.
+
+
+

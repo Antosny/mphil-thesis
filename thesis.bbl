@@ -41,6 +41,17 @@ Jeffrey Dean and Sanjay Ghemawat.
 \newblock Mapreduce: simplified data processing on large clusters.
 \newblock {\em Communications of the ACM}, 51(1):107--113, 2008.
 
+\bibitem{Ding06orthogonalnonnegative}
+Chris Ding.
+\newblock Orthogonal nonnegative matrix tri-factorizations for clustering.
+\newblock In {\em In SIGKDD}, pages 126--135. Press, 2006.
+
+\bibitem{Ding05onthe}
+Chris Ding, Xiaofeng He, and Horst~D. Simon.
+\newblock On the equivalence of nonnegative matrix factorization and spectral
+  clustering.
+\newblock In {\em in SIAM International Conference on Data Mining}, 2005.
+
 \bibitem{/aaai/Eatond11}
 Eric Eaton and Marie desJardins.
 \newblock Selective transfer between learning tasks using task-based boosting.
@@ -111,6 +122,16 @@ Bin Li, Qiang Yang, and Xiangyang Xue.
   generative model.
 \newblock In {\em International Conference on Machine Learning}, volume~26,
   2009.
+
+\bibitem{Li:2009:NMT:1687878.1687914}
+Tao Li, Yi~Zhang, and Vikas Sindhwani.
+\newblock A non-negative matrix tri-factorization approach to sentiment
+  classification with lexical prior knowledge.
+\newblock In {\em Proceedings of the Joint Conference of the 47th Annual
+  Meeting of the ACL and the 4th International Joint Conference on Natural
+  Language Processing of the AFNLP: Volume 1 - Volume 1}, ACL '09, pages
+  244--252, Stroudsburg, PA, USA, 2009. Association for Computational
+  Linguistics.
 
 \bibitem{/tist/Lipczak-TIST11-Tag-Rec}
 Marek Lipczak and Evangelos Milios.
@@ -196,6 +217,18 @@ Ruslan Salakhutdinov, Andriy Mnih, and Geoffrey~E. Hinton.
 \newblock Restricted boltzmann machines for collaborative filtering.
 \newblock In Ghahramani \cite{DBLP:conf/icml/2007}, pages 791--798.
 
+\bibitem{Sarwar00applicationof}
+Badrul~M. Sarwar, George Karypis, Joseph~A. Konstan, and John~T. Riedl.
+\newblock Application of dimensionality reduction in recommender system -- a
+  case study.
+\newblock In {\em IN ACM WEBKDD WORKSHOP}, 2000.
+
+\bibitem{Shalev-Shwartz:2008:SOI:1390156.1390273}
+Shai Shalev-Shwartz and Nathan Srebro.
+\newblock Svm optimization: Inverse dependence on training set size.
+\newblock In {\em Proceedings of the 25th International Conference on Machine
+  Learning}, ICML '08, pages 928--935, New York, NY, USA, 2008. ACM.
+
 \bibitem{/jmlr/ShivaswamyJ10a}
 Pannagadatta~K. Shivaswamy and Tony Jebara.
 \newblock Empirical bernstein boosting.
@@ -238,5 +271,11 @@ Yu~Zheng and Xing Xie.
 \newblock Learning travel recommendations from user-generated gps traces.
 \newblock {\em ACM Transactions on Intelligent Systems and Technology (ACM
   TIST)}, 2(1):2:1--2:29, January 2011.
+
+\bibitem{Zhuang:2011:EAW:1952191.1952195}
+Fuzhen Zhuang, Ping Luo, Hui Xiong, Qing He, Yuhong Xiong, and Zhongzhi Shi.
+\newblock Exploiting associations between word clusters and document classes
+  for cross-domain text categorization.
+\newblock {\em Stat. Anal. Data Min.}, 4(1):100--114, February 2011.
 
 \end{thebibliography}

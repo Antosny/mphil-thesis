@@ -242,6 +242,22 @@
   ee        = {http://doi.acm.org/10.1145/963770.963774},
   bibsource = {DBLP, http://dblp.uni-trier.de}
 }
+@inproceedings{Shalev-Shwartz:2008:SOI:1390156.1390273,
+ author = {Shalev-Shwartz, Shai and Srebro, Nathan},
+ title = {SVM Optimization: Inverse Dependence on Training Set Size},
+ booktitle = {Proceedings of the 25th International Conference on Machine Learning},
+ series = {ICML '08},
+ year = {2008},
+ isbn = {978-1-60558-205-4},
+ location = {Helsinki, Finland},
+ pages = {928--935},
+ numpages = {8},
+ url = {http://doi.acm.org/10.1145/1390156.1390273},
+ doi = {10.1145/1390156.1390273},
+ acmid = {1390273},
+ publisher = {ACM},
+ address = {New York, NY, USA},
+} 
 
 @article{paterek07,
   author    = {Arkadiusz Paterek},
@@ -249,6 +265,36 @@
   journal   = {Proceedings of KDD Cup and Workshop},
   year      = {2007},
 }
+@INPROCEEDINGS{Ding05onthe,
+    author = {Chris Ding and Xiaofeng He and Horst D. Simon},
+    title = {On the equivalence of nonnegative matrix factorization and spectral clustering},
+    booktitle = {in SIAM International Conference on Data Mining},
+    year = {2005}
+}
+@INPROCEEDINGS{Ding06orthogonalnonnegative,
+    author = {Chris Ding},
+    title = {Orthogonal nonnegative matrix tri-factorizations for clustering},
+    booktitle = {In SIGKDD},
+    year = {2006},
+    pages = {126--135},
+    publisher = {Press}
+}
+
+@inproceedings{Li:2009:NMT:1687878.1687914,
+ author = {Li, Tao and Zhang, Yi and Sindhwani, Vikas},
+ title = {A Non-negative Matrix Tri-factorization Approach to Sentiment Classification with Lexical Prior Knowledge},
+ booktitle = {Proceedings of the Joint Conference of the 47th Annual Meeting of the ACL and the 4th International Joint Conference on Natural Language Processing of the AFNLP: Volume 1 - Volume 1},
+ series = {ACL '09},
+ year = {2009},
+ isbn = {978-1-932432-45-9},
+ location = {Suntec, Singapore},
+ pages = {244--252},
+ numpages = {9},
+ url = {http://dl.acm.org/citation.cfm?id=1687878.1687914},
+ acmid = {1687914},
+ publisher = {Association for Computational Linguistics},
+ address = {Stroudsburg, PA, USA},
+} 
 @INPROCEEDINGS{4781145, 
 author={Rong Pan and Yunhong Zhou and Bin Cao and Liu, N.N. and Lukose, R. and Scholz, M. and Qiang Yang}, 
 booktitle={Data Mining, 2008. ICDM '08. Eighth IEEE International Conference on}, 
@@ -295,6 +341,14 @@ ISSN={1550-4786},}
   ee        = {http://uai.sis.pitt.edu/displayArticleDetails.jsp?mmnu=1{\&}smnu=2{\&}article_id=2124{\&}proceeding_id=26},
   crossref  = {DBLP:conf/uai/2010},
   bibsource = {DBLP, http://dblp.uni-trier.de}
+}
+
+@INPROCEEDINGS{Sarwar00applicationof,
+    author = {Badrul M. Sarwar and George Karypis and Joseph A. Konstan and John T. Riedl},
+    title = {Application of Dimensionality Reduction in Recommender System -- A Case Study},
+    booktitle = {IN ACM WEBKDD WORKSHOP},
+    year = {2000},
+    publisher = {}
 }
 
 
@@ -353,7 +407,16 @@ ISSN={1550-4786},}
 }
 
 
+@inproceedings{AAAI101649,
+	author = {Weike Pan and Evan Xiang and Nathan Liu and Qiang Yang},
+	title = {Transfer Learning in Collaborative Filtering for Sparsity Reduction},
+	conference = {AAAI Conference on Artificial Intelligence},
+	year = {2010},
+	keywords = {transfer learning; collaborative filtering},
+	abstract = {Data sparsity is a major problem for collaborative filtering (CF) techniques in recommender systems, especially for new users and items. We observe that, while our target data are sparse for CF systems, related and relatively dense auxiliary data may already exist in some other more mature application domains. In this paper, we address the data sparsity problem in a target domain by transferring knowledge about both users and items from auxiliary data sources. We observe that in different domains the user feedbacks are often heterogeneous such as ratings vs. clicks. Our solution is to integrate both user and item knowledge in auxiliary data sources through a principled matrix-based transfer learning framework that takes into account the data heterogeneity. In particular, we discover the principle coordinates of both users and items in the auxiliary data matrices, and transfer them to the target domain in order to reduce the effect of data sparsity. We describe our method, which is known as coordinate system transfer or CST, and demonstrate its effectiveness in alleviating the data sparsity problem in collaborative filtering. We show that our proposed method can significantly outperform several state-of-the-art solutions for this problem.},
 
+	url = {http://www.aaai.org/ocs/index.php/AAAI/AAAI10/paper/view/1649}
+}
 @inproceedings{/aaai/WPan12,
   author    = {Weike Pan and Evan W. Xiang and Qiang Yang},
   title     = {Transfer Learning in Collaborative Filtering with Uncertain Ratings},

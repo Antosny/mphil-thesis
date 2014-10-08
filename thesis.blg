@@ -3,15 +3,15 @@ Capacity: max_strings=35307, hash_size=35307, hash_prime=30011
 The top-level auxiliary file: thesis.aux
 The style file: plain.bst
 Database file #1: reference.bib
-Repeated entry---line 685 of file reference.bib
+Repeated entry---line 829 of file reference.bib
  : @inproceedings{DBLP:conf/sigir/Hofmann03
  :                                         ,
 I'm skipping whatever remains of this entry
-You're missing a field name---line 757 of file reference.bib
+You're missing a field name---line 901 of file reference.bib
  :  pages = {2052--2057},
  :                       % location = {Pasadena, California, USA}, %series = {IJCAI'09},
 I'm skipping whatever remains of this entry
-You're missing a field name---line 815 of file reference.bib
+You're missing a field name---line 959 of file reference.bib
  :  
  :  %publisher = {Springer-Verlag},
 (Error may have been on previous line)
@@ -36,45 +36,45 @@ Warning--I didn't find a database entry for "DBLP:conf/uai/2010"
 Warning--I didn't find a database entry for "DBLP:conf/ijcai/2011"
 Warning--empty publisher in /ki/bhaskar06cross
 Warning--empty booktitle in AAAI101649
-You've used 41 entries,
+You've used 47 entries,
             2118 wiz_defined-function locations,
-            745 strings with 11322 characters,
-and the built_in function-call counts, 15659 in all, are:
-= -- 1530
-> -- 699
-< -- 24
-+ -- 273
-- -- 229
-* -- 1023
-:= -- 2431
-add.period$ -- 129
-call.type$ -- 41
-change.case$ -- 231
+            786 strings with 12909 characters,
+and the built_in function-call counts, 18153 in all, are:
+= -- 1784
+> -- 811
+< -- 27
++ -- 318
+- -- 267
+* -- 1188
+:= -- 2814
+add.period$ -- 150
+call.type$ -- 47
+change.case$ -- 268
 chr.to.int$ -- 0
-cite$ -- 43
-duplicate$ -- 674
-empty$ -- 1277
-format.name$ -- 236
-if$ -- 3442
+cite$ -- 49
+duplicate$ -- 782
+empty$ -- 1479
+format.name$ -- 274
+if$ -- 3994
 int.to.chr$ -- 0
-int.to.str$ -- 41
-missing$ -- 41
-newline$ -- 206
-num.names$ -- 89
-pop$ -- 287
+int.to.str$ -- 47
+missing$ -- 47
+newline$ -- 236
+num.names$ -- 101
+pop$ -- 332
 preamble$ -- 1
-purify$ -- 194
+purify$ -- 225
 quote$ -- 0
-skip$ -- 525
+skip$ -- 604
 stack$ -- 0
-substring$ -- 963
-swap$ -- 222
-text.length$ -- 21
+substring$ -- 1115
+swap$ -- 258
+text.length$ -- 24
 text.prefix$ -- 0
 top$ -- 0
-type$ -- 158
+type$ -- 182
 warning$ -- 2
-while$ -- 140
-width$ -- 43
-write$ -- 444
+while$ -- 163
+width$ -- 49
+write$ -- 515
 (There were 9 error messages)
