@@ -1,27 +1,17 @@
 \begin{thebibliography}{10}
 
-\bibitem{argyriou2008algorithm}
-Andreas Argyriou, Andreas Maurer, and Massimiliano Pontil.
-\newblock An algorithm for transfer learning in a heterogeneous environment.
-\newblock In {\em Machine Learning and Knowledge Discovery in Databases}, pages
-  71--85. Springer, 2008.
-
-\bibitem{bakker2003task}
-Bart Bakker and Tom Heskes.
-\newblock Task clustering and gating for bayesian multitask learning.
-\newblock {\em The Journal of Machine Learning Research}, 4:83--99, 2003.
-
-\bibitem{ben2003exploiting}
-Shai Ben-David and Reba Schuller.
-\newblock Exploiting task relatedness for multiple task learning.
-\newblock In {\em Learning Theory and Kernel Machines}, pages 567--580.
-  Springer, 2003.
-
 \bibitem{DBLP:conf/aaai/2011}
 Wolfram Burgard and Dan Roth, editors.
 \newblock {\em Proceedings of the Twenty-Fifth AAAI Conference on Artificial
   Intelligence, AAAI 2011, San Francisco, California, USA, August 7-11, 2011}.
   AAAI Press, 2011.
+
+\bibitem{cao2010transfer}
+Bin Cao, Nathan~N Liu, and Qiang Yang.
+\newblock Transfer learning for collective link prediction in multiple
+  heterogenous domains.
+\newblock In {\em Proceedings of the 27th International Conference on Machine
+  Learning (ICML-10)}, pages 159--166, 2010.
 
 \bibitem{chu2007map}
 Cheng Chu, Sang~Kyun Kim, Yi-An Lin, YuanYuan Yu, Gary Bradski, Andrew~Y Ng,
@@ -74,12 +64,6 @@ Zoubin Ghahramani, editor.
 \newblock {\em Machine Learning, Proceedings of the Twenty-Fourth International
   Conference (ICML 2007), Oregon, USA, June 20-24, 2007}, volume 227 of {\em
   ACM International Conference Proceeding Series}. ACM, 2007.
-
-\bibitem{gropp1999using}
-William Gropp, Ewing~L Lusk, and Anthony Skjellum.
-\newblock {\em Using MPI-: Portable Parallel Programming with the Message
-  Passing Interface}, volume~1.
-\newblock MIT press, 1999.
 
 \bibitem{DBLP:conf/sigir/Hofmann03}
 Thomas Hofmann.
@@ -201,12 +185,6 @@ Steffen Rendle.
 \newblock {\em ACM Transactions on Intelligent Systems and Technology (ACM
   TIST)}, 3:19:1--19:22, May 2012.
 
-\bibitem{rosenstein2005transfer}
-Michael~T Rosenstein, Zvika Marx, Leslie~Pack Kaelbling, and Thomas~G
-  Dietterich.
-\newblock To transfer or not to transfer.
-\newblock In {\em NIPS 2005 Workshop on Transfer Learning}, volume 898, 2005.
-
 \bibitem{/nips/SalakhutdinovM07}
 Ruslan Salakhutdinov and Andriy Mnih.
 \newblock Probabilistic matrix factorization.
@@ -229,12 +207,6 @@ Shai Shalev-Shwartz and Nathan Srebro.
 \newblock In {\em Proceedings of the 25th International Conference on Machine
   Learning}, ICML '08, pages 928--935, New York, NY, USA, 2008. ACM.
 
-\bibitem{/jmlr/ShivaswamyJ10a}
-Pannagadatta~K. Shivaswamy and Tony Jebara.
-\newblock Empirical bernstein boosting.
-\newblock {\em Journal of Machine Learning Research - Proceedings Track},
-  9:733--740, 2010.
-
 \bibitem{/kdd/SinghG08}
 Ajit~Paul Singh and Geoffrey~J. Gordon.
 \newblock Relational learning via collective matrix factorization.
@@ -244,22 +216,6 @@ Ajit~Paul Singh and Geoffrey~J. Gordon.
 Xiaoyuan Su and Taghi~M Khoshgoftaar.
 \newblock A survey of collaborative filtering techniques.
 \newblock {\em Advances in Artificial Intelligence}, 2009:4, 2009.
-
-\bibitem{white2012hadoop}
-Tom White.
-\newblock {\em Hadoop: The definitive guide}.
-\newblock O'Reilly Media, Inc., 2012.
-
-\bibitem{DBLP:conf/sigir/XueDYY08}
-Gui-Rong Xue, Wenyuan Dai, Qiang Yang, and Yong Yu.
-\newblock Topic-bridged plsa for cross-domain text classification.
-\newblock In Sung-Hyon Myaeng, Douglas~W. Oard, Fabrizio Sebastiani, Tat-Seng
-  Chua, and Mun-Kew Leong, editors, {\em SIGIR}, pages 627--634. ACM, 2008.
-
-\bibitem{/cvpr/YaoD10}
-Yi~Yao and Gianfranco Doretto.
-\newblock Boosting for transfer learning with multiple sources.
-\newblock In {\em CVPR}, pages 1855--1862, 2010.
 
 \bibitem{/uai/ZhangCY10}
 Yu~Zhang, Bin Cao, and Dit-Yan Yeung.

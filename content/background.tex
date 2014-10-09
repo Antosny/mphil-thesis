@@ -98,7 +98,7 @@ Non-negative matrix factorization (NMF) is a group of algorithms in multivariate
 Latent factor models are an alternative approach that tries to explain the ratings by characterizing both items and users on, say, 20 to 100 factors inferred from the ratings patterns. In movie recommendation, the discovered factors might measure obvious dimensions such as comedy versus
 drama, amount of action, or orientation to children. For users, each factor measures how much the user likes movies that score high on the corresponding movie factor. For movies, each factor measures the property of that movie.
 
-NMF decompose an original matrix $V$ into two matrices $W$ and $H$, s.t $V = WH$. $V$ is $m*n$, $W$ is $m*d$, $H$ is $d*n$. Usually $d << m,n$, is the dimension of latent factor, NMF methods put users and items into one common latent space. When judging whether a user likes an item, we can simply calculate by inner product.
+NMF decompose an original matrix $V$ into two matrices $W$ and $H$, s.t $V = WH$. $V$ is a $m*n$ matrix, $W$ is a $m*d$ matrix, $H$ is a $d*n$ matrix. Usually $d \ll m,n$, is the dimension of latent factor, NMF methods put users and items into one common latent space. When judging whether a user likes an item, we can simply calculate by inner product.
 
 \hspace{0.05in}
 \subsection{Non-negative Matrix Tri-factorizaion}
@@ -117,49 +117,32 @@ Because the property of NMTF, if we get some prior knowledge(e.g word cluster, d
 \hspace{0.1in}
 \section{Transfer Learning} Pan and Yang ~\cite{/tkde/sinno09survey} surveyed the field of transfer learning. A major assumption in many machine learning and data mining algorithms is that the training and future data must be in the same feature space and have the same distribution. However, in many real-world applications, this assumption may not hold. For example, we have a task in recommedation, users and items form a joint distribution in training data. But in test data, users may be different with the training as well as items, their relationship may varies too. Thus the latter data has different feature spaces or distribution than the training data. In such cases, knowledge transfer, if done successfully, would greatly improve the performance of learning by avoiding much expensive data-labeling effort.
 
-Recently, researchers propose the MultiSourceTrAdaBoost~\cite{/cvpr/YaoD10} to allow automatically selecting the appropriate data for knowledge transfer from multiple sources. The newest work TransferBoost~\cite{/aaai/Eatond11} was proposed to iteratively construct an ensemble of classifiers via re-weighting source and target instance via both individual and task-based boosting. Moreover, EBBoost~\cite{/jmlr/ShivaswamyJ10a} suggests weight the instance based on the empirical error as well as its variance.
-
 \hspace{0.05in}
 \subsection{Transfer Learning for Collaborative Filtering}
 Some works on transfer learning are in the context of collaborative filtering.
 Mehta and Hofmann~\cite{/ki/bhaskar06cross} consider the scenario involving two systems with shared users and use manifold alignment methods to jointly build neighborhood models for the two systems. They focus on making use of an auxiliary recommender system when only part of the users are aligned, which does not distinguish the consistency of users' preferences among the aligned users.
-Li \etal~\cite{/icml/libin09} designed a regularization framework to transfer knowledge of cluster-level rating patterns, which does not make use of the correspondence between the source and the target domains.
+~\cite{/kdd/SinghG08} designed a collective matrix factorizaion framework, where two matrix $M, N$ are factorized into $M = UV^T$, $N = US^T$. The sharing part $U$ can be a bridge to transfer knowledge from M to N(or N to M), base on that, there are some following work in cross-domain collaborative filtering using matrix factorization tecnique.
+Li \etal~\cite{/icml/libin09} designed a regularization framework to transfer knowledge of cluster-level rating patterns, they use matrix tri-factorization and cluster level rating patterns are shared.
+Pan \etal~\cite{/ijcai/PanLXY11}, ~\cite{AAAI101649} used a matrix factorization framework to transfer knowledge in latent feature space. Knowledge is transfered from an implicit feedback dataset to a rating dataset, but this method can deal with knowledge transfer in both implicit domains.
+Cao \etal~\cite{cao2010transfer} exploited correlations among different CF domains via learning. E.g we factorize each matrix $X_d$ by $X_d = F_d G_d^T$ where $F_d$ and $G_d$ are the user and the item latent features, respectively. This approach tries to explore the correlations between user domains {$F_d$} and/or item domains {$G_d$} and the knowledge can be
+transferred across domains through the correlation matrices.
 
-Our work is the first to systematically study {\em selective} knowledge transfer in the settings of collaborative filtering. Besides, we propose the novel factor - variance empirical error that is shown to be of much help in solving the real world CF problems.
-
-\hspace{0.05in}
-\subsection{Negative Transfer}
-Negative transfer happens when the source domain data and task contribute to the reduced performance of learning in the target domain.
-This could happen in the context of recommendation system. In the traditional transfer learning framework, if two users have common interests on the light music, we tend to believe they share the similar opinions on books. However, two users who have common interests on the light music may have quite different tastes on the books. In this case, if the transfer learning techniques are applied anyway, we can expect the bad performance. We call this phenomenon negative transfer.
-
-Despite the fact that how to avoid negative transfer is a very important issue, little research work has been published on this topic. Rosenstein et al. \cite{rosenstein2005transfer} empirically showed that if two tasks are too dissimilar, brute-force transfer may hurt the performance of the target task. Some works have been exploited to analyze relatedness among tasks and task clustering techniques, such as ~\cite{ben2003exploiting} and ~\cite{bakker2003task}, which may help provide guidance on how to avoid negative transfer automatically. Bakker and Heskes ~\cite{bakker2003task} adopted a Bayesian approach in which some of the model parameters are shared for all the tasks and others more loosely connected through a joint prior distribution that can be learned from the data. Thus, the data are clustered based on the task parameters, where tasks in the same cluster are
-supposed to be related to each other. Argyriou et al. \cite{argyriou2008algorithm} considered situations in which the learning tasks can be divided into groups. Tasks within each group are related by sharing a low-dimensional representation, which differs among different groups. As a result, tasks within a group can find it easier to transfer useful knowledge.
-
-In our work, we investigate the negative transfer issue in the context of the recommendation system scenario. The key is to identify the items which would cause either much uncertainty in knowledge transfer or reduction in performance. Subsequently, we proposed a selective transfer learning framework for the model-based collaborative filtering tasks.
+Our method(TRIMF) leverage rating pattern sharing and latent feature sharing carefully by designing a matrix tri-factorization framework. TRIMF can handle knowledge transfer from implicit(explicit) dataset A to implicit(explicit) dataset B. Also, TRIMF can be set to suit different tasks.
 
 \hspace{0.05in}
 \subsection{Large Scale Transfer Learning}
-So far, transfer learning has been mostly considered in the off-line learning settings, which do not emphasize the scalability and computation speed. Due to the rapid development of storage technique and flourish of internet services, the real world problems in recent recommendation systems are mostly based on some large data sets. Little work on large scale transfer learning has been published in previous literature, though it is badly desirable. To cope with the growing needs of today's recommendation system, we would like to investigate the parallel framework in our experiments. There are already some researchers working on the large scale machine learning, as you may find in a post from quora \footnote{\url{http://www.quora.com/What-are-some-software-libraries-for-large-scale-learning}}. In our approach, we tried the Map-Reduce Framework and the Message Passing Interface (MPI).
+So far, transfer learning has been mostly considered in the off-line learning settings, which do not emphasize the scalability and computation speed. Due to the rapid development of storage technique and flourish of internet services, the real world problems in recent recommendation systems are mostly based on some large data sets. Little work on large scale transfer learning has been published in previous literature, though it is badly desirable. To cope with the growing needs of today's recommendation system, we would like to discover the parallelizing possibility in our experiments. There are already some researchers working on the large scale collaborative filtering, ~\cite{das2007google} designed a map-reduce framework for online news recommendation. In our approach, we investigate the parallel framework and put them on an online shopping site.
 
 \hspace{0.02in}
 \subsubsection{Map-Reduce Framework}
 MapReduce is a framework for processing parallelizable problems in huge datasets using a large number of computers (nodes). A MapReduce program comprises a Map() procedure that performs filtering and sorting (such as sorting students by first name into queues, one queue for each name) and a Reduce() procedure that performs a summary operation (such as counting the number of students in each queue, yielding name frequencies).
 \begin{itemize}
 \item {\bf ``Map" step:} The master node takes the input, divides it into smaller sub-problems, and distributes them to worker nodes. A worker node may do this again in turn, leading to a multi-level tree structure. The worker node processes the smaller problem, and passes the answer back to its master node.
+\item {\bf ``Sort" step:} The master node sort all key-value pairs according to their key. Thus in the reduce step, same key appears sequentially.
 \item {\bf ``Reduce" step:} The master node then collects the answers to all the sub-problems and combines them in some way to form the output, i.e. the answer to the problem it was originally trying to solve.
 \end{itemize}
-We will show that our methods can be plugged into the Map-Reduce framework for parallelization.
+We will show that our methods(modified version of TRIMF) can be plugged into the Map-Reduce framework for parallelization.
 
-\hspace{0.02in}
-\subsubsection{Message Passing Interface}
-Message Passing Interface (MPI) is a standardized and portable message-passing system designed by a group of researchers from academia and industry to function on a wide variety of parallel computers. Both point-to-point and collective communication are supported. As a dominant model used in high-performance computing, MPI's goals are high performance, scalability, and portability. There are several advantages of MPI:
-\begin{itemize}
-\item {\bf Universality.} The message-passing model fits well on separate processors connected by a either fast or slow communication network.
-\item {\bf Expressivity.} MPI exposes powerful interface to express the data parallel models.
-\item {\bf Ease of debugging.} Because we write shared-memory (machine learning) models under MPI, the debugging process is relatively easier.
-\item {\bf Performance.} As modern CPUs have become faster, management of their caches and the memory hierarchy has become the key to getting the most out of the machines. Message passing provides a way for the programmer to explicitly associate specific data with processers and thus allow the compiler and cache-management hardware to function fully.
-\end{itemize}
-Due to the flexibility of the protocol provided under MPI, it works well for the code development of learning algorithms. We will use MPI for implementation.
 
 
 

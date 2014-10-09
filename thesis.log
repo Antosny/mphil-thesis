@@ -1,11 +1,11 @@
-This is pdfTeX, Version 3.1415926-2.5-1.40.14 (TeX Live 2013/Debian) (format=pdflatex 2014.6.3)  4 OCT 2014 14:00
+This is pdfTeX, Version 3.1415926-2.5-1.40.14 (TeX Live 2013/Debian) (format=pdflatex 2014.10.6)  9 OCT 2014 04:15
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
 **thesis.tex
 (./thesis.tex
 LaTeX2e <2011/06/27>
-Babel <3.9h> and hyphenation patterns for 78 languages loaded.
+Babel <3.9f> and hyphenation patterns for 2 languages loaded.
 (./ustthesis.cls
 Document Class: ustthesis 2002/07/23 v2.1 LaTeX document class
 This class file is adapted from `ustthesis.sty' v1.3 (for LaTeX 2.09).
@@ -104,6 +104,23 @@ Package: verbatim 2003/08/22 v1.5q LaTeX2e package for verbatim enhancements
 \every@verbatim=\toks17
 \verbatim@line=\toks18
 \verbatim@in@stream=\read1
+)
+(/usr/share/texmf/tex/latex/xcolor/xcolor.sty
+Package: xcolor 2007/01/21 v2.11 LaTeX color extensions (UK)
+
+(/usr/share/texlive/texmf-dist/tex/latex/latexconfig/color.cfg
+File: color.cfg 2007/01/18 v1.5 color configuration of teTeX/TeXLive
+)
+Package xcolor Info: Driver file: pdftex.def on input line 225.
+Package xcolor Info: Model `cmy' substituted by `cmy0' on input line 1337.
+Package xcolor Info: Model `hsb' substituted by `rgb' on input line 1341.
+Package xcolor Info: Model `RGB' extended on input line 1353.
+Package xcolor Info: Model `HTML' substituted by `rgb' on input line 1355.
+Package xcolor Info: Model `Hsb' substituted by `hsb' on input line 1356.
+Package xcolor Info: Model `tHsb' substituted by `hsb' on input line 1357.
+Package xcolor Info: Model `HSB' substituted by `hsb' on input line 1358.
+Package xcolor Info: Model `Gray' substituted by `gray' on input line 1359.
+Package xcolor Info: Model `wave' substituted by `hsb' on input line 1360.
 )
 (/usr/share/texlive/texmf-dist/tex/latex/amsmath/amsmath.sty
 Package: amsmath 2013/01/14 v2.14 AMS math features
@@ -300,7 +317,7 @@ Package: cases 2002/05/02 ver 2.5
 )
 (/usr/share/texlive/texmf-dist/tex/latex/url/url.sty
 \Urlmuskip=\muskip11
-Package: url 2013/09/16  ver 3.4  Verb mode for urls, etc.
+Package: url 2006/04/12  ver 3.3  Verb mode for urls, etc.
 )
 (/usr/share/texlive/texmf-dist/tex/latex/algorithms/algorithmic.sty
 Package: algorithmic 2009/08/24 v0.1 Document Style `algorithmic'
@@ -453,18 +470,7 @@ Table of Contents
 (./thesis.toc
 LaTeX Font Info:    Font shape `OT1/ptm/bx/n' in size <12> not available
 (Font)              Font shape `OT1/ptm/b/n' tried instead on input line 1.
-
-Overfull \hbox (23.10692pt too wide) in paragraph at lines 30--30
- [][]  []\OT1/ptm/m/n/12 Collaborative Fil-ter-ing via Gaus-sian Prob-a-bilis-t
-ic La-tent Se-man-tic Anal-y-sis (GPLSA) 
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 30--30
- []  
- []
-
-[5
+ [5
 
 ])
 \tf@toc=\write3
@@ -511,88 +517,66 @@ Missing character: There is no — in font cmr12!
 Missing character: There is no â in font cmr8!
 Missing character: There is no ˆ in font cmr12!
 Missing character: There is no — in font cmr12!
- [8] [9] [10] [11]
-LaTeX Font Info:    Try loading font information for OT1+pcr on input line 142.
-
-
-(/usr/share/texlive/texmf-dist/tex/latex/psnfss/ot1pcr.fd
-File: ot1pcr.fd 2001/06/04 font definitions for OT1/pcr.
-)
-Overfull \hbox (26.75589pt too wide) in paragraph at lines 142--142
-[][]$\OT1/pcr/m/n/10 http : / / www . quora . com / What-[]are-[]some-[]softwar
-e-[]libraries-[]for-[]large-[]scale-[]learning$| 
- []
-
-[12] [13]) (./content/tgplsa.tex [14]
+ [8] [9] [10] [11]) (./content/trimf.tex [12]
 CHAPTER 3.
-[15
+[13
 
 ]
-Package epstopdf Info: Source file: <fig/illustration.eps>
-(epstopdf)                    date: 2014-09-02 17:16:01
-(epstopdf)                    size: 4206233 bytes
-(epstopdf)             Output file: <fig/illustration-eps-converted-to.pdf>
-(epstopdf)                    date: 2014-09-02 17:16:01
-(epstopdf)                    size: 105058 bytes
-(epstopdf)             Command: <repstopdf --outfile=fig/illustration-eps-conve
-rted-to.pdf fig/illustration.eps>
-(epstopdf)             \includegraphics on input line 14.
-Package epstopdf Info: Output file is already uptodate.
- <fig/illustration-eps-converted-to.pdf, id=94, 138.5175pt x 104.39pt>
-File: fig/illustration-eps-converted-to.pdf Graphic file (type pdf)
+Overfull \hbox (38.82182pt too wide) detected at line 26
+\OML/cmm/m/it/12 min[]W[] \OMS/cmsy/m/n/12 ^^L jj\OML/cmm/m/it/12 X[] \OMS/cmsy
+/m/n/12 ^^@ \OT1/cmr/m/n/12 (\OML/cmm/m/it/12 F\OT1/cmr/m/n/12 ; \OML/cmm/m/it/
+12 F[]\OT1/cmr/m/n/12 )\OML/cmm/m/it/12 S\OT1/cmr/m/n/12 (\OML/cmm/m/it/12 G\OT
+1/cmr/m/n/12 ; \OML/cmm/m/it/12 G[]\OT1/cmr/m/n/12 )[]\OMS/cmsy/m/n/12 jj[] \OT
+1/cmr/m/n/12 + \OML/cmm/m/it/12 W[] \OMS/cmsy/m/n/12 ^^L jj\OML/cmm/m/it/12 X[]
+ \OMS/cmsy/m/n/12 ^^@ \OT1/cmr/m/n/12 (\OML/cmm/m/it/12 F\OT1/cmr/m/n/12 ; \OML
+/cmm/m/it/12 F[]\OT1/cmr/m/n/12 )(\OML/cmm/m/it/12 USV\OT1/cmr/m/n/12 )(\OML/cm
+m/m/it/12 G\OT1/cmr/m/n/12 ; \OML/cmm/m/it/12 G[]\OT1/cmr/m/n/12 )[]\OMS/cmsy/m
+/n/12 jj[] \OT1/cmr/m/n/12 + (\OML/cmm/m/it/12 regularization\OT1/cmr/m/n/12 )
+ []
 
-<use fig/illustration-eps-converted-to.pdf>
-Package pdftex.def Info: fig/illustration-eps-converted-to.pdf used on input li
-ne 14.
-(pdftex.def)             Requested size: 433.62pt x 326.82635pt.
- [16 <./fig/illustration-eps-converted-to.pdf>] [17] [18]
-Package epstopdf Info: Source file: <fig/GM-TGPLSA.eps>
-(epstopdf)                    date: 2014-09-02 17:16:01
-(epstopdf)                    size: 2117129 bytes
-(epstopdf)             Output file: <fig/GM-TGPLSA-eps-converted-to.pdf>
-(epstopdf)                    date: 2014-09-02 17:16:01
-(epstopdf)                    size: 63347 bytes
-(epstopdf)             Command: <repstopdf --outfile=fig/GM-TGPLSA-eps-converte
-d-to.pdf fig/GM-TGPLSA.eps>
-(epstopdf)             \includegraphics on input line 77.
-Package epstopdf Info: Output file is already uptodate.
+[14]
+Overfull \hbox (198.95383pt too wide) detected at line 43
+\OML/cmm/m/it/12 F \OT1/cmr/m/n/12 = \OML/cmm/m/it/12 F: \OMS/cmsy/m/n/12 ^^C [
+]
+ []
 
-<fig/GM-TGPLSA-eps-converted-to.pdf, id=109, 486.81876pt x 496.85625pt>
-File: fig/GM-TGPLSA-eps-converted-to.pdf Graphic file (type pdf)
+[15]
+LaTeX Font Info:    Try loading font information for OT1+pcr on input line 52.
+ (/usr/share/texlive/texmf-dist/tex/latex/psnfss/ot1pcr.fd
+File: ot1pcr.fd 2001/06/04 font definitions for OT1/pcr.
+) [16]
+LaTeX Font Info:    Try loading font information for OMS+ptm on input line 85.
 
-<use fig/GM-TGPLSA-eps-converted-to.pdf>
-Package pdftex.def Info: fig/GM-TGPLSA-eps-converted-to.pdf used on input line 
-77.
-(pdftex.def)             Requested size: 289.07999pt x 295.038pt.
- [19 <./fig/GM-TGPLSA-eps-converted-to.pdf>] [20]
-Package epstopdf Info: Source file: <fig/parallelplsa.eps>
-(epstopdf)                    date: 2014-09-02 17:16:01
-(epstopdf)                    size: 4206224 bytes
-(epstopdf)             Output file: <fig/parallelplsa-eps-converted-to.pdf>
-(epstopdf)                    date: 2014-09-02 17:16:01
-(epstopdf)                    size: 94002 bytes
-(epstopdf)             Command: <repstopdf --outfile=fig/parallelplsa-eps-conve
-rted-to.pdf fig/parallelplsa.eps>
-(epstopdf)             \includegraphics on input line 125.
-Package epstopdf Info: Output file is already uptodate.
-
-<fig/parallelplsa-eps-converted-to.pdf, id=122, 722.7pt x 542.025pt>
-File: fig/parallelplsa-eps-converted-to.pdf Graphic file (type pdf)
-
-<use fig/parallelplsa-eps-converted-to.pdf>
-Package pdftex.def Info: fig/parallelplsa-eps-converted-to.pdf used on input li
-ne 125.
-(pdftex.def)             Requested size: 361.34999pt x 271.01183pt.
- [21]) (./content/stlcf.tex [22 <./fig/parallelplsa-eps-converted-to.pdf>]
+(/usr/share/texlive/texmf-dist/tex/latex/psnfss/omsptm.fd
+File: omsptm.fd 
+)
+LaTeX Font Info:    Font shape `OMS/ptm/m/n' in size <12> not available
+(Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 85.
+ [17] [18] [19])
+(./content/stlcf.tex [20]
 CHAPTER 4.
-[23
+[21
 
-] [24]
+]
+
+LaTeX Warning: Reference `fig:illustration' on page 22 undefined on input line 
+20.
+
+[22]
+
+LaTeX Warning: Reference `eq:tplsa_likelihood' on page 23 undefined on input li
+ne 49.
+
+
 Overfull \hbox (17.62482pt too wide) detected at line 69
 [][] 
  []
 
-[25] [26] [27]) (./content/experiment.tex [28] [29]
+[23] [24] [25]
+
+LaTeX Warning: Reference `chp:gplsa' on page 26 undefined on input line 157.
+
+) (./content/experiment.tex [26] [27]
 CHAPTER 5.
 
 Overfull \hbox (8.8045pt too wide) in paragraph at lines 7--19
@@ -600,9 +584,9 @@ Overfull \hbox (8.8045pt too wide) in paragraph at lines 7--19
 ix[], Douban, IMDB[], and Wikipedia[]
  []
 
-[30
+[28
 
-] [31]
+] [29]
 LaTeX Font Info:    Font shape `OT1/ptm/bx/n' in size <10> not available
 (Font)              Font shape `OT1/ptm/b/n' tried instead on input line 81.
 
@@ -610,7 +594,7 @@ Overfull \hbox (23.84274pt too wide) in paragraph at lines 73--114
  [] 
  []
 
-[32] [33]
+[30] [31]
 LaTeX Font Info:    Font shape `OT1/ptm/bx/n' in size <20.74> not available
 (Font)              Font shape `OT1/ptm/b/n' tried instead on input line 161.
 
@@ -618,19 +602,19 @@ Overfull \hbox (4.52316pt too wide) in paragraph at lines 159--180
  [] 
  []
 
-[34] [35] [36] [37]
+[32] [33] [34] [35]
 Package epstopdf Info: Source file: <fig/douban_tau.eps>
-(epstopdf)                    date: 2014-09-02 17:16:01
+(epstopdf)                    date: 2014-10-06 05:47:34
 (epstopdf)                    size: 10426 bytes
 (epstopdf)             Output file: <fig/douban_tau-eps-converted-to.pdf>
-(epstopdf)                    date: 2014-09-02 17:16:01
+(epstopdf)                    date: 2014-10-06 05:47:34
 (epstopdf)                    size: 7141 bytes
 (epstopdf)             Command: <repstopdf --outfile=fig/douban_tau-eps-convert
 ed-to.pdf fig/douban_tau.eps>
 (epstopdf)             \includegraphics on input line 263.
 Package epstopdf Info: Output file is already uptodate.
 
-<fig/douban_tau-eps-converted-to.pdf, id=182, 421.575pt x 159.59625pt>
+<fig/douban_tau-eps-converted-to.pdf, id=162, 421.575pt x 159.59625pt>
 File: fig/douban_tau-eps-converted-to.pdf Graphic file (type pdf)
 
 <use fig/douban_tau-eps-converted-to.pdf>
@@ -643,16 +627,16 @@ Overfull \hbox (14.51088pt too wide) in paragraph at lines 263--264
  []
 
 Package epstopdf Info: Source file: <fig/nf_tau.eps>
-(epstopdf)                    date: 2014-09-02 17:16:01
+(epstopdf)                    date: 2014-10-06 05:47:34
 (epstopdf)                    size: 10406 bytes
 (epstopdf)             Output file: <fig/nf_tau-eps-converted-to.pdf>
-(epstopdf)                    date: 2014-09-02 17:16:01
+(epstopdf)                    date: 2014-10-06 05:47:34
 (epstopdf)                    size: 6937 bytes
 (epstopdf)             Command: <repstopdf --outfile=fig/nf_tau-eps-converted-t
 o.pdf fig/nf_tau.eps>
 (epstopdf)             \includegraphics on input line 270.
 Package epstopdf Info: Output file is already uptodate.
-<fig/nf_tau-eps-converted-to.pdf, id=183, 422.57875pt x 159.59625pt>
+<fig/nf_tau-eps-converted-to.pdf, id=163, 422.57875pt x 159.59625pt>
 File: fig/nf_tau-eps-converted-to.pdf Graphic file (type pdf)
 
 <use fig/nf_tau-eps-converted-to.pdf>
@@ -665,16 +649,16 @@ Overfull \hbox (14.51088pt too wide) in paragraph at lines 270--271
  []
 
 Package epstopdf Info: Source file: <fig/douban_gamma.eps>
-(epstopdf)                    date: 2014-09-02 17:16:01
+(epstopdf)                    date: 2014-10-06 05:47:34
 (epstopdf)                    size: 10140 bytes
 (epstopdf)             Output file: <fig/douban_gamma-eps-converted-to.pdf>
-(epstopdf)                    date: 2014-09-02 17:16:01
+(epstopdf)                    date: 2014-10-06 05:47:34
 (epstopdf)                    size: 7242 bytes
 (epstopdf)             Command: <repstopdf --outfile=fig/douban_gamma-eps-conve
 rted-to.pdf fig/douban_gamma.eps>
 (epstopdf)             \includegraphics on input line 277.
 Package epstopdf Info: Output file is already uptodate.
-<fig/douban_gamma-eps-converted-to.pdf, id=184, 421.575pt x 159.59625pt>
+<fig/douban_gamma-eps-converted-to.pdf, id=164, 421.575pt x 159.59625pt>
 File: fig/douban_gamma-eps-converted-to.pdf Graphic file (type pdf)
 
 <use fig/douban_gamma-eps-converted-to.pdf>
@@ -687,16 +671,16 @@ Overfull \hbox (14.51088pt too wide) in paragraph at lines 277--278
  []
 
 Package epstopdf Info: Source file: <fig/nf_gamma.eps>
-(epstopdf)                    date: 2014-09-02 17:16:01
+(epstopdf)                    date: 2014-10-06 05:47:34
 (epstopdf)                    size: 10346 bytes
 (epstopdf)             Output file: <fig/nf_gamma-eps-converted-to.pdf>
-(epstopdf)                    date: 2014-09-02 17:16:01
+(epstopdf)                    date: 2014-10-06 05:47:34
 (epstopdf)                    size: 7289 bytes
 (epstopdf)             Command: <repstopdf --outfile=fig/nf_gamma-eps-converted
 -to.pdf fig/nf_gamma.eps>
 (epstopdf)             \includegraphics on input line 284.
 Package epstopdf Info: Output file is already uptodate.
-<fig/nf_gamma-eps-converted-to.pdf, id=185, 421.575pt x 159.59625pt>
+<fig/nf_gamma-eps-converted-to.pdf, id=165, 421.575pt x 159.59625pt>
 File: fig/nf_gamma-eps-converted-to.pdf Graphic file (type pdf)
 
 <use fig/nf_gamma-eps-converted-to.pdf>
@@ -708,19 +692,19 @@ Overfull \hbox (14.51088pt too wide) in paragraph at lines 284--285
  [][] 
  []
 
-[38 <./fig/douban_tau-eps-converted-to.pdf>]
+[36 <./fig/douban_tau-eps-converted-to.pdf>]
 Package epstopdf Info: Source file: <fig/douban_learners.eps>
-(epstopdf)                    date: 2014-09-02 17:16:01
+(epstopdf)                    date: 2014-10-06 05:47:34
 (epstopdf)                    size: 10122 bytes
 (epstopdf)             Output file: <fig/douban_learners-eps-converted-to.pdf>
-(epstopdf)                    date: 2014-09-02 17:16:01
+(epstopdf)                    date: 2014-10-06 05:47:34
 (epstopdf)                    size: 9011 bytes
 (epstopdf)             Command: <repstopdf --outfile=fig/douban_learners-eps-co
 nverted-to.pdf fig/douban_learners.eps>
 (epstopdf)             \includegraphics on input line 294.
 Package epstopdf Info: Output file is already uptodate.
 
-<fig/douban_learners-eps-converted-to.pdf, id=196, 330.23375pt x 234.8775pt>
+<fig/douban_learners-eps-converted-to.pdf, id=175, 330.23375pt x 234.8775pt>
 File: fig/douban_learners-eps-converted-to.pdf Graphic file (type pdf)
 
 <use fig/douban_learners-eps-converted-to.pdf>
@@ -728,37 +712,37 @@ Package pdftex.def Info: fig/douban_learners-eps-converted-to.pdf used on input
  line 294.
 (pdftex.def)             Requested size: 433.62pt x 308.4229pt.
 Package epstopdf Info: Source file: <fig/douban_alpha.eps>
-(epstopdf)                    date: 2014-09-02 17:16:01
+(epstopdf)                    date: 2014-10-06 05:47:34
 (epstopdf)                    size: 10106 bytes
 (epstopdf)             Output file: <fig/douban_alpha-eps-converted-to.pdf>
-(epstopdf)                    date: 2014-09-02 17:16:01
+(epstopdf)                    date: 2014-10-06 05:47:34
 (epstopdf)                    size: 7454 bytes
 (epstopdf)             Command: <repstopdf --outfile=fig/douban_alpha-eps-conve
 rted-to.pdf fig/douban_alpha.eps>
 (epstopdf)             \includegraphics on input line 300.
 Package epstopdf Info: Output file is already uptodate.
 
-<fig/douban_alpha-eps-converted-to.pdf, id=197, 330.23375pt x 234.8775pt>
+<fig/douban_alpha-eps-converted-to.pdf, id=176, 330.23375pt x 234.8775pt>
 File: fig/douban_alpha-eps-converted-to.pdf Graphic file (type pdf)
 
 <use fig/douban_alpha-eps-converted-to.pdf>
 Package pdftex.def Info: fig/douban_alpha-eps-converted-to.pdf used on input li
 ne 300.
 (pdftex.def)             Requested size: 433.62pt x 308.4229pt.
- [39 <./fig/nf_tau-eps-converted-to.pdf> <./fig/douban_gamma-eps-converted-to.p
+ [37 <./fig/nf_tau-eps-converted-to.pdf> <./fig/douban_gamma-eps-converted-to.p
 df>]
 Package epstopdf Info: Source file: <fig/douban_k.eps>
-(epstopdf)                    date: 2014-09-02 17:16:01
+(epstopdf)                    date: 2014-10-06 05:47:34
 (epstopdf)                    size: 16289 bytes
 (epstopdf)             Output file: <fig/douban_k-eps-converted-to.pdf>
-(epstopdf)                    date: 2014-09-02 17:16:01
+(epstopdf)                    date: 2014-10-06 05:47:34
 (epstopdf)                    size: 10436 bytes
 (epstopdf)             Command: <repstopdf --outfile=fig/douban_k-eps-converted
 -to.pdf fig/douban_k.eps>
 (epstopdf)             \includegraphics on input line 312.
 Package epstopdf Info: Output file is already uptodate.
 
-<fig/douban_k-eps-converted-to.pdf, id=213, 440.64626pt x 281.05pt>
+<fig/douban_k-eps-converted-to.pdf, id=193, 440.64626pt x 281.05pt>
 File: fig/douban_k-eps-converted-to.pdf Graphic file (type pdf)
 
 <use fig/douban_k-eps-converted-to.pdf>
@@ -770,51 +754,52 @@ Overfull \hbox (37.27448pt too wide) in paragraph at lines 312--313
 [][] 
  []
 
-) (./content/conclusion.tex [40 <./fig/nf_gamma-eps-converted-to.pdf>] [41 <./f
+) (./content/conclusion.tex [38 <./fig/nf_gamma-eps-converted-to.pdf>] [39 <./f
 ig/douban_learners-eps-converted-to.pdf> <./fig/douban_alpha-eps-converted-to.p
-df>] [42 <./fig/douban_k-eps-converted-to.pdf>]
+df>] [40 <./fig/douban_k-eps-converted-to.pdf>]
 CHAPTER 6.
-[43
+[41
 
 ]) (./thesis.bbl
 References
-[44] [45
+[42] [43
 
-] [46] [47] [48] [49]) [50] (./thesis.aux) ) 
+] [44] [45] [46]) [47] (./thesis.aux)
+
+LaTeX Warning: There were undefined references.
+
+ ) 
 Here is how much of TeX's memory you used:
- 5597 strings out of 493304
- 77876 string characters out of 6139872
- 178305 words of memory out of 5000000
- 8875 multiletter control sequences out of 15000+600000
+ 6046 strings out of 495031
+ 82673 string characters out of 6181531
+ 183777 words of memory out of 5000000
+ 9077 multiletter control sequences out of 15000+600000
  38627 words of font info for 98 fonts, out of 8000000 for 9000
- 957 hyphenation exceptions out of 8191
- 38i,12n,26p,1101b,518s stack positions out of 5000i,500n,10000p,200000b,80000s
-{/usr/share/texlive/texmf-dist/font
-s/enc/dvips/base/8r.enc}</usr/share/texlive/texmf-dist/fonts/type1/public/amsfo
-nts/cm/cmbx10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm
-/cmbx12.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx8
-.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmex10.pfb><
-/usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb></usr/s
-hare/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi12.pfb></usr/share/t
-exlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi6.pfb></usr/share/texlive/
-texmf-dist/fonts/type1/public/amsfonts/cm/cmmi8.pfb></usr/share/texlive/texmf-d
-ist/fonts/type1/public/amsfonts/cm/cmr10.pfb></usr/share/texlive/texmf-dist/fon
-ts/type1/public/amsfonts/cm/cmr12.pfb></usr/share/texlive/texmf-dist/fonts/type
-1/public/amsfonts/cm/cmr17.pfb></usr/share/texlive/texmf-dist/fonts/type1/publi
-c/amsfonts/cm/cmr6.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfon
-ts/cm/cmr7.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cm
-r8.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb
-></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy6.pfb></usr/
-share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy8.pfb></usr/share/t
-exlive/texmf-dist/fonts/type1/public/amsfonts/symbols/msbm10.pfb></usr/share/te
-xlive/texmf-dist/fonts/type1/urw/courier/ucrr8a.pfb></usr/share/texlive/texmf-d
-ist/fonts/type1/urw/times/utmb8a.pfb></usr/share/texlive/texmf-dist/fonts/type1
-/urw/times/utmr8a.pfb></usr/share/texlive/texmf-dist/fonts/type1/urw/times/utmr
-i8a.pfb>
-Output written on thesis.pdf (59 pages, 620869 bytes).
+ 14 hyphenation exceptions out of 8191
+ 38i,13n,35p,1053b,535s stack positions out of 5000i,500n,10000p,200000b,80000s
+{/usr/share/texlive/texmf-dist/fonts/enc/dvips/base/8r.enc}</usr/share/texliv
+e/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx10.pfb></usr/share/texlive/texm
+f-dist/fonts/type1/public/amsfonts/cm/cmbx12.pfb></usr/share/texlive/texmf-dist
+/fonts/type1/public/amsfonts/cm/cmbx8.pfb></usr/share/texlive/texmf-dist/fonts/
+type1/public/amsfonts/cm/cmex10.pfb></usr/share/texlive/texmf-dist/fonts/type1/
+public/amsfonts/cm/cmmi12.pfb></usr/share/texlive/texmf-dist/fonts/type1/public
+/amsfonts/cm/cmmi6.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfon
+ts/cm/cmmi8.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/c
+mr12.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr17.pf
+b></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr6.pfb></usr/
+share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr7.pfb></usr/share/te
+xlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr8.pfb></usr/share/texlive/te
+xmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/share/texlive/texmf-di
+st/fonts/type1/public/amsfonts/cm/cmsy6.pfb></usr/share/texlive/texmf-dist/font
+s/type1/public/amsfonts/cm/cmsy8.pfb></usr/share/texlive/texmf-dist/fonts/type1
+/public/amsfonts/symbols/msbm10.pfb></usr/share/texlive/texmf-dist/fonts/type1/
+urw/courier/ucrr8a.pfb></usr/share/texlive/texmf-dist/fonts/type1/urw/times/utm
+b8a.pfb></usr/share/texlive/texmf-dist/fonts/type1/urw/times/utmr8a.pfb></usr/s
+hare/texlive/texmf-dist/fonts/type1/urw/times/utmri8a.pfb>
+Output written on thesis.pdf (56 pages, 343305 bytes).
 PDF statistics:
- 349 PDF objects out of 1000 (max. 8388607)
- 242 compressed objects within 3 object streams
+ 320 PDF objects out of 1000 (max. 8388607)
+ 224 compressed objects within 3 object streams
  0 named destinations out of 1000 (max. 500000)
- 51 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 36 words of extra memory for PDF output out of 10000 (max. 10000000)
 

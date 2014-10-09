@@ -279,7 +279,25 @@
     pages = {126--135},
     publisher = {Press}
 }
-
+@article{Zhuang:2011:EAW:1952191.1952195,
+ author = {Zhuang, Fuzhen and Luo, Ping and Xiong, Hui and He, Qing and Xiong, Yuhong and Shi, Zhongzhi},
+ title = {Exploiting Associations Between Word Clusters and Document Classes for Cross-domain Text Categorization},
+ journal = {Stat. Anal. Data Min.},
+ issue_date = {February 2011},
+ volume = {4},
+ number = {1},
+ month = feb,
+ year = {2011},
+ issn = {1932-1864},
+ pages = {100--114},
+ numpages = {15},
+ url = {http://dx.doi.org/10.1002/sam.10099},
+ doi = {10.1002/sam.10099},
+ acmid = {1952195},
+ publisher = {John Wiley \& Sons, Inc.},
+ address = {New York, NY, USA},
+ keywords = {cross-domain learning, domain adaption, text categorization, transfer learning},
+} 
 @inproceedings{Li:2009:NMT:1687878.1687914,
  author = {Li, Tao and Zhang, Yi and Sindhwani, Vikas},
  title = {A Non-negative Matrix Tri-factorization Approach to Sentiment Classification with Lexical Prior Knowledge},

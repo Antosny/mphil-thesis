@@ -1,0 +1,256 @@
+\chapter{Gaussian Probabilistic Latent Semantic Analysis}
+\label{chp:gplsa}
+\begin{section}{Introduction}
+\par{}
+\par{
+In real-world, a person usually has different kinds of behaviour before buying one thing. In Yixun(Tencent's online shopping site), there are two main actions - clicking and purchasing. We developed a transfer learning algorithm(TRIMF) that leverage these data to predict a user's future purchasing. Compared with former methods which shares rating patterns or latent features only, our method shares both rating patterns and latent features throught cluster-level transform and overlapping matrix. Experiments show that my algorithm performs better then other baseline(Transfer) methods.}
+
+\end{section}
+
+\begin{section}{Problem definition}
+  \begin{itemize}
+  \item Input: [0-1 matrix:user click matrix $X_C(m_c*n_c)$, user deal matrix $X_d(m_d*n_d)$] , $m_c, m_d$ denote the number of users, $n_c, n_d$ denote the number of items. Users and items are partially shared.
+  \item Output: Two prediction matrix $P_C(m_c*n_c), P_d(m_d*n_d)$, which predict users' purchasing behaviour.
+  \end{itemize}
+
+\end{section}
+
+\begin{section}{TRIMF}
+  \par{Former one-class CF methods use weighted matrix factorization to tackle the problem that all observed rating are 1. In this method we adopt this weighting scheme to give missing values proper weights.}
+  \par{User's deal data is very sparse, e.g users will buy $n_d$ items one day while click $n_c$ items. Then $n_d << n_c$. So only use deal data is not sufficient.}
+
+  \par{We want to use users' click data to learn a better cluster-level rating pattern $S$, compared with only using users' purchase data. But what a user like to click is not always the item he wants to buy. So these rating pattern should be somehow related but not the same. In Yixun, there are only 4 common items in top-20 clicked items and top-20 purchased items. So we can't simply apply the same pattern in prediction.}
+
+\par{There are some items with higher conversion rate(user tends to buy after clicking), but some items not. And there are some users who like window-shopping while others will buy it right after clicking. These are all cluster-level features, so I decide to learn a mapping function to let the learnt $S$ suit data better.}
+
+\par{Finally we use a weighted non-negative matrix tri-factorization method to deal with the problem.  }
+ 
+  \par{Objective Function:$$min_{F,G,S,U,V} W_c\odot ||X_c - (F;F_c)S(G;G_c)'||_2 + W_d\odot ||X_d - (F;F_d)(USV)(G;G_d)'||_2 + (regularization)$$}
+
+  \par{
+    \begin{itemize}
+    \item $W_c,W_d$ is the weight for $X_C, X_d$, every observed entry has weight 1 while others have weight 0.5.
+    \item $F, G$ is the soft clustering result matrix for overlapped users(items), they are forced to have the same cluster distributions. Others are unique users(items).
+    \item $U,V$ are two diagonal matrix, $U_{ii}$ scales every $S_{i*}$ to $U_{ii}S_{i*}$, it models the users' tranform from click to deal. While $V_{jj}$ scales every $S_{*j}$ to $S_{*j}V_{jj}$, it models the items' tranform from click to deal.
+    \item When predicting, we use $(F;F_d)(USV)(G;G_d)$ to predict users who have deal data. And since we got two mapping matrix $U,V$, we apply $U,V$ back to click matrix to predict users who have click data, i.e we use $(F;F_c)(USV)(G;G_c)$ to predict.
+    \end{itemize}
+}
+\end{section}
+
+
+\begin{section}
+  {Solution to the problem \& Algorithm}
+\par{We use an alternately iterative algorithm to solve the objective function.We use $F_1,F_2$ to denote $(F;F_c)$ and $(F;F_d)$, $G_1,G_2$ to denote $(G;G_c)$ and $(G;G_d)$}
+\par{The update rules for $S,U,V$ are simple, here we decribe the update rules for $F$ and $F_c$:
+$$F = F .* \sqrt{\frac{Ifc'*W_c*X_c*G_1*S' + Ifd'*W_d*X_d*G_2*S'}{Ifc'*W_c*((Ifc*F + Ifcc)*F_c*S*G_1)*G_1*S + Ifd'*W_d*((Ifd*F_f+ Ifdd*F_d)*S*G_2)*G_2*S + a*F}}$$
+$$F_c = F_c .* \sqrt{\frac{Ifc'*W_c*X_c*G_1*S'}{Ifcc'*(W_c*((Ifc*F + Ifcc*F_c)*S*G_1'))*G_1*S' + a*F_c}}$$}
+\par{We define four block matrix $Ifc,Ifcc,Ifd,Ifdd$ that $(Ifc,Ifcc)*(F;F_c) = I*F_1$ and $(Ifd,Ifdd)*(F;F_d) = I*F_2$}
+\par{The user-item matrix is typically very sparse with $z << nm$ non-zero entries while $k$ is typically
+also much smaller than n, m. By using sparse matrix multiplications and avoiding dense intermediate matrices, the updates can be very efficiently
+and easily implemented. In particular, updating F, S, G each takes $O(k^2 (m + n) + kz)$ , and the algorithm usually reach convergence in less than 200 iterations.}
+\par{---}
+\par{Algorithm:
+
+\begin{verbatim}
+      Init F,G,S,U,V
+      Set overlap numbers for users and items
+      for i = 1 to k
+          update F,G,S
+          update U,V
+      output F,G,S,U,V
+
+\end{verbatim}
+}
+\end{section}
+\begin{section}{Experiment}
+  \begin{subsection}{Datasets}
+\par{Yixun short term data: we got users' click \& deal data from date 20130801 to 20130814, first week used as training data, second week used as test data.Click matrix: 16240 users, 1932 items. Deal matrix: 2520 users, 1791 items. There are 2029 overlapped users and 1642 overlapped items.}
+\par{Yixun long term data: we trace 1k users' 6 months' activity, there are 6k items clicked and 2k items boughted. We select the last 5 deal activities as test data, others as training data. 1800 items are overlapped.}
+\end{subsection}
+
+\begin{subsection}{Metrics}
+\par{We use prec@5 and prec@10 as evaluation meatures.}
+  
+\end{subsection}
+
+\begin{subsection}{Methods}  
+
+
+\par{
+  For all non-transfer methods, we try 3 training matrix:{deal, click, deal+click}, and report their best performace. We choose parameters by cross validation.
+  \begin{itemize}
+  \item non-transfer:
+    \begin{itemize}
+    \item Most Popular
+    \item SVD:Pure SVD
+      \begin{itemize}
+      \item rank = \{5,10,20,30,40,50\}
+      \end{itemize}
+    \item NMF
+      \begin{itemize}
+      \item rank = \{10,20,40,60,100\}
+      \end{itemize}
+    \item PMF:Probabilistic Matrix Factorization 
+      \begin{itemize}
+      \item rank = \{10,20,30,40,50\}
+      \end{itemize}
+    \item BPRMF:Bayesian Personalized Ranking from Implicit Feedback
+      \begin{itemize}
+      \item We initialized BPR with most popular results.
+      \item We set $iteration = \#n * 100$, ($\#n$ in the number of observations)
+      \end{itemize}
+    \item WRMF:One-class collaborative filtering
+      \begin{itemize}
+      \item rank = \{5,10,15,20,25\}
+      \end{itemize}
+    \end{itemize}
+  \item transfer:
+    \begin{itemize}
+    \item CMF:Collective Matrix Factorization
+      \begin{itemize}
+      \item Shared latent space = \{5,10,15,20,25\}
+      \item For each data, we make two matrix the same dimension(in order to share a latent factor) by adding zeroes rows \& columns.
+      \end{itemize}
+    \item TCF:
+Transfer Learning to Predict Missing Ratings via Heterogeneous Feedbacks
+\begin{itemize}
+\item We set the deal matrix with random sampled zeros as the rating matrix, click matrix as the implicit feed back matrix.
+\item We make matrix the same dimension by adding zeroes rows \& columns.
+\end{itemize}
+\item TRIMF: My method
+  \begin{itemize}
+  \item We set latent factor = 30, iter = 200, $\lambda$ = 0.001.
+  \end{itemize}
+    \end{itemize}
+  \end{itemize}
+  
+}
+\end{subsection}
+\begin{subsection}{Result}
+  \begin{subsubsection}{Yixun short term data}
+\par{Since the user overlap of deal and click matrix are small, so we perform two test, one on deal matrix $X_d$ and one on click matrix $X_c$.}
+\par{The main result are showed in Table 1 and Table 2.}
+\begin{table}
+\begin{center}
+  \begin{tabular}{|c|c|c|}
+    \hline
+    Method&Prec@5&Prec@10\\
+    \hline
+    Most Popular&0.0323&0.0289\\
+    \hline
+    SVD&0.0438&0.0367\\
+    \hline
+    NMF&0.0403&0.0324\\
+    \hline
+    PMF&0.0435&0.0372\\
+    \hline
+    BPRMF&0.0444&0.0364\\
+    \hline
+    WRMF&0.049&0.0403\\
+    \hline
+    CMF&0.0436&0.0350\\
+    \hline
+    TCF&0.0453&0.0369\\
+    \hline
+    TRIMF&\textbf{\color{red}0.0525}&\textbf{\color{red}0.0410}\\
+    \hline
+  \end{tabular}
+\end{center}
+\caption{Comparison on user who have deal data.}
+\end{table}
+
+\begin{table}
+  \centering
+  \begin{tabular}{|c|c|c|}
+    \hline
+    Method&Prec@5&Prec@10\\
+    \hline
+    Most Popular&0.0090&0.0085\\
+    \hline
+    SVD&0.0123&0.00113\\
+    \hline
+    NMF&0.0091&0.0089\\
+    \hline
+    PMF&0.0121&0.0112\\
+    \hline
+    BPRMF&0.0142&0.0130\\
+    \hline
+    WRMF&0.0174&0.0144\\
+    \hline
+    CMF&0.0176&0.0139\\
+    \hline
+    TCF&0.0158&0.0127\\
+    \hline
+    TRIMF&\textbf{\color{red}0.0189}&\textbf{\color{red}0.0153}\\
+    \hline
+    TRIMF(without remap)&0.0175&0.0146\\
+    \hline
+  \end{tabular}
+  \caption{Comparison on user who have click data.}
+\end{table}
+\end{subsubsection}
+
+
+\begin{subsubsection}
+  {Yixun long term data}
+\par{Since the user are manually selected, we only test $X_d$. The result is showed in Table 3.}
+
+\begin{table}
+  \centering
+  \begin{tabular}{|c|c|c|}
+    \hline
+    Method&Prec@5&Prec@10\\
+    \hline
+    Most Popular&0.00508&0.00405\\
+    \hline
+    SVD&0.00453&0.00413\\
+    \hline
+    NMF&0.00401&0.00389\\
+    \hline
+    PMF&0.00421&0.00312\\
+    \hline
+    BPRMF&0.00542&0.00430\\
+    \hline
+    WRMF&0.00485&0.00345\\
+    \hline
+    CMF&0.00512&0.00432\\
+    \hline
+    TCF&0.00534&0.00502\\
+    \hline
+    TRIMF&\textbf{\color{red}0.00720}&\textbf{\color{red}0.00606}\\
+    \hline
+  \end{tabular}
+  \caption{Comparison on yixun long term data.}
+\end{table}
+\end{subsubsection}
+
+\end{subsection}
+\end{section}
+
+\begin{section}{Result analysis}
+  \begin{subsection}{The effects of mapping UV}
+    \par{Mapping UV aims at the difference between hot click items and hot deal item. We check the value of V and see item clusters that have higher values are items that people tends to buy after clicking, e.g toothbrush, snacks. While lower value of V more reflects that items are popular, e.g cell phones, laptops.}
+  \end{subsection}
+  \begin{subsection}{The effects of sharing}
+    \par{To see that sharing $F,G$ really works, I select another 6000users to test, I tried 'not share','share' and 'random share', the prec@n here are not comparable with the first experiment(Table 4).}
+    \par{
+\begin{table}
+\begin{center}
+  \begin{tabular}{|c|c|c|}
+    \hline
+    Method&Prec@5&Prec@10\\
+    \hline
+    shareFG&\textbf{\color{red}0.0436}&\textbf{\color{red}0.0350}\\
+    \hline
+    not share&0.0335&0.0306\\
+    \hline
+    random share&0.0344&0.0299\\
+    \hline
+  \end{tabular}
+\end{center}
+\caption{The effect of mappig UV}
+\end{table}
+}
+  \end{subsection}
+\end{section}
+

@@ -3,15 +3,15 @@ Capacity: max_strings=35307, hash_size=35307, hash_prime=30011
 The top-level auxiliary file: thesis.aux
 The style file: plain.bst
 Database file #1: reference.bib
-Repeated entry---line 829 of file reference.bib
+Repeated entry---line 841 of file reference.bib
  : @inproceedings{DBLP:conf/sigir/Hofmann03
  :                                         ,
 I'm skipping whatever remains of this entry
-You're missing a field name---line 901 of file reference.bib
+You're missing a field name---line 913 of file reference.bib
  :  pages = {2052--2057},
  :                       % location = {Pasadena, California, USA}, %series = {IJCAI'09},
 I'm skipping whatever remains of this entry
-You're missing a field name---line 959 of file reference.bib
+You're missing a field name---line 971 of file reference.bib
  :  
  :  %publisher = {Springer-Verlag},
 (Error may have been on previous line)
@@ -22,59 +22,56 @@ A bad cross reference---entry "/kdd/SinghG08"
 refers to entry "DBLP:conf/kdd/2008", which doesn't exist
 A bad cross reference---entry "/ijcai/PanLXY11"
 refers to entry "DBLP:conf/ijcai/2011", which doesn't exist
-A bad cross reference---entry "/cvpr/YaoD10"
-refers to entry "DBLP:conf/cvpr/2010", which doesn't exist
-A bad cross reference---entry "DBLP:conf/sigir/Hofmann03"
-refers to entry "DBLP:conf/sigir/2003", which doesn't exist
 A bad cross reference---entry "/nips/SalakhutdinovM07"
 refers to entry "DBLP:conf/nips/2007", which doesn't exist
+A bad cross reference---entry "DBLP:conf/sigir/Hofmann03"
+refers to entry "DBLP:conf/sigir/2003", which doesn't exist
 Warning--I didn't find a database entry for "DBLP:conf/kdd/2008"
 Warning--I didn't find a database entry for "DBLP:conf/sigir/2003"
 Warning--I didn't find a database entry for "DBLP:conf/nips/2007"
-Warning--I didn't find a database entry for "DBLP:conf/cvpr/2010"
 Warning--I didn't find a database entry for "DBLP:conf/uai/2010"
 Warning--I didn't find a database entry for "DBLP:conf/ijcai/2011"
 Warning--empty publisher in /ki/bhaskar06cross
 Warning--empty booktitle in AAAI101649
-You've used 47 entries,
+You've used 39 entries,
             2118 wiz_defined-function locations,
-            786 strings with 12909 characters,
-and the built_in function-call counts, 18153 in all, are:
-= -- 1784
-> -- 811
-< -- 27
-+ -- 318
-- -- 267
-* -- 1188
-:= -- 2814
-add.period$ -- 150
-call.type$ -- 47
-change.case$ -- 268
+            736 strings with 11412 characters,
+and the built_in function-call counts, 15150 in all, are:
+= -- 1492
+> -- 671
+< -- 22
++ -- 264
+- -- 222
+* -- 998
+:= -- 2337
+add.period$ -- 123
+call.type$ -- 39
+change.case$ -- 226
 chr.to.int$ -- 0
-cite$ -- 49
-duplicate$ -- 782
-empty$ -- 1479
-format.name$ -- 274
-if$ -- 3994
+cite$ -- 41
+duplicate$ -- 651
+empty$ -- 1233
+format.name$ -- 229
+if$ -- 3331
 int.to.chr$ -- 0
-int.to.str$ -- 47
-missing$ -- 47
-newline$ -- 236
-num.names$ -- 101
-pop$ -- 332
+int.to.str$ -- 39
+missing$ -- 37
+newline$ -- 196
+num.names$ -- 83
+pop$ -- 274
 preamble$ -- 1
-purify$ -- 225
+purify$ -- 189
 quote$ -- 0
-skip$ -- 604
+skip$ -- 510
 stack$ -- 0
-substring$ -- 1115
-swap$ -- 258
-text.length$ -- 24
+substring$ -- 946
+swap$ -- 219
+text.length$ -- 19
 text.prefix$ -- 0
 top$ -- 0
-type$ -- 182
+type$ -- 154
 warning$ -- 2
-while$ -- 163
-width$ -- 49
-write$ -- 515
-(There were 9 error messages)
+while$ -- 136
+width$ -- 41
+write$ -- 425
+(There were 8 error messages)
