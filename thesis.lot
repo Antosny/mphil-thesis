@@ -2,15 +2,10 @@
 \addvspace {1pt}
 \contentsline {table}{\numberline {2.1}{\ignorespaces Overview of TRIMF in Cross-Domain Collaborative Filtering context.}}{4}
 \addvspace {1pt}
-\contentsline {table}{\numberline {3.1}{\ignorespaces Comparison on user who have deal data.}}{18}
-\contentsline {table}{\numberline {3.2}{\ignorespaces Comparison on user who have click data.}}{19}
-\contentsline {table}{\numberline {3.3}{\ignorespaces Comparison on yixun long term data.}}{19}
-\contentsline {table}{\numberline {3.4}{\ignorespaces The effect of mappig UV}}{20}
-\addvspace {1pt}
-\addvspace {1pt}
-\contentsline {table}{\numberline {5.1}{\ignorespaces Datasets in our experiments.}}{29}
-\contentsline {table}{\numberline {5.2}{\ignorespaces Prediction performance of STLCF and the baselines.}}{30}
-\contentsline {table}{\numberline {5.3}{\ignorespaces Prediction performance of STLCF for Long-Tail Users on the D2 to D3 task.}}{33}
-\contentsline {table}{\numberline {5.4}{\ignorespaces Prediction performance of STLCF with multiple source domains containing much irrelevant information.}}{34}
-\contentsline {table}{\numberline {5.5}{\ignorespaces Prediction performance of STLCF with multiple source domains (Douban).}}{34}
+\contentsline {table}{\numberline {3.1}{\ignorespaces Top 10 click items and top 10 purchase items in Yixun}}{15}
+\contentsline {table}{\numberline {3.2}{\ignorespaces Baseline methods.}}{19}
+\contentsline {table}{\numberline {3.3}{\ignorespaces Performance of TRIMF and other baseline methods on short-term users who have deal data.}}{21}
+\contentsline {table}{\numberline {3.4}{\ignorespaces Performance of TRIMF and other baseline methods on short-term users who have deal data.}}{22}
+\contentsline {table}{\numberline {3.5}{\ignorespaces Performance of TRIMF and other baseline methods on long-term users.}}{22}
+\contentsline {table}{\numberline {3.6}{\ignorespaces The effect of sharing}}{24}
 \addvspace {1pt}

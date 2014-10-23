@@ -347,7 +347,13 @@ ISSN={1550-4786},}
     address = {Los Alamitos, CA, USA},
 }
 
-
+@inproceedings{cao2010transfer,
+  title={Transfer learning for collective link prediction in multiple heterogenous domains},
+  author={Cao, Bin and Liu, Nathan N and Yang, Qiang},
+  booktitle={Proceedings of the 27th International Conference on Machine Learning (ICML-10)},
+  pages={159--166},
+  year={2010}
+}
 @inproceedings{/uai/ZhangCY10,
   author    = {Yu Zhang and
                Bin Cao and

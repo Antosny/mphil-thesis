@@ -42,18 +42,6 @@ Chris Ding, Xiaofeng He, and Horst~D. Simon.
   clustering.
 \newblock In {\em in SIAM International Conference on Data Mining}, 2005.
 
-\bibitem{/aaai/Eatond11}
-Eric Eaton and Marie desJardins.
-\newblock Selective transfer between learning tasks using task-based boosting.
-\newblock In Burgard and Roth \cite{DBLP:conf/aaai/2011}.
-
-\bibitem{/ecml/Eaton2008Modeling}
-Eric Eaton, Marie desJardins, and Terran Lane.
-\newblock Modeling transfer relationships between learning tasks for improved
-  inductive transfer.
-\newblock In {\em The European Conference on Machine Learning}, pages 317--332,
-  2008.
-
 \bibitem{DBLP:conf/aaai/EldardiryN11}
 Hoda Eldardiry and Jennifer Neville.
 \newblock Across-model collective ensemble classification.
@@ -64,12 +52,6 @@ Zoubin Ghahramani, editor.
 \newblock {\em Machine Learning, Proceedings of the Twenty-Fourth International
   Conference (ICML 2007), Oregon, USA, June 20-24, 2007}, volume 227 of {\em
   ACM International Conference Proceeding Series}. ACM, 2007.
-
-\bibitem{DBLP:conf/sigir/Hofmann03}
-Thomas Hofmann.
-\newblock Collaborative filtering via gaussian probabilistic latent semantic
-  analysis.
-\newblock In {\em SIGIR}, pages 259--266, 2003.
 
 \bibitem{hofmann04cf}
 Thomas Hofmann.
@@ -185,10 +167,18 @@ Steffen Rendle.
 \newblock {\em ACM Transactions on Intelligent Systems and Technology (ACM
   TIST)}, 3:19:1--19:22, May 2012.
 
-\bibitem{/nips/SalakhutdinovM07}
+\bibitem{Rendle:2009:BBP:1795114.1795167}
+Steffen Rendle, Christoph Freudenthaler, Zeno Gantner, and Lars Schmidt-Thieme.
+\newblock Bpr: Bayesian personalized ranking from implicit feedback.
+\newblock In {\em Proceedings of the Twenty-Fifth Conference on Uncertainty in
+  Artificial Intelligence}, UAI '09, pages 452--461, Arlington, Virginia,
+  United States, 2009. AUAI Press.
+
+\bibitem{/nips/SalMnih08}
 Ruslan Salakhutdinov and Andriy Mnih.
 \newblock Probabilistic matrix factorization.
-\newblock In {\em NIPS}, 2007.
+\newblock In {\em Advances in Neural Information Processing Systems},
+  volume~20, 2008.
 
 \bibitem{/icml/SalakhutdinovMH07}
 Ruslan Salakhutdinov, Andriy Mnih, and Geoffrey~E. Hinton.
