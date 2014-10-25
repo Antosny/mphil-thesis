@@ -1,0 +1,56 @@
+\chapter{Clustering-based Matrix Factorization for Online Shopping Prediction}
+\label{chp:cbmf}
+\section{Limitation of TRIMF}
+In Chapter \ref{chp:trimf}, we introduced TRIMF. It's a matrix tri-factorization method for cross-domain recommendation. However, it has some limitations which restricts its scalability and extensibility.
+
+First, when data are coming from multiple sources(e.g click, pageview, add cart), TRIMF treats every source equally and put each of them into a matrix which is very sparse. When solving the object function, more matrix will increase the time complexity and space complexity. If we try to update $S$, every matrix is included so it will be very time-consuming.
+
+What's more, in reality we can't ignore users with fewer actions. Thus the matrix will be much more sparse than the ones in our experiment, so we can't guarantee to acheive equal performance.
+
+To solve these problems, we developed a framework based on clustering and scoring scheme (CBMF). CBMF firstly cluster users according to their behaviour and demongraphic features, then automatically convert different types of actions into one matrix call action matrix, finally a matrix factorization method is applied in the action matrix. For users with enough actions, personalized recommendation is provided. Otherwise we provide a recommendation based on his/her cluster.
+
+\section{Clustering method of CBMF}
+
+Usually users' actions are unique and sparse, it'll be time-consuming if we want to cluster users using raw data. In Tencent, we have 800,000,000 users in total, and their feature vector size can be as large as 1,000,000. So if we want to speed up the phase, we must first convert large sparse user vector into a low dimension dense vector.
+
+\subsection{Simhash}
+
+Simhash is a kind of locally sensitive hashing(LSH). LSH is a hashing method that if we got two points $A,B$ which are close in their original space, after hashing we got $A',B'$, then $A',B'$ is still close in the new space. Thus we keep the relationship of distance among two spaces. 
+
+The input of Simhash per user is $(feature_1, weight_1),..(feature_n,weight_n)$. The procedure of Simhash is in Algorithm \ref{algorithm:simhash}.
+
+\begin{algorithm}[tb]
+\caption{Simhash Algorithm for one instance.}
+\begin{algorithmic}
+
+\STATE {\bfseries Input:} $\X_U$, $h$\\
+$\X_{U}$ : $(feature_1, weight_1),..(feature_n,weight_n)$ \\
+$h$: a smooth hash function with $k$ bits after hashing\\
+
+\STATE {\bfseries Initialize:} $r$(result vector) : $[0,0,0..0] \in \{0,1\}^k$
+
+\FOR{ $i$ = 1 to $n$}
+
+\STATE calculate $h(feature_i)$
+
+\STATE $r = r + weight_i * h(feature_i)$
+
+\ENDFOR
+
+\FOR{ $i$ = 1 to $k$}
+\STATE {if $r_i > 0$}
+\STATE {$r_i = 1$}
+\STATE {else $r_i = 0$}
+
+\ENDFOR
+
+\STATE {\bfseries Output:} $r$
+
+\end{algorithmic}
+\label{algorithm:simhash}
+\end{algorithm}
+
+Assume that Simhash convert a vector $x$ into a 32-dimension binary vector $x'$. Actually $i_{th}$ bit of $x'$ is the sign of inner product of $x$ and $H_i = [h^1_i, h^2_i,...h^n_i]$, $H_i$ can be regarded as a pingmian in original space. If two vector $x, y$ are in the same direction of $H_i$, then $x', y'$ is equal on $i_{th}$ bit. Thus we can use hamming distance in the low dimension to represent their similarity in original space.
+
+\subsection{Minhash}
+

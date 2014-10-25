@@ -44,5 +44,10 @@
 \contentsline {section}{\numberline {3.5}Performance comparison \& analysis}{23}
 \contentsline {subsubsection}{The effects of $UV$}{23}
 \contentsline {subsubsection}{The effects of sharing}{24}
-\contentsline {chapter}{{Chapter 4}\hspace {1em}Conclusion and Future work}{25}
-\contentsline {chapter}{References}{27}
+\contentsline {chapter}{{Chapter 4}\hspace {1em}Clustering-based Matrix Factorization for Online Shopping Prediction}{25}
+\contentsline {section}{\numberline {4.1}Limitation of TRIMF}{25}
+\contentsline {section}{\numberline {4.2}Clustering method of CBMF}{26}
+\contentsline {subsection}{\numberline {4.2.1}Simhash}{26}
+\contentsline {subsection}{\numberline {4.2.2}Minhash}{27}
+\contentsline {chapter}{{Chapter 5}\hspace {1em}Conclusion and Future work}{28}
+\contentsline {chapter}{References}{30}
