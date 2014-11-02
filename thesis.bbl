@@ -64,6 +64,13 @@ Yifan Hu, Y.~Koren, and C.~Volinsky.
 \newblock In {\em Data Mining, 2008. ICDM '08. Eighth IEEE International
   Conference on}, pages 263--272, Dec 2008.
 
+\bibitem{Indyk:1998:ANN:276698.276876}
+Piotr Indyk and Rajeev Motwani.
+\newblock Approximate nearest neighbors: Towards removing the curse of
+  dimensionality.
+\newblock In {\em Proceedings of the Thirtieth Annual ACM Symposium on Theory
+  of Computing}, STOC '98, pages 604--613, New York, NY, USA, 1998. ACM.
+
 \bibitem{jin:decoupled}
 Rong Jin, Luo Si, Chengxiang Zhai, and Jamie Callan.
 \newblock Collaborative filtering with decoupled models for preferences and

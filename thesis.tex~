@@ -33,6 +33,7 @@
 \usepackage{subfigure}
 \usepackage{epsfig}
 \usepackage{listings}
+\usepackage{endfloat}
 \usepackage[a4paper,top=2.5cm,bottom=2.5cm,left=2.5cm,right=2.5cm]{geometry}
 \usepackage{cases}
 \usepackage{url}
@@ -193,7 +194,7 @@
 \input{content/intro}
 \input{content/background}
 \input{content/trimf}
-%\input{content/stlcf}
+\input{content/cbmf}
 %\input{content/experiment}
 \input{content/conclusion}
 

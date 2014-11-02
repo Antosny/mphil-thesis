@@ -3,11 +3,11 @@ Capacity: max_strings=35307, hash_size=35307, hash_prime=30011
 The top-level auxiliary file: thesis.aux
 The style file: plain.bst
 Database file #1: reference.bib
-You're missing a field name---line 913 of file reference.bib
+You're missing a field name---line 943 of file reference.bib
  :  pages = {2052--2057},
  :                       % location = {Pasadena, California, USA}, %series = {IJCAI'09},
 I'm skipping whatever remains of this entry
-You're missing a field name---line 971 of file reference.bib
+You're missing a field name---line 1001 of file reference.bib
  :  
  :  %publisher = {Springer-Verlag},
 (Error may have been on previous line)
@@ -23,45 +23,45 @@ Warning--I didn't find a database entry for "DBLP:conf/uai/2010"
 Warning--I didn't find a database entry for "DBLP:conf/ijcai/2011"
 Warning--empty publisher in /ki/bhaskar06cross
 Warning--empty booktitle in AAAI101649
-You've used 37 entries,
+You've used 38 entries,
             2118 wiz_defined-function locations,
-            727 strings with 11223 characters,
-and the built_in function-call counts, 14565 in all, are:
-= -- 1437
-> -- 655
-< -- 21
-+ -- 258
-- -- 218
-* -- 974
-:= -- 2253
-add.period$ -- 118
-call.type$ -- 37
-change.case$ -- 218
+            735 strings with 11478 characters,
+and the built_in function-call counts, 15033 in all, are:
+= -- 1491
+> -- 668
+< -- 22
++ -- 263
+- -- 222
+* -- 1001
+:= -- 2319
+add.period$ -- 122
+call.type$ -- 38
+change.case$ -- 223
 chr.to.int$ -- 0
-cite$ -- 39
-duplicate$ -- 619
-empty$ -- 1177
-format.name$ -- 222
-if$ -- 3197
+cite$ -- 40
+duplicate$ -- 642
+empty$ -- 1216
+format.name$ -- 226
+if$ -- 3308
 int.to.chr$ -- 0
-int.to.str$ -- 37
-missing$ -- 35
-newline$ -- 186
-num.names$ -- 78
-pop$ -- 260
+int.to.str$ -- 38
+missing$ -- 36
+newline$ -- 191
+num.names$ -- 80
+pop$ -- 265
 preamble$ -- 1
-purify$ -- 183
+purify$ -- 187
 quote$ -- 0
-skip$ -- 481
+skip$ -- 501
 stack$ -- 0
-substring$ -- 908
-swap$ -- 208
-text.length$ -- 19
+substring$ -- 945
+swap$ -- 218
+text.length$ -- 20
 text.prefix$ -- 0
 top$ -- 0
-type$ -- 146
+type$ -- 150
 warning$ -- 2
-while$ -- 130
-width$ -- 39
-write$ -- 409
+while$ -- 135
+width$ -- 40
+write$ -- 423
 (There were 5 error messages)

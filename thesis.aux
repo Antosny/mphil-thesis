@@ -98,8 +98,8 @@
 \@writefile{lot}{\contentsline {table}{\numberline {3.1}{\ignorespaces Top 10 click items and top 10 purchase items in Yixun}}{15}}
 \@writefile{toc}{\contentsline {subsection}{\numberline {3.2.3}Object function}{15}}
 \citation{Zhuang:2011:EAW:1952191.1952195}
-\newlabel{fig:trimf}{{3.2.3}{16}}
 \@writefile{lof}{\contentsline {figure}{\numberline {3.1}{\ignorespaces Graphical model of TRIMF}}{16}}
+\newlabel{fig:trimf}{{3.1}{16}}
 \@writefile{toc}{\contentsline {section}{\numberline {3.3}Solution to TRIMF \& Algorithm}{17}}
 \@writefile{loa}{\contentsline {algocf}{\numberline {1}{\ignorespaces Algorithm for TRIMF.}}{18}}
 \newlabel{algorithm:TRIMF}{{1}{18}}
@@ -138,16 +138,44 @@
 \@writefile{loa}{\addvspace {10\p@ }}
 \newlabel{chp:cbmf}{{4}{25}}
 \@writefile{toc}{\contentsline {section}{\numberline {4.1}Limitation of TRIMF}{25}}
-\@writefile{loa}{\contentsline {algocf}{\numberline {2}{\ignorespaces Simhash Algorithm for one instance.}}{26}}
-\newlabel{algorithm:simhash}{{2}{26}}
-\@writefile{toc}{\contentsline {section}{\numberline {4.2}Clustering method of CBMF}{26}}
-\@writefile{toc}{\contentsline {subsection}{\numberline {4.2.1}Simhash}{26}}
-\@writefile{toc}{\contentsline {subsection}{\numberline {4.2.2}Minhash}{27}}
-\@writefile{toc}{\contentsline {chapter}{{Chapter 5}\hspace  {1em}Conclusion and Future work}{28}}
+\@writefile{lof}{\contentsline {figure}{\numberline {4.1}{\ignorespaces Framework of CBMF}}{26}}
+\newlabel{fig:cbmf}{{4.1}{26}}
+\@writefile{toc}{\contentsline {section}{\numberline {4.2}Feature construction in CBMF}{26}}
+\@writefile{toc}{\contentsline {section}{\numberline {4.3}Clustering method in CBMF}{26}}
+\@writefile{loa}{\contentsline {algocf}{\numberline {2}{\ignorespaces Simhash Algorithm for one instance.}}{27}}
+\newlabel{algorithm:simhash}{{2}{27}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {4.3.1}Simhash}{27}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {4.3.2}Minhash}{27}}
+\citation{Indyk:1998:ANN:276698.276876}
+\@writefile{toc}{\contentsline {subsection}{\numberline {4.3.3}Simhash \& Minhash using MapReduce}{28}}
+\@writefile{toc}{\contentsline {subsubsection}{Map phase}{28}}
+\@writefile{toc}{\contentsline {subsubsection}{Reduce phase}{29}}
+\@writefile{toc}{\contentsline {section}{\numberline {4.4}Matrix factorization in CBMF}{29}}
+\@writefile{lof}{\contentsline {figure}{\numberline {4.2}{\ignorespaces  CTR of online algorithms from 0409 to 0415.}}{30}}
+\newlabel{fig:ctr0415}{{4.2}{30}}
+\@writefile{toc}{\contentsline {section}{\numberline {4.5}Experiments and results analysis}{30}}
+\@writefile{lof}{\contentsline {figure}{\numberline {4.3}{\ignorespaces  CTR of online algorithms from 0417 to 0424.}}{31}}
+\newlabel{fig:ctr0424}{{4.3}{31}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {4.5.1}Click through rate}{31}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {4.5.2}Order amount per impression}{31}}
+\@writefile{lot}{\contentsline {table}{\numberline {4.1}{\ignorespaces  Average OAPI of online algorithms.}}{31}}
+\newlabel{tbl:cvravg}{{4.1}{31}}
+\@writefile{lof}{\contentsline {figure}{\numberline {4.4}{\ignorespaces  OAPI of online algorithms from 0409 to 0415.}}{32}}
+\newlabel{fig:oapi0415}{{4.4}{32}}
+\@writefile{lof}{\contentsline {figure}{\numberline {4.5}{\ignorespaces  OAPI of online algorithms from 0427 to 0502.}}{32}}
+\newlabel{fig:oapi0427}{{4.5}{32}}
+\@writefile{lof}{\contentsline {figure}{\numberline {4.6}{\ignorespaces  OAPI of online algorithms from 0426 to 0501.}}{33}}
+\newlabel{fig:oapi0426}{{4.6}{33}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {4.5.3}Pay amount per impression}{33}}
+\@writefile{lof}{\contentsline {figure}{\numberline {4.7}{\ignorespaces  PAPI of online algorithms from 0409 to 0415.}}{34}}
+\newlabel{fig:papi0415}{{4.7}{34}}
+\@writefile{lof}{\contentsline {figure}{\numberline {4.8}{\ignorespaces  PAPI of online algorithms from 0426 to 0501.}}{34}}
+\newlabel{fig:papi0501}{{4.8}{34}}
+\@writefile{toc}{\contentsline {chapter}{{Chapter 5}\hspace  {1em}Conclusion and Future work}{35}}
 \@writefile{lof}{\addvspace {1pt}}
 \@writefile{lot}{\addvspace {1pt}}
 \@writefile{loa}{\addvspace {10\p@ }}
-\newlabel{chp:conclusion}{{5}{28}}
+\newlabel{chp:conclusion}{{5}{35}}
 \bibstyle{plain}
 \bibdata{reference}
 \bibcite{DBLP:conf/aaai/2011}{1}
@@ -160,33 +188,34 @@
 \bibcite{DBLP:conf/aaai/EldardiryN11}{8}
 \citation{DBLP:conf/aaai/2011}
 \bibcite{DBLP:conf/icml/2007}{9}
-\@writefile{toc}{\contentsline {chapter}{References}{30}}
+\@writefile{toc}{\contentsline {chapter}{References}{37}}
 \bibcite{hofmann04cf}{10}
 \bibcite{4781121}{11}
-\bibcite{jin:decoupled}{12}
-\bibcite{/computer/yehuda09matrix}{13}
-\bibcite{/ijcai/libin09}{14}
-\bibcite{/icml/libin09}{15}
-\bibcite{Li:2009:NMT:1687878.1687914}{16}
-\bibcite{/tist/Lipczak-TIST11-Tag-Rec}{17}
-\bibcite{/ki/bhaskar06cross}{18}
-\bibcite{4781145}{19}
-\bibcite{/tkde/sinno09survey}{20}
-\bibcite{Pan:2011:TLP:2283696.2283784}{21}
-\bibcite{/ijcai/PanLXY11}{22}
-\bibcite{AAAI101649}{23}
-\bibcite{/aaai/WPan12}{24}
-\bibcite{paterek07}{25}
-\bibcite{pennock00pd}{26}
-\bibcite{/tist/LibFM-TIST12}{27}
-\bibcite{Rendle:2009:BBP:1795114.1795167}{28}
-\bibcite{/nips/SalMnih08}{29}
-\bibcite{/icml/SalakhutdinovMH07}{30}
+\bibcite{Indyk:1998:ANN:276698.276876}{12}
+\bibcite{jin:decoupled}{13}
+\bibcite{/computer/yehuda09matrix}{14}
+\bibcite{/ijcai/libin09}{15}
+\bibcite{/icml/libin09}{16}
+\bibcite{Li:2009:NMT:1687878.1687914}{17}
+\bibcite{/tist/Lipczak-TIST11-Tag-Rec}{18}
+\bibcite{/ki/bhaskar06cross}{19}
+\bibcite{4781145}{20}
+\bibcite{/tkde/sinno09survey}{21}
+\bibcite{Pan:2011:TLP:2283696.2283784}{22}
+\bibcite{/ijcai/PanLXY11}{23}
+\bibcite{AAAI101649}{24}
+\bibcite{/aaai/WPan12}{25}
+\bibcite{paterek07}{26}
+\bibcite{pennock00pd}{27}
+\bibcite{/tist/LibFM-TIST12}{28}
+\bibcite{Rendle:2009:BBP:1795114.1795167}{29}
+\bibcite{/nips/SalMnih08}{30}
+\bibcite{/icml/SalakhutdinovMH07}{31}
 \citation{DBLP:conf/icml/2007}
-\bibcite{Sarwar00applicationof}{31}
-\bibcite{Shalev-Shwartz:2008:SOI:1390156.1390273}{32}
-\bibcite{/kdd/SinghG08}{33}
-\bibcite{su2009survey}{34}
-\bibcite{/uai/ZhangCY10}{35}
-\bibcite{/tist/TIST11-Yu-ZHENG-Travel-Rec}{36}
-\bibcite{Zhuang:2011:EAW:1952191.1952195}{37}
+\bibcite{Sarwar00applicationof}{32}
+\bibcite{Shalev-Shwartz:2008:SOI:1390156.1390273}{33}
+\bibcite{/kdd/SinghG08}{34}
+\bibcite{su2009survey}{35}
+\bibcite{/uai/ZhangCY10}{36}
+\bibcite{/tist/TIST11-Yu-ZHENG-Travel-Rec}{37}
+\bibcite{Zhuang:2011:EAW:1952191.1952195}{38}

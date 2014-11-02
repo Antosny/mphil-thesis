@@ -46,8 +46,17 @@
 \contentsline {subsubsection}{The effects of sharing}{24}
 \contentsline {chapter}{{Chapter 4}\hspace {1em}Clustering-based Matrix Factorization for Online Shopping Prediction}{25}
 \contentsline {section}{\numberline {4.1}Limitation of TRIMF}{25}
-\contentsline {section}{\numberline {4.2}Clustering method of CBMF}{26}
-\contentsline {subsection}{\numberline {4.2.1}Simhash}{26}
-\contentsline {subsection}{\numberline {4.2.2}Minhash}{27}
-\contentsline {chapter}{{Chapter 5}\hspace {1em}Conclusion and Future work}{28}
-\contentsline {chapter}{References}{30}
+\contentsline {section}{\numberline {4.2}Feature construction in CBMF}{26}
+\contentsline {section}{\numberline {4.3}Clustering method in CBMF}{26}
+\contentsline {subsection}{\numberline {4.3.1}Simhash}{27}
+\contentsline {subsection}{\numberline {4.3.2}Minhash}{27}
+\contentsline {subsection}{\numberline {4.3.3}Simhash \& Minhash using MapReduce}{28}
+\contentsline {subsubsection}{Map phase}{28}
+\contentsline {subsubsection}{Reduce phase}{29}
+\contentsline {section}{\numberline {4.4}Matrix factorization in CBMF}{29}
+\contentsline {section}{\numberline {4.5}Experiments and results analysis}{30}
+\contentsline {subsection}{\numberline {4.5.1}Click through rate}{31}
+\contentsline {subsection}{\numberline {4.5.2}Order amount per impression}{31}
+\contentsline {subsection}{\numberline {4.5.3}Pay amount per impression}{33}
+\contentsline {chapter}{{Chapter 5}\hspace {1em}Conclusion and Future work}{35}
+\contentsline {chapter}{References}{37}

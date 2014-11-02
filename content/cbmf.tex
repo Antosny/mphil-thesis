@@ -7,15 +7,34 @@ First, when data are coming from multiple sources(e.g click, pageview, add cart)
 
 What's more, in reality we can't ignore users with fewer actions. Thus the matrix will be much more sparse than the ones in our experiment, so we can't guarantee to acheive equal performance.
 
-To solve these problems, we developed a framework based on clustering and scoring scheme (CBMF). CBMF firstly cluster users according to their behaviour and demongraphic features, then automatically convert different types of actions into one matrix call action matrix, finally a matrix factorization method is applied in the action matrix. For users with enough actions, personalized recommendation is provided. Otherwise we provide a recommendation based on his/her cluster.
+To solve these problems, we developed a framework based on clustering and scoring scheme (CBMF, Figure \ref{fig:cbmf}). CBMF firstly cluster users according to their behaviour and demongraphic features, then automatically convert different types of actions into one matrix call action matrix, finally a matrix factorization method is applied in the action matrix. For users with enough actions, personalized recommendation is provided. Otherwise we provide a recommendation based on his/her cluster.
 
-\section{Clustering method of CBMF}
+\begin{figure}
+
+%\begin{Large}
+
+\begin{center}
+\includegraphics[width=400px]{fig/d} 
+\caption{Framework of CBMF}
+\label{fig:cbmf}
+\end{center}
+\end{figure}
+
+\section{Feature construction in CBMF}
+
+In real world, a user may have many aspect of actions, e.g click, purchase, pageview and so forth. Simply create a matrix for each kind of action may lead to data sparsity problems. In CBMF, a scoring scheme is applied for each kind of action to put every action into a simple matrix with proper score.
+
+The idea behind the construction is that for a specific goal(e.g predict future purchase), what score should be given to an action depends on how much impact the action can have. In Yixun for a specific item, a user may have four kinds of actions(click, purchase, pageview and uninterested). For a given action, we compare the conversion rate of users who did this action with average, their log ratio $log(\frac{Cvr(u)}{Cvr(all)})$ is our initial score.
+
+
+
+\section{Clustering method in CBMF}
 
 Usually users' actions are unique and sparse, it'll be time-consuming if we want to cluster users using raw data. In Tencent, we have 800,000,000 users in total, and their feature vector size can be as large as 1,000,000. So if we want to speed up the phase, we must first convert large sparse user vector into a low dimension dense vector.
 
 \subsection{Simhash}
 
-Simhash is a kind of locally sensitive hashing(LSH). LSH is a hashing method that if we got two points $A,B$ which are close in their original space, after hashing we got $A',B'$, then $A',B'$ is still close in the new space. Thus we keep the relationship of distance among two spaces. 
+Simhash is a kind of locality sensitive hashing(LSH). LSH is a hashing method that if we got two points $A,B$ which are close in their original space, after hashing we got $A',B'$, then $A',B'$ is still close in the new space. Thus we keep the relationship of distance among two spaces. 
 
 The input of Simhash per user is $(feature_1, weight_1),..(feature_n,weight_n)$. The procedure of Simhash is in Algorithm \ref{algorithm:simhash}.
 
@@ -38,10 +57,11 @@ $h$: a smooth hash function with $k$ bits after hashing\\
 \ENDFOR
 
 \FOR{ $i$ = 1 to $k$}
-\STATE {if $r_i > 0$}
+\IF {$r_i > 0$}
 \STATE {$r_i = 1$}
-\STATE {else $r_i = 0$}
-
+\ELSE 
+\STATE {$r_i = 0$}
+\ENDIF
 \ENDFOR
 
 \STATE {\bfseries Output:} $r$
@@ -54,3 +74,156 @@ Assume that Simhash convert a vector $x$ into a 32-dimension binary vector $x'$.
 
 \subsection{Minhash}
 
+The similarity between two users $u_i , u_j$ is defined as the overlap between their item sets. $S(u_i, u_j) = \frac{C_{u_i} \cup C_{u_j}}{C_{u_i} \cap C_{u_j}}$, also known as the Jaccard coefficient. But doing this in real-time is clearly not scalable. However, we can acheive a provably sublinear time near-neighbor search technique by applying minhash.
+
+MinHash is a probabilistic clustering method that assigns a pair of users to the same cluster with probability proportional to the overlap between the set of items that these users have voted for (clicked-on). In CBMF, minhashing is applied after simhashing, so every user has 32 items(bits). 
+
+The basic idea in the Min-Hashing scheme is to randomly permute the set of items (S) and for each user $u_i$ compute its hash value $h(u_i)$ as the index of the first item under the permutation that belongs to the user’s item set $C_{u_i}$. And it's easy to show that the probability that two users will have the same hash function is exactly equal to their similarity or Jaccard coefficient.
+
+Similar to \cite{Indyk:1998:ANN:276698.276876}, we can always concatenate $p$ hash-keys for
+users, where $p \ge 1$, so the probability that any two users $u_i , u_j$ will agree on the concatenated hash-key is equal to $S(u_i , u_j )^p$. $p$ can be a parameter to control the number of clusters. If $p$ is large, then the clusters will be more refined thus the number of cluster will increase.
+
+\subsection{Simhash \& Minhash using MapReduce}
+
+MapReduce is a very simple model of computation over large clusters of machines that can handle processing of large amounts of data in relatively short periods of time and scales well with the number of machines. Our method Simhash and Minhash can be easily implemented using hadoop.
+
+\subsubsection{Map phase}
+In the map phase, we read the input records independently, in parallel, on different machines and map each input to a set of zero or more key-
+value pairs. In our case, hadoop streaming is applied and each input instance is a user's vector(in sparse representation).
+
+We first iterate the user's vector $u_i$, using Simhash to convert the vector to a 32-bit binary vector, the hashing function used in Simhash is FNV-32. Then Minhash is applied for $p$ times per user. We concatenate the $p$ Minhash values $Mnhs_i$ to obtain the cluster id of the user. Finally, the output is ( $Mnhs_i$, $u_i$), key is $Mnhs_i$, value is $u_i$. For users with enough actions, we output another pairs ( $user-id$, $u_i$). 
+
+\subsubsection{Reduce phase}
+
+In the reduce phase, our input has two form: ($Mnhs_i$, $u_i$) represents cluster-id and uservector. ($user-id$, $u_i$) represents an experienced user and its vector.
+\begin{itemize}
+\item For the cluster case: we obtain for each cluster-id the list of user-ids that belong to this cluster and prune away clusters with members less than 10. For each cluster-id, a joint vector is needed to represents all users in it. Thus we simply add scores from users to the joint vector, then we do a normalization to make the range of the vector between 0 and 1. The output has two parts: 
+\begin{itemize}
+\item user and the cluster he belongs to (userid, clusterid). 
+\item cluster-id and its vector (cluster-id, cluster-vector).
+\end{itemize}
+\item For the user case: we simply output the normalized vector.
+
+\end{itemize}
+
+After the reduce phase, we have three tables(matrix). 1, user and his cluster-id. 2, cluster-id and its vector. 3, user and his vector.
+
+\section{Matrix factorization in CBMF}
+
+Once the matrix are generated, we use Singular Value Decomposition(SVD) from mahout \footnote{https://mahout.apache.org/users/dim-reduction/dimensional-reduction.html}. The number of eigenvalues is set to 20 according to online test.
+
+After SVD, we can provide recommendations to every user, for experienced users direct results are provides, otherwise we find his cluster-id and provide results for this cluster as our recommendation. We output our resuls to a online key-value dataset called TDE. Once a user comes, we search his id is TDE, the return value is our recommendation.
+
+\section{Experiments and results analysis}
+
+Our algorithm has gone online for about one months from 2014-04-01 to 2014-05-01, after some days of parameter selection, CBMF's performance becomes stable since 2014-04-10.
+
+There are three evaluation metrics: 
+\begin{itemize}
+\item [1] click-through-rate(CTR). 
+\item [2] order amount per impression(OAPI)
+\item [3] pay amount per impression(PAPI).
+\end{itemize}
+
+An impression is a measure of the number of times an ad is seen. The difference between OAPI and PAPI is that a user may place an order but didn't pay for it(he can cancel at any time).
+
+\subsection{Click through rate}
+
+
+\begin{figure}
+\begin{center}
+\includegraphics[width=400px]{fig/yixunexp/ctr0415.png}
+\caption{\label{fig:ctr0415} CTR of online algorithms from 0409 to 0415.}
+
+\end{center}
+\end{figure}
+
+\begin{figure}
+\begin{center}
+
+\includegraphics[width=400px]{fig/yixunexp/ctr0424.png}
+\caption{\label{fig:ctr0424} CTR of online algorithms from 0417 to 0424.}
+\end{center}
+\end{figure}
+
+In Figure \ref{fig:ctr0415} and Figure \ref{fig:ctr0424}, CTR of different online algorithms are shown. The id of CBMF is $4312$, the purple line. It can be seen that CBMF didn't rank first in CTR, but rather among the mid levels. This is because CBMF didn't optimize for CTR, it is designed for improving purchase rate. But because there is some similarity between click and purchase, so CBMF's CTR performance could not be too bad.
+
+\subsection{Order amount per impression}
+
+\begin{figure}
+\begin{center}
+
+\includegraphics[width=400px]{fig/yixunexp/OAPI0415.png}
+\caption{\label{fig:oapi0415} OAPI of online algorithms  from 0409 to 0415.}
+\end{center}
+\end{figure}
+
+\begin{figure}
+\begin{center}
+
+
+
+\includegraphics[width=400px]{fig/yixunexp/OAPI0427.png}
+\caption{\label{fig:oapi0427} OAPI of online algorithms  from 0427 to 0502.}
+\end{center}
+\end{figure}
+
+\begin{figure}
+\begin{center}
+
+
+
+\includegraphics[width=400px]{fig/yixunexp/cvr0502.png}
+\caption{\label{fig:oapi0426} OAPI of online algorithms  from 0426 to 0501.}
+\end{center}
+\end{figure}
+
+\begin{table}[h]
+
+%\begin{Large}
+
+\begin{center}
+\begin{tabular}{| c | c | c | c |}
+\hline
+Algorithm ID & Average OAPI in Figure \ref{fig:ctr0415} & Average OAPI in Figure \ref{fig:ctr0424} & Average total OAPI \\
+\hline
+4315 &2.21 & 2.87 & 2.64\\
+\hline
+4314 &\textbf{3.33} & 2.65& 2.86\\
+\hline
+4312 &3.25& \textbf{3.97}& \textbf{3.65}\\
+\hline
+4313 & 1.93 & 2.31& 2.12\\
+\hline
+cpsf & 3.04& 2.98 & 3.01\\
+\hline
+\end{tabular}
+\caption{\label{tbl:cvravg} Average OAPI of online algorithms.}
+\end{center}
+%\end{Large}
+\end{table}
+
+In Figure \ref{fig:oapi0415} and Figure \ref{fig:oapi0427}, OAPI of different online algorithms are shown. The id of CBMF is $4312$, the blue line. In Figure \ref{fig:oapi0415}, we can see that CBMF is relatively stable and its performance are among the best. In Figure \ref{fig:oapi0427} , CBMF outperforms other algorithms significantly. In Table \ref{tbl:cvravg}, we can see that although CBMF may not be the best in one week's performance due to insuffient data. But its overall OAPI is the highest.
+
+If we look at the Figure carefully we can find that, CBMF tends to achieve better performance in holidays( 4-11, 4-12, 5-1, 5-2 are all Chinese holidays). This may because in holidays, users tends to buy something which they are long for while in ordinary days users may buy some necessary first. CBMF captures users' desire to buy something they like instead of they need, so CBMF will acheive better performance in holidays.
+
+
+\subsection{Pay amount per impression}
+
+\begin{figure}
+\begin{center}
+
+\includegraphics[width=400px]{fig/yixunexp/PAPI0415.png}
+\caption{\label{fig:papi0415} PAPI of online algorithms  from 0409 to 0415.}
+\end{center}
+\end{figure}
+
+\begin{figure}
+\begin{center}
+
+\includegraphics[width=400px]{fig/yixunexp/PAPI0421.png}
+\caption{\label{fig:papi0501} PAPI of online algorithms  from 0426 to 0501.}
+\end{center}
+\end{figure}
+
+In Figure \ref{fig:papi0415} and Figure \ref{fig:papi0501}, OAPI of different online algorithms are shown. The id of CBMF is $4312$, the blue line. We can see that CBMF outperforms other algorithms in these two periods. Different from the observations in OAPI, users may have high OAPI in Mondays and Sundays, that may bacause users may not pay right after they place their order. After thinking carefully, they may finally pay which leads to the delay effect in OAPI.
