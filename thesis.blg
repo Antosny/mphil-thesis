@@ -14,54 +14,61 @@ You're missing a field name---line 1001 of file reference.bib
 I'm skipping whatever remains of this entry
 A bad cross reference---entry "/uai/ZhangCY10"
 refers to entry "DBLP:conf/uai/2010", which doesn't exist
+A bad cross reference---entry "DBLP:dblp_conf/aaai/LinKH14"
+refers to entry "2014", which doesn't exist
 A bad cross reference---entry "/kdd/SinghG08"
 refers to entry "DBLP:conf/kdd/2008", which doesn't exist
 A bad cross reference---entry "/ijcai/PanLXY11"
 refers to entry "DBLP:conf/ijcai/2011", which doesn't exist
+A bad cross reference---entry "DBLP:dblp_conf/recsys/LercheJ14"
+refers to entry "2014", which doesn't exist
+A bad cross reference---entry "DBLP:dblp_conf/recsys/Aiolli14"
+refers to entry "2014", which doesn't exist
 Warning--I didn't find a database entry for "DBLP:conf/kdd/2008"
 Warning--I didn't find a database entry for "DBLP:conf/uai/2010"
 Warning--I didn't find a database entry for "DBLP:conf/ijcai/2011"
+Warning--I didn't find a database entry for "2014"
 Warning--empty publisher in /ki/bhaskar06cross
 Warning--empty booktitle in AAAI101649
-You've used 38 entries,
+You've used 41 entries,
             2118 wiz_defined-function locations,
-            735 strings with 11478 characters,
-and the built_in function-call counts, 15033 in all, are:
-= -- 1491
-> -- 668
-< -- 22
-+ -- 263
-- -- 222
-* -- 1001
-:= -- 2319
-add.period$ -- 122
-call.type$ -- 38
-change.case$ -- 223
+            752 strings with 12012 characters,
+and the built_in function-call counts, 16351 in all, are:
+= -- 1622
+> -- 706
+< -- 25
++ -- 278
+- -- 234
+* -- 1071
+:= -- 2499
+add.period$ -- 131
+call.type$ -- 41
+change.case$ -- 238
 chr.to.int$ -- 0
-cite$ -- 40
-duplicate$ -- 642
-empty$ -- 1216
-format.name$ -- 226
-if$ -- 3308
+cite$ -- 43
+duplicate$ -- 711
+empty$ -- 1339
+format.name$ -- 238
+if$ -- 3624
 int.to.chr$ -- 0
-int.to.str$ -- 38
-missing$ -- 36
-newline$ -- 191
-num.names$ -- 80
-pop$ -- 265
+int.to.str$ -- 41
+missing$ -- 39
+newline$ -- 206
+num.names$ -- 86
+pop$ -- 289
 preamble$ -- 1
-purify$ -- 187
+purify$ -- 199
 quote$ -- 0
-skip$ -- 501
+skip$ -- 562
 stack$ -- 0
-substring$ -- 945
-swap$ -- 218
-text.length$ -- 20
+substring$ -- 1044
+swap$ -- 251
+text.length$ -- 23
 text.prefix$ -- 0
 top$ -- 0
-type$ -- 150
+type$ -- 162
 warning$ -- 2
-while$ -- 135
-width$ -- 40
-write$ -- 423
-(There were 5 error messages)
+while$ -- 147
+width$ -- 43
+write$ -- 456
+(There were 8 error messages)

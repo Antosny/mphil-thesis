@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.1415926-2.5-1.40.14 (TeX Live 2013/Debian) (format=pdflatex 2014.6.3)  1 NOV 2014 12:24
+This is pdfTeX, Version 3.1415926-2.5-1.40.14 (TeX Live 2013/Debian) (format=pdflatex 2014.6.3)  4 NOV 2014 17:38
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -557,146 +557,141 @@ Missing character: There is no — in font cmr12!
 CHAPTER 3.
 [13
 
-] [14] <fig/trimf.jpg, id=86, 636.87938pt x 427.5975pt>
+] [14]
+
+LaTeX Warning: `h' float specifier changed to `ht'.
+
+[15] <fig/trimf.jpg, id=90, 636.87938pt x 427.5975pt>
 File: fig/trimf.jpg Graphic file (type jpg)
  <use fig/trimf.jpg>
-Package pdftex.def Info: fig/trimf.jpg used on input line 63.
+Package pdftex.def Info: fig/trimf.jpg used on input line 73.
 (pdftex.def)             Requested size: 401.50146pt x 269.56401pt.
 
-[15] [16 <./fig/trimf.jpg>]
-Overfull \hbox (17.62482pt too wide) detected at line 137
+[16] [17 <./fig/trimf.jpg>]
+Overfull \hbox (17.62482pt too wide) detected at line 147
 [][] 
  []
 
-[17] [18]
-LaTeX Font Info:    Try loading font information for OMS+ptm on input line 187.
+[18] [19]
+LaTeX Font Info:    Try loading font information for OMS+ptm on input line 197.
 
  (/usr/share/texlive/texmf-dist/tex/latex/psnfss/omsptm.fd
 File: omsptm.fd 
 )
 LaTeX Font Info:    Font shape `OMS/ptm/m/n' in size <12> not available
-(Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 187.
- [19]
-[20] [21] [22] [23]) (./content/cbmf.tex [24]
+(Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 197.
+ [20]
+[21] [22] [23] [24]) (./content/cbmf.tex [25]
 CHAPTER 4.
-<fig/d.jpg, id=124, 4087.27pt x 1373.13pt>
+<fig/d.jpg, id=127, 4087.27pt x 1373.13pt>
 File: fig/d.jpg Graphic file (type jpg)
  <use fig/d.jpg>
 Package pdftex.def Info: fig/d.jpg used on input line 17.
 (pdftex.def)             Requested size: 401.50146pt x 134.86963pt.
- [25
+ [26
 
-] [26 <./fig/d.jpg>]
-Overfull \hbox (17.62482pt too wide) detected at line 71
+]
+Overfull \hbox (17.62482pt too wide) detected at line 67
 [][] 
  []
 
-[27]
+[27 <./fig/d.jpg>]
 Missing character: There is no â in font ptmr7t!
 Missing character: There is no € in font ptmr7t!
 Missing character: There is no ™ in font ptmr7t!
- [28] [29] <fig/yixunexp/ctr0415.png, id=141, 702.625pt x 351.3125pt>
+ [28] [29] [30] [31]
+<fig/yixunexp/ctr0415.png, id=148, 702.625pt x 351.3125pt>
 File: fig/yixunexp/ctr0415.png Graphic file (type png)
 
 <use fig/yixunexp/ctr0415.png>
-Package pdftex.def Info: fig/yixunexp/ctr0415.png used on input line 135.
+Package pdftex.def Info: fig/yixunexp/ctr0415.png used on input line 159.
 (pdftex.def)             Requested size: 401.50146pt x 200.75409pt.
 
-<fig/yixunexp/ctr0424.png, id=143, 702.625pt x 351.3125pt>
+<fig/yixunexp/ctr0424.png, id=150, 702.625pt x 351.3125pt>
 File: fig/yixunexp/ctr0424.png Graphic file (type png)
 
 <use fig/yixunexp/ctr0424.png>
-Package pdftex.def Info: fig/yixunexp/ctr0424.png used on input line 144.
+Package pdftex.def Info: fig/yixunexp/ctr0424.png used on input line 168.
 (pdftex.def)             Requested size: 401.50146pt x 200.75409pt.
- [30 <./fig/yixunexp/ctr0415.png>]
-<fig/yixunexp/OAPI0415.png, id=148, 602.25pt x 301.125pt>
+ [32] [33 <./fig/yixunexp/ctr0415.png> <./fig/yixunexp/ctr0424.png>] <fig/yixun
+exp/OAPI0415.png, id=159, 602.25pt x 301.125pt>
 File: fig/yixunexp/OAPI0415.png Graphic file (type png)
 
 <use fig/yixunexp/OAPI0415.png>
-Package pdftex.def Info: fig/yixunexp/OAPI0415.png used on input line 156.
+Package pdftex.def Info: fig/yixunexp/OAPI0415.png used on input line 182.
 (pdftex.def)             Requested size: 401.50146pt x 200.76021pt.
 
-<fig/yixunexp/OAPI0427.png, id=149, 602.25pt x 301.125pt>
+<fig/yixunexp/OAPI0427.png, id=160, 602.25pt x 301.125pt>
 File: fig/yixunexp/OAPI0427.png Graphic file (type png)
 
 <use fig/yixunexp/OAPI0427.png>
-Package pdftex.def Info: fig/yixunexp/OAPI0427.png used on input line 166.
+Package pdftex.def Info: fig/yixunexp/OAPI0427.png used on input line 192.
 (pdftex.def)             Requested size: 401.50146pt x 200.76021pt.
 
-<fig/yixunexp/cvr0502.png, id=150, 602.25pt x 301.125pt>
+<fig/yixunexp/cvr0502.png, id=161, 602.25pt x 301.125pt>
 File: fig/yixunexp/cvr0502.png Graphic file (type png)
 
 <use fig/yixunexp/cvr0502.png>
-Package pdftex.def Info: fig/yixunexp/cvr0502.png used on input line 176.
+Package pdftex.def Info: fig/yixunexp/cvr0502.png used on input line 202.
 (pdftex.def)             Requested size: 401.50146pt x 200.76021pt.
 
-Overfull \hbox (22.54472pt too wide) in paragraph at lines 186--201
+Overfull \hbox (22.54472pt too wide) in paragraph at lines 212--227
  [] 
  []
 
-[31 <./fig/yixunexp/ctr0424.png>] [32 <./fig/yixunexp/OAPI0415.png> <./fig/yixu
-nexp/OAPI0427.png>] <fig/yixunexp/PAPI0415.png, id=160, 602.25pt x 301.125pt>
+[34 <./fig/yixunexp/OAPI0415.png>] [35 <./fig/yixunexp/OAPI0427.png> <./fig/yix
+unexp/cvr0502.png>] <fig/yixunexp/PAPI0415.png, id=172, 602.25pt x 301.125pt>
 File: fig/yixunexp/PAPI0415.png Graphic file (type png)
 
 <use fig/yixunexp/PAPI0415.png>
-Package pdftex.def Info: fig/yixunexp/PAPI0415.png used on input line 216.
+Package pdftex.def Info: fig/yixunexp/PAPI0415.png used on input line 242.
 (pdftex.def)             Requested size: 401.50146pt x 200.76021pt.
 
-<fig/yixunexp/PAPI0421.png, id=161, 602.25pt x 301.125pt>
+<fig/yixunexp/PAPI0421.png, id=173, 602.25pt x 301.125pt>
 File: fig/yixunexp/PAPI0421.png Graphic file (type png)
 
 <use fig/yixunexp/PAPI0421.png>
-Package pdftex.def Info: fig/yixunexp/PAPI0421.png used on input line 224.
+Package pdftex.def Info: fig/yixunexp/PAPI0421.png used on input line 250.
 (pdftex.def)             Requested size: 401.50146pt x 200.76021pt.
-) (./content/conclusion.tex [33 <./fig/yixunexp/cvr0502.png>] [34 <./fig/yixune
-xp/PAPI0415.png> <./fig/yixunexp/PAPI0421.png>]
+ [36 <./fig/yixunexp/PAPI0415.png>])
+(./content/conclusion.tex [37 <./fig/yixunexp/PAPI0421.png>]
 CHAPTER 5.
-
-LaTeX Warning: Reference `sec:long-tail' on page 35 undefined on input line 11.
-
-
-[35
+[38
 
 ]) (./thesis.bbl
 References
-[36] [37
+[39] [40
 
-] [38] [39] [40]) [41] (./thesis.aux)
-
-LaTeX Warning: There were undefined references.
-
-
-LaTeX Warning: Label(s) may have changed. Rerun to get cross-references right.
-
- ) 
+] [41] [42] [43]) [44] (./thesis.aux) ) 
 Here is how much of TeX's memory you used:
- 7241 strings out of 493304
- 100005 string characters out of 6139872
- 235580 words of memory out of 5000000
- 10514 multiletter control sequences out of 15000+600000
+ 7243 strings out of 493304
+ 100084 string characters out of 6139872
+ 234580 words of memory out of 5000000
+ 10516 multiletter control sequences out of 15000+600000
  25094 words of font info for 65 fonts, out of 8000000 for 9000
  957 hyphenation exceptions out of 8191
- 38i,11n,36p,984b,612s stack positions out of 5000i,500n,10000p,200000b,80000s
-{/usr/share/texlive/texmf-dist/fonts/enc/dvips/base/8r.enc}</usr/share/texliv
-e/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx10.pfb></usr/share/texlive/texm
-f-dist/fonts/type1/public/amsfonts/cm/cmbx12.pfb></usr/share/texlive/texmf-dist
-/fonts/type1/public/amsfonts/cm/cmex10.pfb></usr/share/texlive/texmf-dist/fonts
-/type1/public/amsfonts/cm/cmmi12.pfb></usr/share/texlive/texmf-dist/fonts/type1
-/public/amsfonts/cm/cmmi6.pfb></usr/share/texlive/texmf-dist/fonts/type1/public
-/amsfonts/cm/cmmi8.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfon
-ts/cm/cmr12.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/c
-mr6.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr7.pfb>
-</usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr8.pfb></usr/sh
-are/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/share/te
-xlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy8.pfb></usr/share/texlive/t
-exmf-dist/fonts/type1/public/amsfonts/symbols/msbm10.pfb></usr/share/texlive/te
-xmf-dist/fonts/type1/urw/times/utmb8a.pfb></usr/share/texlive/texmf-dist/fonts/
-type1/urw/times/utmr8a.pfb></usr/share/texlive/texmf-dist/fonts/type1/urw/times
-/utmri8a.pfb>
-Output written on thesis.pdf (50 pages, 714784 bytes).
+ 38i,11n,36p,917b,612s stack positions out of 5000i,500n,10000p,200000b,80000s
+{/usr/share/texlive/texmf-dist/fonts/enc
+/dvips/base/8r.enc}</usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/c
+m/cmbx10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx
+12.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmex10.pfb
+></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cmextra/cmex8.pfb><
+/usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi12.pfb></usr/s
+hare/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi6.pfb></usr/share/te
+xlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi8.pfb></usr/share/texlive/t
+exmf-dist/fonts/type1/public/amsfonts/cm/cmr12.pfb></usr/share/texlive/texmf-di
+st/fonts/type1/public/amsfonts/cm/cmr6.pfb></usr/share/texlive/texmf-dist/fonts
+/type1/public/amsfonts/cm/cmr7.pfb></usr/share/texlive/texmf-dist/fonts/type1/p
+ublic/amsfonts/cm/cmr8.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/am
+sfonts/cm/cmsy10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts
+/cm/cmsy8.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/symbol
+s/msbm10.pfb></usr/share/texlive/texmf-dist/fonts/type1/urw/times/utmb8a.pfb></
+usr/share/texlive/texmf-dist/fonts/type1/urw/times/utmr8a.pfb></usr/share/texli
+ve/texmf-dist/fonts/type1/urw/times/utmri8a.pfb>
+Output written on thesis.pdf (53 pages, 732856 bytes).
 PDF statistics:
- 249 PDF objects out of 1000 (max. 8388607)
- 163 compressed objects within 2 object streams
+ 262 PDF objects out of 1000 (max. 8388607)
+ 172 compressed objects within 2 object streams
  0 named destinations out of 1000 (max. 500000)
  46 words of extra memory for PDF output out of 10000 (max. 10000000)
 

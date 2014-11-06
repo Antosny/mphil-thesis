@@ -1,5 +1,11 @@
 \begin{thebibliography}{10}
 
+\bibitem{DBLP:dblp_conf/recsys/Aiolli14}
+Fabio Aiolli.
+\newblock Convex auc optimization for top-n recommendation with implicit
+  feedback.
+\newblock In {\em RecSys}, pages 293--296, 2014.
+
 \bibitem{DBLP:conf/aaai/2011}
 Wolfram Burgard and Dan Roth, editors.
 \newblock {\em Proceedings of the Twenty-Fifth AAAI Conference on Artificial
@@ -82,6 +88,11 @@ Yehuda Koren, Robert Bell, and Chris Volinsky.
 \newblock Matrix factorization techniques for recommender systems.
 \newblock {\em Computer}, 42(8):30--37, 2009.
 
+\bibitem{DBLP:dblp_conf/recsys/LercheJ14}
+Lukas Lerche and Dietmar Jannach.
+\newblock Using graded implicit feedback for bayesian personalized ranking.
+\newblock In {\em RecSys}, pages 353--356, 2014.
+
 \bibitem{/ijcai/libin09}
 Bin Li, Qiang Yang, and Xiangyang Xue.
 \newblock Can movies and books collaborate?: cross-domain collaborative
@@ -105,6 +116,12 @@ Tao Li, Yi~Zhang, and Vikas Sindhwani.
   Language Processing of the AFNLP: Volume 1 - Volume 1}, ACL '09, pages
   244--252, Stroudsburg, PA, USA, 2009. Association for Computational
   Linguistics.
+
+\bibitem{DBLP:dblp_conf/aaai/LinKH14}
+Christopher~H. Lin, Ece Kamar, and Eric Horvitz.
+\newblock Signals in the silence: Models of implicit feedback in a
+  recommendation system for crowdsourcing.
+\newblock In {\em AAAI}, pages 908--915, 2014.
 
 \bibitem{/tist/Lipczak-TIST11-Tag-Rec}
 Marek Lipczak and Evangelos Milios.

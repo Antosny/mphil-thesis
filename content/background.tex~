@@ -7,7 +7,7 @@ We classify our work to be most related to the works in the areas of cross-domai
 In Table~\ref{tbl:relatedW}, we summarize the related works under the cross-domain collaborative filtering context.
 To the best of our knowledge, no previous work for collaborative filtering has ever focused on knowledge transfer between implicit datasets and utilize both latent factor and rating pattern transfer.
 
-In the following, we would like to discuss the state-of-the-art methods for both Collaborative Filtering, Matrix Factorization and Transfer Learning.
+In the following, we would like to discuss the state-of-the-art methods for Collaborative Filtering, Matrix Factorization and Transfer Learning.
 
 
 \begin{table}[h]
@@ -84,7 +84,7 @@ A number of applications combine the memory-based and the model-based CF algorit
 
 \hspace{0.1in}
 \section{Matrix Factorization}
-In the mathematical discipline of linear algebra, a matrix decomposition or matrix factorization is a factorization of a matrix into a product of matrices. There are many different matrix decompositions; each finds use among a particular class of problems. In CF, usually user-item matrix is very sparse, we can decompose the original matrix into different low-rank matrix and then recover the dense matrix by multiply the low-rank matrix to produce recommendation results. There are two main methods of matrix factorizaion which are widely applied. 1. Singular value decomposition(SVD), 2. Non-negative matrix factorization(NMF).
+In the mathematical discipline of linear algebra, a matrix decomposition or matrix factorization is a factorization of a matrix into a product of matrices. There are many different matrix decompositions; each finds use among a particular class of problems. In CF, usually user-item matrix is very sparse, we can decompose the original matrix into different low-rank matrix and then recover the dense matrix by multiply the low-rank matrix to produce recommendation results. There are two main methods of matrix factorizaion which are widely applied: Singular value decomposition(SVD) and Non-negative matrix factorization(NMF).
 \hspace{0.05in}
 \subsection{Singular Value Decomposition}
 In linear algebra, the singular value decomposition (SVD) is a factorization of a real or complex matrix, with many useful applications in signal processing and statistics.
@@ -98,15 +98,15 @@ Non-negative matrix factorization (NMF) is a group of algorithms in multivariate
 Latent factor models are an alternative approach that tries to explain the ratings by characterizing both items and users on, say, 20 to 100 factors inferred from the ratings patterns. In movie recommendation, the discovered factors might measure obvious dimensions such as comedy versus
 drama, amount of action, or orientation to children. For users, each factor measures how much the user likes movies that score high on the corresponding movie factor. For movies, each factor measures the property of that movie.
 
-NMF decompose an original matrix $V$ into two matrices $W$ and $H$, s.t $V = WH$. $V$ is $m*n$, $W$ is $m*d$, $H$ is $d*n$. Usually $d \ll m,n$, is the dimension of latent factor, NMF methods put users and items into one common latent space. When judging whether a user likes an item, we can simply calculate by inner product.
+NMF decompose an original matrix $V$ into two matrices $W$ and $H$, s.t $V = WH$. $V$ is a $m*n$ matrix, $W$ is a $m*d$ matrix, $H$ is a $d*n$ matrix. Usually $d \ll m,n$, is the dimension of latent factor, NMF methods put users and items into one common latent space. When judging whether a user likes an item, we can simply calculate by inner product.
 
 \hspace{0.05in}
 \subsection{Non-negative Matrix Tri-factorizaion}
-As a transformation of NMF, Non-negative Matrix Tri-factorizaion(NMTF) decompose a matrix $X$ into three non-negative part : $X = USV$. Instead of mapping users and items to a same latent space, the three parts of NMTF can be interpreted as:
+As a transformation of NMF, Non-negative matrix tri-factorizaion(NMTF) decompose a matrix $X$ into three non-negative part : $X = USV$. Instead of mapping users and items to a same latent space, the three parts of NMTF can be interpreted as:
 \begin{itemize}
-\item $U$ users' soft-clustering matrix
-\item $S$ users' clusters vs items' clusters(cluster relationship matrix)
-\item $V$ items' soft-clustering matrix
+\item $U$:users' soft-clustering matrix
+\item $S$:users' clusters vs items' clusters(cluster relationship matrix)
+\item $V$:items' soft-clustering matrix
 \end{itemize}
 
 In ~\cite{Ding05onthe}, the authors proved that NMF is equivalent to k-means clustering. In ~\cite{Ding06orthogonalnonnegative} the authors also proved that NMTF can be regarded as a way of clustering. NMTF is well known in document processing, ~\cite{Li:2009:NMT:1687878.1687914} uses prior knowledge in lexical and NMTF to tackle the sentiment analysis problem, ~\cite{Zhuang:2011:EAW:1952191.1952195} exploits the relationship between word clusters and document classes in text classification problem.

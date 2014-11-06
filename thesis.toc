@@ -29,34 +29,35 @@
 \contentsline {subsection}{\numberline {3.1.2}Problem definition}{13}
 \contentsline {section}{\numberline {3.2}TRIMF}{14}
 \contentsline {subsection}{\numberline {3.2.1}Weighting scheme of TRIMF}{14}
-\contentsline {subsection}{\numberline {3.2.2}Transfer learning in TRIMF}{14}
-\contentsline {subsection}{\numberline {3.2.3}Object function}{15}
+\contentsline {subsection}{\numberline {3.2.2}Transfer learning in TRIMF}{15}
+\contentsline {subsection}{\numberline {3.2.3}Object function}{16}
 \contentsline {section}{\numberline {3.3}Solution to TRIMF \& Algorithm}{17}
-\contentsline {section}{\numberline {3.4}Experiment}{18}
-\contentsline {subsection}{\numberline {3.4.1}Datasets}{18}
-\contentsline {subsection}{\numberline {3.4.2}Metrics}{19}
-\contentsline {subsection}{\numberline {3.4.3}Baseline methods}{19}
-\contentsline {subsubsection}{non-transfer methods}{19}
-\contentsline {subsubsection}{transfer methods}{20}
-\contentsline {subsection}{\numberline {3.4.4}Results}{21}
-\contentsline {subsubsection}{Yixun short term data}{21}
-\contentsline {subsubsection}{Yixun long term data}{21}
-\contentsline {section}{\numberline {3.5}Performance comparison \& analysis}{23}
-\contentsline {subsubsection}{The effects of $UV$}{23}
-\contentsline {subsubsection}{The effects of sharing}{24}
-\contentsline {chapter}{{Chapter 4}\hspace {1em}Clustering-based Matrix Factorization for Online Shopping Prediction}{25}
-\contentsline {section}{\numberline {4.1}Limitation of TRIMF}{25}
-\contentsline {section}{\numberline {4.2}Feature construction in CBMF}{26}
-\contentsline {section}{\numberline {4.3}Clustering method in CBMF}{26}
-\contentsline {subsection}{\numberline {4.3.1}Simhash}{27}
-\contentsline {subsection}{\numberline {4.3.2}Minhash}{27}
-\contentsline {subsection}{\numberline {4.3.3}Simhash \& Minhash using MapReduce}{28}
-\contentsline {subsubsection}{Map phase}{28}
+\contentsline {section}{\numberline {3.4}Experiment}{19}
+\contentsline {subsection}{\numberline {3.4.1}Datasets}{19}
+\contentsline {subsection}{\numberline {3.4.2}Metrics}{20}
+\contentsline {subsection}{\numberline {3.4.3}Baseline methods}{20}
+\contentsline {subsubsection}{non-transfer methods}{20}
+\contentsline {subsubsection}{transfer methods}{21}
+\contentsline {subsection}{\numberline {3.4.4}Results}{22}
+\contentsline {subsubsection}{Yixun short term data}{22}
+\contentsline {subsubsection}{Yixun long term data}{22}
+\contentsline {section}{\numberline {3.5}Performance comparison \& analysis}{22}
+\contentsline {subsubsection}{The effects of cluster-level tranformation}{24}
+\contentsline {subsubsection}{The effects of latent vector sharing}{25}
+\contentsline {chapter}{{Chapter 4}\hspace {1em}Clustering-based Matrix Factorization for Leoline Shopping Prediction}{26}
+\contentsline {section}{\numberline {4.1}Limitation of TRIMF}{26}
+\contentsline {section}{\numberline {4.2}Clustering method in CBMF}{27}
+\contentsline {subsection}{\numberline {4.2.1}Simhash}{27}
+\contentsline {subsection}{\numberline {4.2.2}Minhash}{28}
+\contentsline {subsection}{\numberline {4.2.3}Simhash \& Minhash using MapReduce}{29}
+\contentsline {subsubsection}{Map phase}{29}
 \contentsline {subsubsection}{Reduce phase}{29}
-\contentsline {section}{\numberline {4.4}Matrix factorization in CBMF}{29}
-\contentsline {section}{\numberline {4.5}Experiments and results analysis}{30}
-\contentsline {subsection}{\numberline {4.5.1}Click through rate}{31}
-\contentsline {subsection}{\numberline {4.5.2}Order amount per impression}{31}
-\contentsline {subsection}{\numberline {4.5.3}Pay amount per impression}{33}
-\contentsline {chapter}{{Chapter 5}\hspace {1em}Conclusion and Future work}{35}
-\contentsline {chapter}{References}{37}
+\contentsline {section}{\numberline {4.3}Feature construction in CBMF}{30}
+\contentsline {section}{\numberline {4.4}Matrix factorization in CBMF}{31}
+\contentsline {section}{\numberline {4.5}Experiments and results analysis}{31}
+\contentsline {subsection}{\numberline {4.5.1}Baselines}{32}
+\contentsline {subsection}{\numberline {4.5.2}Click through rate}{32}
+\contentsline {subsection}{\numberline {4.5.3}Order amount per impression}{34}
+\contentsline {subsection}{\numberline {4.5.4}Pay amount per impression}{36}
+\contentsline {chapter}{{Chapter 5}\hspace {1em}Conclusion and Future work}{38}
+\contentsline {chapter}{References}{40}

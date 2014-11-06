@@ -7,7 +7,7 @@ We classify our work to be most related to the works in the areas of cross-domai
 In Table~\ref{tbl:relatedW}, we summarize the related works under the cross-domain collaborative filtering context.
 To the best of our knowledge, no previous work for collaborative filtering has ever focused on knowledge transfer between implicit datasets and utilize both latent factor and rating pattern transfer.
 
-In the following, we would like to discuss the state-of-the-art methods for both Collaborative Filtering, Matrix Factorization and Transfer Learning.
+In the following, we would like to discuss the state-of-the-art methods for Collaborative Filtering, Matrix Factorization and Transfer Learning.
 
 
 \begin{table}[h]
@@ -84,7 +84,7 @@ A number of applications combine the memory-based and the model-based CF algorit
 
 \hspace{0.1in}
 \section{Matrix Factorization}
-In the mathematical discipline of linear algebra, a matrix decomposition or matrix factorization is a factorization of a matrix into a product of matrices. There are many different matrix decompositions; each finds use among a particular class of problems. In CF, usually user-item matrix is very sparse, we can decompose the original matrix into different low-rank matrix and then recover the dense matrix by multiply the low-rank matrix to produce recommendation results. There are two main methods of matrix factorizaion which are widely applied. 1. Singular value decomposition(SVD), 2. Non-negative matrix factorization(NMF).
+In the mathematical discipline of linear algebra, a matrix decomposition or matrix factorization is a factorization of a matrix into a product of matrices. There are many different matrix decompositions; each finds use among a particular class of problems. In CF, usually user-item matrix is very sparse, we can decompose the original matrix into different low-rank matrix and then recover the dense matrix by multiply the low-rank matrix to produce recommendation results. There are two main methods of matrix factorizaion which are widely applied: Singular value decomposition(SVD) and Non-negative matrix factorization(NMF).
 \hspace{0.05in}
 \subsection{Singular Value Decomposition}
 In linear algebra, the singular value decomposition (SVD) is a factorization of a real or complex matrix, with many useful applications in signal processing and statistics.
@@ -102,11 +102,11 @@ NMF decompose an original matrix $V$ into two matrices $W$ and $H$, s.t $V = WH$
 
 \hspace{0.05in}
 \subsection{Non-negative Matrix Tri-factorizaion}
-As a transformation of NMF, Non-negative Matrix Tri-factorizaion(NMTF) decompose a matrix $X$ into three non-negative part : $X = USV$. Instead of mapping users and items to a same latent space, the three parts of NMTF can be interpreted as:
+As a transformation of NMF, Non-negative matrix tri-factorizaion(NMTF) decompose a matrix $X$ into three non-negative part : $X = USV$. Instead of mapping users and items to a same latent space, the three parts of NMTF can be interpreted as:
 \begin{itemize}
-\item $U$ users' soft-clustering matrix
-\item $S$ users' clusters vs items' clusters(cluster relationship matrix)
-\item $V$ items' soft-clustering matrix
+\item $U$:users' soft-clustering matrix
+\item $S$:users' clusters vs items' clusters(cluster relationship matrix)
+\item $V$:items' soft-clustering matrix
 \end{itemize}
 
 In ~\cite{Ding05onthe}, the authors proved that NMF is equivalent to k-means clustering. In ~\cite{Ding06orthogonalnonnegative} the authors also proved that NMTF can be regarded as a way of clustering. NMTF is well known in document processing, ~\cite{Li:2009:NMT:1687878.1687914} uses prior knowledge in lexical and NMTF to tackle the sentiment analysis problem, ~\cite{Zhuang:2011:EAW:1952191.1952195} exploits the relationship between word clusters and document classes in text classification problem.
@@ -127,7 +127,7 @@ Pan \etal~\cite{/ijcai/PanLXY11}, ~\cite{AAAI101649} used a matrix factorization
 Cao \etal~\cite{cao2010transfer} exploited correlations among different CF domains via learning. E.g we factorize each matrix $X_d$ by $X_d = F_d G_d^T$ where $F_d$ and $G_d$ are the user and the item latent features, respectively. This approach tries to explore the correlations between user domains {$F_d$} and/or item domains {$G_d$} and the knowledge can be
 transferred across domains through the correlation matrices.
 
-Our method(TRIMF) leverage rating pattern sharing and latent feature sharing carefully by designing a matrix tri-factorization framework. TRIMF can handle knowledge transfer from implicit(explicit) dataset A to implicit(explicit) dataset B. Also, TRIMF can be set to suit different tasks.
+Our method(TRIMF) leverage rating pattern sharing and latent feature sharing carefully by designing a matrix tri-factorization framework. TRIMF can handle knowledge transfer from implicit dataset A to implicit dataset B. Also, TRIMF can be set to suit different tasks.
 
 \hspace{0.05in}
 \subsection{Large Scale Transfer Learning}
