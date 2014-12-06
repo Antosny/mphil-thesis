@@ -1,0 +1,65 @@
+\contentsline {chapter}{Title Page}{\nbi i}
+\contentsline {chapter}{Authorization Page}{\nbi ii}
+\contentsline {chapter}{Signature Page}{\nbi iii}
+\contentsline {chapter}{Acknowledgments}{\nbi iv}
+\contentsline {chapter}{Table of Contents}{\nbi v}
+\contentsline {chapter}{List of Figures}{\nbi vii}
+\contentsline {chapter}{List of Tables}{\nbi viii}
+\contentsline {chapter}{Abstract}{\nbi ix}
+\contentsline {chapter}{{Chapter 1}\hspace {1em}Introduction}{1}
+\contentsline {section}{\numberline {1.1}Motivation}{1}
+\contentsline {section}{\numberline {1.2}Contributions}{2}
+\contentsline {section}{\numberline {1.3}Thesis Outline}{3}
+\contentsline {chapter}{{Chapter 2}\hspace {1em}Background}{4}
+\contentsline {section}{\numberline {2.1}Collaborative Filtering}{4}
+\contentsline {subsection}{\numberline {2.1.1}Memory-based CF}{5}
+\contentsline {subsection}{\numberline {2.1.2}Model-based CF}{6}
+\contentsline {subsection}{\numberline {2.1.3}Hybrid models}{7}
+\contentsline {section}{\numberline {2.2}Matrix Factorization}{7}
+\contentsline {subsection}{\numberline {2.2.1}Singular Value Decomposition}{8}
+\contentsline {subsection}{\numberline {2.2.2}Non-negative Matrix Factorization}{8}
+\contentsline {subsection}{\numberline {2.2.3}Non-negative Matrix Tri-factorization}{9}
+\contentsline {section}{\numberline {2.3}Transfer Learning}{10}
+\contentsline {subsection}{\numberline {2.3.1}Transfer Learning for Collaborative Filtering}{10}
+\contentsline {subsection}{\numberline {2.3.2}Large Scale Transfer Learning}{11}
+\contentsline {subsubsection}{Map-Reduce Framework}{11}
+\contentsline {chapter}{{Chapter 3}\hspace {1em}Transfer Learning in One Class CF for Shopping Prediction}{13}
+\contentsline {section}{\numberline {3.1}Problem settings}{13}
+\contentsline {subsection}{\numberline {3.1.1}Background}{13}
+\contentsline {subsection}{\numberline {3.1.2}Problem definition}{13}
+\contentsline {section}{\numberline {3.2}TRIMF}{14}
+\contentsline {subsection}{\numberline {3.2.1}Weighting scheme of TRIMF}{14}
+\contentsline {subsection}{\numberline {3.2.2}Transfer learning in TRIMF}{15}
+\contentsline {subsection}{\numberline {3.2.3}Object function}{16}
+\contentsline {section}{\numberline {3.3}Solution to TRIMF \& Algorithm}{17}
+\contentsline {section}{\numberline {3.4}Experiments}{19}
+\contentsline {subsection}{\numberline {3.4.1}Datasets}{19}
+\contentsline {subsection}{\numberline {3.4.2}Metrics}{20}
+\contentsline {subsection}{\numberline {3.4.3}Baseline methods}{20}
+\contentsline {subsubsection}{non-transfer methods}{21}
+\contentsline {subsubsection}{transfer methods}{22}
+\contentsline {subsection}{\numberline {3.4.4}Results}{22}
+\contentsline {subsubsection}{Yixun short term data}{22}
+\contentsline {subsubsection}{Yixun long term data}{24}
+\contentsline {section}{\numberline {3.5}Performance comparison \& analysis}{24}
+\contentsline {subsubsection}{The effects of cluster-level transformation}{25}
+\contentsline {subsubsection}{The effects of latent vector sharing}{25}
+\contentsline {chapter}{{Chapter 4}\hspace {1em}Clustering-based Matrix Factorization for Online Shopping Prediction}{27}
+\contentsline {section}{\numberline {4.1}Limitation of TRIMF}{27}
+\contentsline {section}{\numberline {4.2}Clustering method in CBMF}{28}
+\contentsline {subsection}{\numberline {4.2.1}Simhash}{28}
+\contentsline {subsection}{\numberline {4.2.2}Minhash}{29}
+\contentsline {subsection}{\numberline {4.2.3}Simhash \& Minhash using MapReduce}{30}
+\contentsline {subsubsection}{Map phase}{30}
+\contentsline {subsubsection}{Reduce phase}{30}
+\contentsline {section}{\numberline {4.3}Feature construction in CBMF}{31}
+\contentsline {section}{\numberline {4.4}Matrix factorization in CBMF}{32}
+\contentsline {section}{\numberline {4.5}Offline Experiments}{32}
+\contentsline {subsection}{\numberline {4.5.1}Result analysis}{33}
+\contentsline {section}{\numberline {4.6}Online Experiments}{33}
+\contentsline {subsection}{\numberline {4.6.1}Baselines}{36}
+\contentsline {subsection}{\numberline {4.6.2}Click through rate}{38}
+\contentsline {subsection}{\numberline {4.6.3}Order amount per impression}{38}
+\contentsline {subsection}{\numberline {4.6.4}Pay amount per impression}{41}
+\contentsline {chapter}{{Chapter 5}\hspace {1em}Conclusion and Future work}{42}
+\contentsline {chapter}{References}{44}

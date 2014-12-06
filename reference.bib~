@@ -375,7 +375,22 @@ ISSN={1550-4786},}
     publisher = {}
 }
 
-
+@inproceedings{Indyk:1998:ANN:276698.276876,
+ author = {Indyk, Piotr and Motwani, Rajeev},
+ title = {Approximate Nearest Neighbors: Towards Removing the Curse of Dimensionality},
+ booktitle = {Proceedings of the Thirtieth Annual ACM Symposium on Theory of Computing},
+ series = {STOC '98},
+ year = {1998},
+ isbn = {0-89791-962-9},
+ location = {Dallas, Texas, USA},
+ pages = {604--613},
+ numpages = {10},
+ url = {http://doi.acm.org/10.1145/276698.276876},
+ doi = {10.1145/276698.276876},
+ acmid = {276876},
+ publisher = {ACM},
+ address = {New York, NY, USA},
+} 
 @inproceedings{das2007google,
   title={Google news personalization: scalable online collaborative filtering},
   author={Das, Abhinandan S and Datar, Mayur and Garg, Ashutosh and Rajaram, Shyam},
@@ -623,12 +638,52 @@ year=           {2008}
   bibsource = {DBLP, http://dblp.uni-trier.de}
 }
 
+@inproceedings{DBLP:dblp_conf/recsys/LercheJ14,
+   author              = {Lukas Lerche and 
+                          Dietmar Jannach},
+   title               = {Using graded implicit feedback for bayesian personalized ranking.},
+   booktitle           = {RecSys},
+   year                = {2014},
+   pages               = {353-356},
+   ee                  = {http://doi.acm.org/10.1145/2645710.2645759},
+   crossref            = {2014},
+}
+
+
+
+@inproceedings{DBLP:dblp_conf/aaai/LinKH14,
+   author              = {Christopher H. Lin and 
+                          Ece Kamar and 
+                          Eric Horvitz},
+   title               = {Signals in the Silence: Models of Implicit Feedback in a Recommendation System for Crowdsourcing.},
+   booktitle           = {AAAI},
+   year                = {2014},
+   pages               = {908-915},
+   ee                  = {http://www.aaai.org/ocs/index.php/AAAI/AAAI14/paper/view/8425},
+   crossref            = {2014},
+}
+
+
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%% ACM-TIST
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%% ========================================================
 % CF techniques
-
+@inproceedings{Rendle:2009:BBP:1795114.1795167,
+ author = {Rendle, Steffen and Freudenthaler, Christoph and Gantner, Zeno and Schmidt-Thieme, Lars},
+ title = {BPR: Bayesian Personalized Ranking from Implicit Feedback},
+ booktitle = {Proceedings of the Twenty-Fifth Conference on Uncertainty in Artificial Intelligence},
+ series = {UAI '09},
+ year = {2009},
+ isbn = {978-0-9749039-5-8},
+ location = {Montreal, Quebec, Canada},
+ pages = {452--461},
+ numpages = {10},
+ url = {http://dl.acm.org/citation.cfm?id=1795114.1795167},
+ acmid = {1795167},
+ publisher = {AUAI Press},
+ address = {Arlington, Virginia, United States},
+} 
 @article{/tist/LibFM-TIST12,
  author = {Steffen Rendle},
  title = {Factorization Machines with libFM},
