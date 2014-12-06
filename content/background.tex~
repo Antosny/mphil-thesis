@@ -1,13 +1,13 @@
-\chapter{Background}
+﻿\chapter{Background}
 \label{chp:bg}
 
-In this chapter, we would like to give a brief review of the related literatures.
-We classify our work to be most related to the works in the areas of cross-domain collaborative filtering.
+In this chapter, we give a brief review of the related literatures.
+We classify our work as most related to the works in the areas of cross-domain collaborative filtering.
 
 In Table~\ref{tbl:relatedW}, we summarize the related works under the cross-domain collaborative filtering context.
-To the best of our knowledge, no previous work for collaborative filtering has ever focused on knowledge transfer between implicit datasets and utilize both latent factor and rating pattern transfer.
+To the best of our knowledge, no previous work for collaborative filtering has ever focused on knowledge transfer between implicit datasets, or use both latent factor and rating pattern transfer.
 
-In the following, we would like to discuss the state-of-the-art methods for both Collaborative Filtering, Matrix Factorization and Transfer Learning.
+In the following, we would like to discuss the state-of-the-art methods for Collaborative Filtering, Matrix Factorization and Transfer Learning.
 
 
 \begin{table}[h]
@@ -34,28 +34,28 @@ In the following, we would like to discuss the state-of-the-art methods for both
 \section{Collaborative Filtering}
 Collaborative filtering (\cite{/computer/yehuda09matrix}, \cite{/tist/LibFM-TIST12}) as an intelligent component in recommender systems (\cite{/tist/TIST11-Yu-ZHENG-Travel-Rec}, \cite{/tist/Lipczak-TIST11-Tag-Rec}) has gained extensive interest in both academia and industry.
 
-Collaborative filtering(CF) methods are based on collecting and analyzing a large amount of information on users' behaviors, activities or preferences and predicting what users will like in the future based on their similar users. The underlying assumption of the collaborative filtering approach is that, if a person A has the same opinion as B on an issue, A is more likely to have B's opinion on a different issue x than to have the opinion on x of a randomly chosen person. For example, a collaborative filtering recommendation system for television tastes could make predictions about which television show a user should like given a partial list of this user's tastes (likes or dislikes, ratings, etc).
+Collaborative filtering(CF) methods are based on collecting and analyzing information on users’ behaviors, activities or preferences and predicting what users will like in the future based on similar users. The underlying assumption of the CF approach is that people who agree in the past will agree in the future too and they will like similar items to those they liked in the past. For example, a CF recommendation system for television could predict which show a user should like given a partial list of this user’s tastes (likes, dislikes or ratings, etc.).
 
-There are three types of CF: memory-based, model-based and hybrid.
+There are three types of CFs: memory-based, model-based and hybrid.
 
 \hspace{0.05in}
 \subsection{Memory-based CF}
-This mechanism uses user rating data to compute the similarity between users or items. The similarity is then used for making recommendations. The memory-based method is used in many commercial systems, because it is easy to implement and is effective given plenty of records and doesn't produce a model. Typical examples of this mechanism are neighborhood based CF and item-based/user-based top-N recommendations\cite{su2009survey}.
+This mechanism uses user rating data to compute the similarity between users or items. The similarity is then used for making recommendations. The memory-based method is used in many commercial systems, because it is easy to implement, is effective given plenty of records and doesn’t produce a model. Typical examples of this mechanism are the neighborhood based CF and item-based/user-based top-N recommendations \cite{su2009survey}.
 
 The advantages of this approach include:
 \begin{itemize}
-\item The explainability of the results, which is an important aspect of recommendation systems.
-\item It is easy to setup and use.
+\item The interpretability of the results, which is an important aspect of recommendation systems.
+\item Ease of setup and use.
 \item New data can be added easily and incrementally.
-\item It need not consider contents of the items being recommended.
-\item The mechanism scales well with co-rated items.
+\item Content of items being recommended need not be considered.
+\item Mechanism scales well with co-rated items.
 \end{itemize}
 
 However, there are several disadvantages with this approach:
 \begin{itemize}
-\item It requires plenty of human ratings.
-\item Its performance decreases when data gets sparse, which is a common phenomenon with web related items.
-\item Although it can efficiently handle new users, adding new items becomes more complicated since that representation usually relies on a specific vector space. That would require to include the new item and re-insert all the elements in the structure. This prevents the scalability of this approach.
+\item Large numbers of human ratings are required.
+\item Performance decreases when data gets sparse, which is a common phenomenon with web related items.
+\item Although it can efficiently handle new users, adding new items becomes more complicated since the representation usually relies on a specific vector space. This would require including a new item and re-inserting all the elements in the structure, preventing the scalability of the approach.
 \end{itemize}
 
 \hspace{0.05in}
@@ -66,82 +66,79 @@ probabilistic mixture models~\cite{hofmann04cf,jin:decoupled}, Bayesian networks
 
 There are several advantages with this paradigm:
 \begin{itemize}
-\item It handles the sparsity better than memory based ones.
-\item This helps with scalability with large data sets.
+\item It handles the sparsity better than memory based ones. This helps with scalability with large data sets.
 \item It improves the prediction performance.
 \item It gives an intuitive rationale for the recommendations.
 \end{itemize}
 
-The disadvantage of this approach is the expensive model building. On the one hand, the modern recommendation system usually have petabytes of records as input; On the other hand, the convergence of most models requires intensive computation. One needs to have a tradeoff between prediction performance and scalability.
+The disadvantage of this approach is the expensive model building. On the one hand, the modern recommendation system usually has petabytes of records as input; on the other hand, the convergence of most models requires intensive computation. There needs to be a tradeoff between prediction performance and scalability. Given the accuracy of model-based CFs, how to overcome the scalability issue has attracted much attention. With the rapid development of computation, researchers have been exploring the use of parallel systems to speed up complex model building. For example in ~\cite{chu2007map}, the authors showed that a variety of machine learning algorithms including k-means, logistic regression, naive Bayes, SVM, PCA, Gaussian discriminant analysis, EM and backpropagation (NN) could be speeded up by Google's map-reduce ~\cite{dean2008mapreduce} paradigm. In ~\cite{Shalev-Shwartz:2008:SOI:1390156.1390273}, the authors showed there is an inverse dependency of training set size and training speed in SVM(linear kernel). That is, if you get more training instances, you can increase your training speed.
 
-Given the accuracy of model-based CF, how to overcome the scalability issue has attracted much concern. With the rapid development of parallel computation, researchers have been exploring the use of parallel system to speed up the complex model building. For example in ~\cite{chu2007map}, the authors showed that a variety of machine learning algorithms including k-means, logistic regression, naive Bayes, SVM, PCA, gaussian discriminant analysis, EM and backpropagation (NN) could be speeded up by Google's map-reduce ~\cite{dean2008mapreduce} paradigm. In ~\cite{Shalev-Shwartz:2008:SOI:1390156.1390273}, the authors showed there is an inverse dependency of training set size and training speed in SVM(linear kernel). That is, if you get more training instances, you can speed up your training speed.
-
-In our method TRIMF, it's hard to parallellize the update step, so we develop a modified version of TRIMF and put it online.
+The update step is hard to parallelize in our method TRIMF. To get it online, we develop a varied version of TRIMF(CBMF).
 
 \hspace{0.05in}
 \subsection{Hybrid models}
-A number of applications combine the memory-based and the model-based CF algorithms. These overcome the limitations of native CF approaches. It improves the prediction performance. Importantly, it overcomes the CF problems such as sparsity and loss of information. However, they have increased complexity and are expensive to implement. Usually most of the commercial recommender systems are hybrid, for example, Google news recommender system ~\cite{das2007google}.
+A number of applications combine memory-based and model-based CF algorithms.
+These overcome the limits of native CF approaches and improve the prediction performance. Importantly, they overcome CF problems such as sparsity and loss of information. However, they have increased complexity and are expensive to implement. Most commercial recommender systems are usually hybrid, for example, Google news recommender system ~\cite{das2007google}.
 
 \hspace{0.1in}
 \section{Matrix Factorization}
-In the mathematical discipline of linear algebra, a matrix decomposition or matrix factorization is a factorization of a matrix into a product of matrices. There are many different matrix decompositions; each finds use among a particular class of problems. In CF, usually user-item matrix is very sparse, we can decompose the original matrix into different low-rank matrix and then recover the dense matrix by multiply the low-rank matrix to produce recommendation results. There are two main methods of matrix factorizaion which are widely applied. 1. Singular value decomposition(SVD), 2. Non-negative matrix factorization(NMF).
+In the mathematical discipline of linear algebra, a matrix factorization is a factorization of a matrix into a product of matrices. There are many different matrix factorizations; each finds use among a particular class of problems. Matrix factorization models map both users and items to a joint latent factor space of dimensionality $f$, such that user-item interactions are modeled as inner products in that space. There are two main methods of matrix factorization which are widely applied: Singular value decomposition(SVD) and Non-negative matrix factorization(NMF).
 \hspace{0.05in}
 \subsection{Singular Value Decomposition}
 In linear algebra, the singular value decomposition (SVD) is a factorization of a real or complex matrix, with many useful applications in signal processing and statistics.
 
-Formally, the singular value decomposition of an $m * n$ real or complex matrix M is a factorization of the form $M = U \sum V^∗$, where $U$ is an $m * m$ real or complex unitary matrix, $\sum$ is an $m * n$ rectangular diagonal matrix with non-negative real numbers on the diagonal, and $V∗$ is an $n * n$ real or complex unitary matrix. Singular value decomposition is used in recommender systems to predict people's item ratings ~\cite{Sarwar00applicationof}. $\sum$ consists of singular values of $M$, and we can select the k-biggest values and set other entries of $\sum$ to zero. Then put $M' = U \sum V^∗$, $M'$ is our recommendation result.
+Formally, the singular value decomposition of an $m * n$ real or complex matrix M is a factorization of the form $M = U \sum V^∗$, where $U$ is an $m * m$ real or complex unitary matrix, $\sum$ is an $m * n$ rectangular diagonal matrix with non-negative real numbers on the diagonal, and $V∗$ is an $n * n$ real or complex unitary matrix. Singular value decomposition is used in recommender systems to predict people's item ratings ~\cite{Sarwar00applicationof}. $\sum$ consists of singular values of $M$, and we can select the k-biggest values and set other entries of $\sum$ to zero. Then put $M' = U \sum V^∗$, since $M'$ is our recommendation result.
 
 \hspace{0.05in}
-\subsection{Non-negative Matrix Factorizaion}
-Non-negative matrix factorization (NMF) is a group of algorithms in multivariate analysis and linear algebra where a matrix $V$ is factorized into (usually) two matrices $W$ and $H$, with the property that all three matrices have no negative elements. It can be regard as a latent factor model~\cite{/computer/yehuda09matrix}.
+\subsection{Non-negative Matrix Factorization}
+Non-negative matrix factorization (NMF) is a group of algorithms in multivariate analysis and linear algebra where a matrix $V$ is usually factorized into two matrices $W$ and $H$, with the property that all three matrices have no negative elements. It can be regarded as a latent factor model~\cite{/computer/yehuda09matrix}.
 
-Latent factor models are an alternative approach that tries to explain the ratings by characterizing both items and users on, say, 20 to 100 factors inferred from the ratings patterns. In movie recommendation, the discovered factors might measure obvious dimensions such as comedy versus
+Latent factor models are an alternative approach that tries to explain the ratings by characterizing both items and users on, say, 20 to 100 factors inferred from the ratings patterns. In a movie recommendation, the discovered factors might measure obvious dimensions such as comedy versus
 drama, amount of action, or orientation to children. For users, each factor measures how much the user likes movies that score high on the corresponding movie factor. For movies, each factor measures the property of that movie.
 
-NMF decompose an original matrix $V$ into two matrices $W$ and $H$, s.t $V = WH$. $V$ is $m*n$, $W$ is $m*d$, $H$ is $d*n$. Usually $d \ll m,n$, is the dimension of latent factor, NMF methods put users and items into one common latent space. When judging whether a user likes an item, we can simply calculate by inner product.
+NMF decomposes an original matrix $V$ into two matrices $W$ and $H$, s.t $V = WH$. $V$ is a $m*n$ matrix, $W$ is a $m*d$ matrix, and $H$ is a $d*n$ matrix. Usually $d \ll m,n$, is the dimension of the latent factor, NMF methods put users and items into one common latent space. When judging whether a user likes an item, we can simply calculate by the inner product.
 
 \hspace{0.05in}
-\subsection{Non-negative Matrix Tri-factorizaion}
-As a transformation of NMF, Non-negative Matrix Tri-factorizaion(NMTF) decompose a matrix $X$ into three non-negative part : $X = USV$. Instead of mapping users and items to a same latent space, the three parts of NMTF can be interpreted as:
+\subsection{Non-negative Matrix Tri-factorization}
+As a transformation of NMF, Non-negative matrix tri-factorization(NMTF) decomposes a matrix $X$ into three non-negative parts : $X = USV$. Instead of mapping users and items to a common latent space, the three parts of NMTF can be interpreted as:
 \begin{itemize}
-\item $U$ users' soft-clustering matrix
-\item $S$ users' clusters vs items' clusters(cluster relationship matrix)
-\item $V$ items' soft-clustering matrix
+\item $U$:users' soft-clustering matrix
+\item $S$:users' clusters vs items' clusters(cluster relationship matrix)
+\item $V$:items' soft-clustering matrix
 \end{itemize}
 
-In ~\cite{Ding05onthe}, the authors proved that NMF is equivalent to k-means clustering. In ~\cite{Ding06orthogonalnonnegative} the authors also proved that NMTF can be regarded as a way of clustering. NMTF is well known in document processing, ~\cite{Li:2009:NMT:1687878.1687914} uses prior knowledge in lexical and NMTF to tackle the sentiment analysis problem, ~\cite{Zhuang:2011:EAW:1952191.1952195} exploits the relationship between word clusters and document classes in text classification problem.
+In ~\cite{Ding05onthe}, the authors proved that NMF is equivalent to k-means clustering. In ~\cite{Ding06orthogonalnonnegative} the authors also proved that NMTF can be regarded as a way of clustering. NMTF is well known in document processing, ~\cite{Li:2009:NMT:1687878.1687914} uses prior knowledge in lexical and NMTF to tackle the sentiment analysis problem, ~\cite{Zhuang:2011:EAW:1952191.1952195}and exploits the relationship between word clusters and document classes in text classification problem.
 
-Because the property of NMTF, if we get some prior knowledge(e.g word cluster, document class), we can easily adopt them in the model. Thus can acheive better performance than tradictional NMF methods. Our method(TRIMF) uses NMTF to leverage auxiliary data, align cluster and do cluster-level sharing. NMTF is also very common in the field of transfer learning, where clusters can be shared across different domains.
+Based on the NMTF property, if we get some prior knowledge(e.g word cluster or document class), we can easily adopt them into the model. Thus we can often achieve a better performance than traditional NMF methods. Our method(TRIMF) uses NMTF to leverage auxiliary data, align cluster and do cluster-level sharing. NMTF is also very common in transfer learning, where clusters can be shared across different domains.
 
 
 \hspace{0.1in}
-\section{Transfer Learning} Pan and Yang ~\cite{/tkde/sinno09survey} surveyed the field of transfer learning. A major assumption in many machine learning and data mining algorithms is that the training and future data must be in the same feature space and have the same distribution. However, in many real-world applications, this assumption may not hold. For example, we have a task in recommedation, users and items form a joint distribution in training data. But in test data, users may be different with the training as well as items, their relationship may varies too. Thus the latter data has different feature spaces or distribution than the training data. In such cases, knowledge transfer, if done successfully, would greatly improve the performance of learning by avoiding much expensive data-labeling effort.
+\section{Transfer Learning} Pan and Yang ~\cite{/tkde/sinno09survey} surveyed the field of transfer learning. A major assumption in many machine learning and data mining algorithms is that the training and future data must be in the same feature space and have the same distribution. However, in many real-world applications, this assumption may not hold. For example, we have a task in recommendation, users and items form a joint distribution in training data. However, in test data, users may be different as might the items; their relationship may vary as well. Thus the latter data has different feature spaces or distribution than the training data. In such cases, knowledge transfer, if done successfully, would greatly improve the performance of learning by avoiding much expensive data-labeling effort.
 
 \hspace{0.05in}
 \subsection{Transfer Learning for Collaborative Filtering}
 Some works on transfer learning are in the context of collaborative filtering.
-Mehta and Hofmann~\cite{/ki/bhaskar06cross} consider the scenario involving two systems with shared users and use manifold alignment methods to jointly build neighborhood models for the two systems. They focus on making use of an auxiliary recommender system when only part of the users are aligned, which does not distinguish the consistency of users' preferences among the aligned users.
-~\cite{/kdd/SinghG08} designed a collective matrix factorizaion framework, where two matrix $M, N$ are factorized into $M = UV^T$, $N = US^T$. The sharing part $U$ can be a bridge to transfer knowledge from M to N(or N to M), base on that, there are some following work in cross-domain collaborative filtering using matrix factorization tecnique.
-Li \etal~\cite{/icml/libin09} designed a regularization framework to transfer knowledge of cluster-level rating patterns, they use matrix tri-factorization and cluster level rating patterns are shared.
-Pan \etal~\cite{/ijcai/PanLXY11}, ~\cite{AAAI101649} used a matrix factorization framework to transfer knowledge in latent feature space. Knowledge is transfered from an implicit feedback dataset to a rating dataset, but this method can deal with knowledge transfer in both implicit domains.
-Cao \etal~\cite{cao2010transfer} exploited correlations among different CF domains via learning. E.g we factorize each matrix $X_d$ by $X_d = F_d G_d^T$ where $F_d$ and $G_d$ are the user and the item latent features, respectively. This approach tries to explore the correlations between user domains {$F_d$} and/or item domains {$G_d$} and the knowledge can be
+Mehta and Hofmann~\cite{/ki/bhaskar06cross} consider the scenario involving two systems with shared users and use manifold alignment methods to jointly build neighborhood models for the two systems. They focus on making use of an auxiliary recommender system when only a percentage of the users are aligned, which does not distinguish the consistency of users' preferences among the aligned users.
+The authors in ~\cite{/kdd/SinghG08} designed a collective matrix factorization framework, where two matrices $M, N$ are factorized into $M = UV^T$, $N = US^T$. The sharing part $U$ can be a bridge to transfer knowledge from M to N(or N to M). Based on which, are some follow-up works in cross-domain collaborative filtering using matrix factorization techniques.
+Li \etal~\cite{/icml/libin09} designed a regularization framework to transfer knowledge of cluster-level rating patterns, where they use matrix tri-factorization and cluster level rating patterns are shared.
+Pan \etal~\cite{/ijcai/PanLXY11}, ~\cite{AAAI101649} used a matrix factorization framework to transfer knowledge in a latent feature space. Knowledge is transferred from an implicit domain to an explicit domain, but this method can’t handle knowledge transfer between implicit domains.
+Cao \etal~\cite{cao2010transfer} exploited correlations among different CF domains via learning. They factorize each matrix $X_d$ by $X_d = F_d G_d^T$ where $F_d$ and $G_d$ are the user and item latent vectors, respectively. This approach tries to explore the correlations between user domains {$F_d$} and/or item domains {$G_d$} and the knowledge can be
 transferred across domains through the correlation matrices.
 
-Our method(TRIMF) leverage rating pattern sharing and latent feature sharing carefully by designing a matrix tri-factorization framework. TRIMF can handle knowledge transfer from implicit(explicit) dataset A to implicit(explicit) dataset B. Also, TRIMF can be set to suit different tasks.
+Our method(TRIMF) carefully adopts rating patterns and latent feature sharing by designing a matrix tri-factorization framework. It can handle knowledge transfer between implicit domains and can be set to suit different tasks.
 
 \hspace{0.05in}
 \subsection{Large Scale Transfer Learning}
-So far, transfer learning has been mostly considered in the off-line learning settings, which do not emphasize the scalability and computation speed. Due to the rapid development of storage technique and flourish of internet services, the real world problems in recent recommendation systems are mostly based on some large data sets. Little work on large scale transfer learning has been published in previous literature, though it is badly desirable. To cope with the growing needs of today's recommendation system, we would like to discover the parallelizing possibility in our experiments. There are already some researchers working on the large scale collaborative filtering, ~\cite{das2007google} designed a map-reduce framework for online news recommendation. In our approach, we investigate the parallel framework and put them on an online shopping site.
-
+Thus far, transfer learning has mostly been considered in the off-line learning settings, which do not emphasize scalability and computation speed. Due to the rapid development of storage techniques and flourish of internet services, the real world problems in recent recommendation systems are mostly based on some large data sets. Little work on large scale transfer learning has been published in the previous literature, though it is badly needed. To cope with the growing needs of today’s recommendation system, we would like to discover the parallelizing possibility in our experiments. There are already some researchers working on large scale collaborative filtering, the authors in ~\cite{das2007google} designed a map-reduce framework for online news recommendation. In our approach, we have developed a parallel framework CBMF and put it on an online shopping site.
 \hspace{0.02in}
 \subsubsection{Map-Reduce Framework}
-MapReduce is a framework for processing parallelizable problems in huge datasets using a large number of computers (nodes). A MapReduce program comprises a Map() procedure that performs filtering and sorting (such as sorting students by first name into queues, one queue for each name) and a Reduce() procedure that performs a summary operation (such as counting the number of students in each queue, yielding name frequencies).
+MapReduce is a framework for processing parallelizable problems in huge datasets using a large number of computers (nodes). A MapReduce program comprises a Map() procedure that performs filtering and sorting (such as sorting students by first name into queues, one queue for each name) and a Reduce() procedure that performs a summary operation (such as counting the number of students in each queue, which yields name frequencies).
 \begin{itemize}
 \item {\bf ``Map" step:} The master node takes the input, divides it into smaller sub-problems, and distributes them to worker nodes. A worker node may do this again in turn, leading to a multi-level tree structure. The worker node processes the smaller problem, and passes the answer back to its master node.
-\item {\bf ``Sort" step:} The master node sort all key-value pairs according to their key. Thus in the reduce step, same key appears sequentially.
-\item {\bf ``Reduce" step:} The master node then collects the answers to all the sub-problems and combines them in some way to form the output, i.e. the answer to the problem it was originally trying to solve.
+\item {\bf ``Sort" step:} The master node sorts all key-value pairs according to their key, thus in the reduce step, the same key appears sequentially.
+\item {\bf ``Reduce" step:} The master node then collects the answers to all the sub-problems and combines them in some way to form the output, that is, the answer to the problem it was originally trying to solve.
 \end{itemize}
-We will show that our methods(modified version of TRIMF) can be plugged into the Map-Reduce framework for parallelization.
+We show that our method(CBMF) can be plugged into the Map-Reduce framework for parallelization in Chapter \ref{}.
 
 
 

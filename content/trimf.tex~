@@ -3,30 +3,38 @@
 \section{Problem settings}
 \subsection{Background}
 \par{
-In real-world, a person usually has different kinds of behaviour before buying one thing. For online shopping sites, Their goal is to let users buy their products, but the user-item matrix for deal is extremely sparse( less than $0.001\%$ ). So if we only use the information of deal, we can't acheive good even reasonable performance. 
+In real-world, a person usually has different kinds of behaviors before buying one thing. For online shopping sites, their goal is to let users buy their products, but the user-item matrix for deal is extremely sparse( less than $0.001\%$ ). Therefore, if we only use the available information, we cannot achieve a reliable or even reasonable performance.
 
-In Yixun(Tencent's online shopping site), there are two main actions - click and purchase, both consists only binary data(1-action happened, 0-unknown). We know that deal matrix $X_d$ is very sparse, althrough click matrix $X_c$ is also sparse, but is much denser than $X_d$. So we developed a transfer learning algorithm(TRIMF) that leverage these data to predict a user's future purchasing. Compared with former methods which shares rating patterns or latent features only, our method shares both rating patterns and latent features throught cluster-level transform and overlapping matrix. Experiments show that my algorithm performs better then other baseline(Transfer) methods.}
+In Yixun(Tencent's online shopping site), there are two main actions - click and purchase. Both can form a matrix which consists of only binary data(1-action happened, 0-unknown). Let's denote $X_d$ to be the matrix of deal, $X_c$ to be the matrix of click. We know that deal matrix $X_d$ is very sparse and although click matrix $X_c$ is also sparse, it is much denser than $X_d$. To use more data, we develop a transfer learning algorithm(TRIMF) that leverages click data to predict purchasing. Compared with former methods which only share either rating patterns or latent features , our method shares both rating patterns and latent features through cluster-level transformation and overlapping matrices. Experiments show that our algorithm performs better than other baseline(transfer and non-transfer) methods.}
 
 \subsection{Problem definition}
   \begin{itemize}
-  \item Input: [0-1 matrix:user click matrix $X_C(m_c*n_c)$, user deal matrix $X_d(m_d*n_d)$] , $m_c, m_d$ denote the number of users, $n_c, n_d$ denote the number of items. Users and items are partially shared.
-  \item Output: Two prediction matrix $P_C(m_c*n_c), P_d(m_d*n_d)$, which predict users' purchasing behaviour.
+  \item Input: [0-1 matrix:user click matrix $X_C(m_c*n_c)$, user deal matrix $X_d(m_d*n_d)$] , $m_c, m_d$ denote the number of users, $n_c, n_d$ denote the number of items. Users and items partially overlap.
+  \item Output: Two prediction matrix $P_C(m_c*n_c), P_d(m_d*n_d)$, which predict users' purchasing behavior.
   \end{itemize}
 
 
 
 \section{TRIMF}
 \subsection{Weighting scheme of TRIMF}
-  \par{Former one-class CF methods ~\cite{4781121}, ~\cite{4781145} use weighted low-rank approximation to tackle the problem that all observed ratings are 1. Given a rating matrix $R = (R_{ij})_{m*n} \in \{0, 1\}^{m*n}$ with $m$ users and $n$ items and a corresponding non-negative weight matrix $W = (W_{ij})_{m*n} \in R^{m*n^+}$ , weighted low-rank approximation aims at finding a low rank matrix $X = (X_{ij})_{m*n} $minimizing the objective of a weighted Frobenius loss function as follows : $L(X) = w(R_{ij} - X_{ij})$. 
+  \par{Former one-class CF methods ~\cite{4781121}, ~\cite{4781145} use weighted low-rank approximation to tackle the problem that all observed ratings are 1. Given a rating matrix $R = (R_{ij})_{m*n} \in \{0, 1\}^{m*n}$ with $m$ users and $n$ items and a corresponding non-negative weight matrix $W = (W_{ij})_{m*n} \in R^{m*n^+}$ , weighted low-rank approximation aims at finding a low rank matrix $X = (X_{ij})_{m*n} $minimizing the objective of a weighted Frobenius loss function as follows : $L(X) = \|\sum W_{ij}(R_{ij} - X_{ij})\|_2$. 
 
-In ~\cite{4781121}, the authors consider actions that happens more than once(e.g click an item mutiple times). Negative entries are ignored, for each positive entry, its weight is propotional to its frequency, since more frequent can mean that we are more confident about the entry. In ~\cite{4781145}, positive entries are all with the same weight 1, while negative entries are considered in different ways. According to their experiments, user-oriented weighting scheme can acheive best performance. That is, for negative entries $W_{ij} \propto \sum_j{R_{ij}}$, it's idea is that if a user has more positive examples, it is more likely that she does not like the other items, that is, the missing data for this user is negative with higher probability.
+In ~\cite{4781121}, the authors consider actions that happen more than once(e.g. multiple clicks on an item). Negative entries are ignored; for each positive entry, its weight is proportional to its frequency, since higher frequency can mean that we are more confident about the entry. For example, user $i$ viewed item $j$, $n$ times, then $W_{ij} = 1 + log(n)$. In ~\cite{4781145}, positive entries all have same weight 1, while negative entries are considered differently. According to their experiments, the user-oriented weighting scheme can achieve the best performance. That is, for negative entries $W_{ij} \propto \sum_j{R_{ij}}$, the idea is that if a user has more positive examples, it is more likely that the user does not like the other items, that is, the missing data for this user is negative with higher probability.
 
-In our method we adopt this weighting scheme to give missing values proper weights, i.e for positive entries we use the weighting scheme in ~\cite{4781121} and negative entries we use user-oriented weighting.}
+In our method, we adopt these weighting schemes to give missing values proper weights, that is, for positive entries we use the weighting scheme in ~\cite{4781121} and for negative entries we use user-oriented weighting. $$ W_{ij}=\left\{
+\begin{aligned}
+1 + log(n) & & X_{ij} = 1\\
+log(\sum_j{R_{ij}}) &  & X_{ij} = 0 \\
+\end{aligned}
+\right.
+$$}
 \subsection{Transfer learning in TRIMF}
 
-User's deal data is very sparse, e.g users will buy $n_d$ items one day while click $n_c$ items. Then $n_d \ll n_c$. So only use deal data is not sufficient. Traditional transfer learning methods use matrix factorization and share a certain part of low-rank matrix(e.g user-latent factor, rating pattern). But none of them apply multi-selective-sharing schme.
+Usually users' deal data is very sparse. For instance, users will buy $n_d$ items in one day while clicking $n_c$ items which often results in $n_d \ll n_c$. Therefore, only using deal data is not sufficient. Traditional transfer learning methods use matrix factorization and share a certain part of low-rank matrices to achieve knowledge transfer(e.g. user-latent factor, rating pattern). However, none of them apply the selective-sharing scheme as ours does.
 
-In TRIMF, rating matrix are factorized into three parts : $X = USV^T$. We want to use users' click data to learn a better cluster-level rating pattern $S$, compared with only using users' purchase data. And for overlap users and items, we want their latent vector$U,V$ to be the same, too. That it, we share their rating patterns and latent vectors. But what a user like to click is not always the item he wants to buy. So these rating pattern should be somehow related but not the same. In Yixun, there are only 2 common items in top-10 click items and top-10 purchase items (Table ~\ref{tbl:topitem}). So we can't simply apply the same pattern in prediction.
+In TRIMF, rating matrices are factorized into three parts : $X = USV^T$. The first part $U$ stands for user clustering results or latent factor, $V$ stands for item clustering results or the latent factor, while $S$ stands for the clustering relationships between user clusters and item clusters. We want to learn a better cluster-level rating pattern $S$ from users' deal data with the help of users' click data, not just use users' deal data. Therefore we factorize two matrices $X_c, X_d$ together. In order to transfer knowledge, we must make sure that their latent spaces are the same. For a user who has click and deal actions, it would be particularly beneficial that his latent vectors factorized from $X_c, X_d$ are the same.
+
+Therefore, for overlap users and items, we want their clustering vector  $U,V$ to be the same. What is more, we want even more knowledge transfer from the matrix $S$ which stands for cluster relationship or rating patterns. However, what a user likes to click is not always the item he wants to buy. In Yixun, there are only two common items in the top 10 click items and top 10 purchase items (Table ~\ref{tbl:topitem}). Therefore these rating patterns should somehow be related but not the same. We cannot simply make the pattern matrix $S$ the same in the prediction. 
 
 \begin{table}[h]
 
@@ -46,22 +54,25 @@ Router & Iphone 5s\\
 Earphone & Mouse\\
 \hline
 \end{tabular}
-\caption{Top 10 click items and top 10 purchase items in Yixun}
+\caption{Top 10 click items and purchase items in Yixun.}
 \end{center}
 %\end{Large}
 \end{table}
 
-\par{However, after careful observation we found that there are some items which belongs to the same category with higher conversion rate(user tends to buy after clicking), but some categories not. And there are some users who like window-shopping while others will buy it right after clicking. These are all cluster-level features, we design a mapping function to let the learnt $S$ suit data better.}
+\par{After careful observation we found that there are some items which belong to the same category with a higher conversion rate (user tends to buy after clicking), but not with other categories. There are also some users who like window-shopping while others buy an item straight after clicking. These are all cluster-level features. We design a mapping function to allow the learnt $S$ better suit the data.
+
+We design two mapping vectors: $U,V$, if we have learnt a rating pattern $S_c$ from a click matrix, then for the deal matrix pattern we have $S_d^{ij} = U_i * S_c^{ij} * V_j$. The transformation is based on $S_c$ to enable knowledge transfer, while after being multiplied by $U$ and $V$ we can capture the difference between them, at the cluster-level. }
 
 \subsection{Object function}
 \par{We use a weighted non-negative matrix tri-factorization method to deal with the problem as illustrated below. 
 \begin{figure}
 
 %\begin{Large}
-\label{fig:trimf}
+
 \begin{center}
 \includegraphics[width=400px]{fig/trimf.jpg} 
-\caption{Graphical model of TRIMF}
+\caption{Graphical model of TRIMF.}
+\label{fig:trimf}
 \end{center}
 \end{figure}}
  
@@ -69,10 +80,10 @@ Earphone & Mouse\\
 
   \par{
     \begin{itemize}
-    \item $W_c,W_d$ is the weight for $X_C, X_d$, every observed entry has weight $1 + log(frequency)$. while others have weight $W_{ij} = \sum_jI({R_{ij}})$.
-    \item $F, G$ is the soft clustering result matrix for overlapped users(items), they are forced to have the same cluster distributions. Others are unique users(items).
-    \item $U,V$ are two diagonal matrix, $U_{ii}$ scales every $S_{i*}$ to $U_{ii}S_{i*}$, it models the users' tranform from click to deal. While $V_{jj}$ scales every $S_{*j}$ to $S_{*j}V_{jj}$, it models the items' tranform from click to deal.
-    \item When predicting, we use $(F;F_d)(USV)(G;G_d)$ to predict users who have deal data. And since we got two mapping matrix $U,V$, we apply $U,V$ back to click matrix to predict users who have click data, i.e we use $(F;F_c)(USV)(G;G_c)$ to predict.
+    \item $W_c,W_d$ are the weights for $X_C, X_d$, every observed entry has weight $1 + log(frequency)$. While others have weight $W_{ij} = \sum_jI({R_{ij}})$.
+    \item $F, G$ are the soft clustering result matrices for overlapped users(items), they are forced to be the same. $F_c,F_d,G_c,G_d$ are matrices for unique users(items).
+    \item $U,V$ are two diagonal matrices, $U_{ii}$ scales every $S_{i*}$ to $U_{ii}S_{i*}$, and models the users' cluster-level transformation from click to deal. While $V_{jj}$ scales every $S_{*j}$ to $S_{*j}V_{jj}$, it models the items' cluster-level transformation from click to deal.
+    \item When predicting, we use $(F;F_d)(USV)(G;G_d)$ to predict users who have deal data. Then since we got two mapping matrices $U,V$, we apply $U,V$ back to the click pattern matrix $S$ to predict for users who have click data, i.e. we use $(F;F_c)(USV)(G;G_c)$.
     \end{itemize}
 }
 
@@ -80,15 +91,15 @@ Earphone & Mouse\\
 
 \begin{section}
   {Solution to TRIMF \& Algorithm}
-\par{Follow the update rules in ~\cite{Zhuang:2011:EAW:1952191.1952195}, we use an alternately iterative algorithm to solve the objective function.}
+\par{Following the update rules in ~\cite{Zhuang:2011:EAW:1952191.1952195}, we use an alternately iterative algorithm to solve the objective function.}
 
-Firstly, we declare some denotions:
+Firstly, we declare some denotations:
 \begin{itemize}
 	\item $Ic,Icc,Icd,Id$ : $(Ic,Icc)*(F;F_c) = I*(F;F_c)$ and $(Icd,Id)*(F;F_d) = I*(F;F_d)$
 	\item $sg$ : $S*G'*G*S'$
 	\item $F_1, F_2$ : $[F;F_c]$, $[F;F_d]$
 \end{itemize}
-\par{In each round of iteration these matrixes are updated as :
+\par{In each round of iterations these matrices are updated as :
 $$F \leftarrow F .* \sqrt{\frac{Icc'*(W_c.*X_c)*G*S' + Icd'*(W_d.*X_d)*G*S'}{(Icc'*Icc*F + Icc'*Ic*F_c + Icd'*(Icd*F + Id*F_d))*sg)}}$$
 $$F_c \leftarrow F_c .* \sqrt{\frac{Ic'*(W_c.*X_c)*G*S'}{Ic'*(Icc*F + Ic*F_c)*sg}}$$
 $$F_d \leftarrow F_d .* \sqrt{\frac{Id'*(W_d.*X_d)*G*S'}{Id'*(Icd*F + Id*F_d)*sg }}$$
@@ -100,9 +111,7 @@ $$V \leftarrow V .* \sqrt{\frac{S'*F_2'*(W_d.*X_d)*G}{S'*F_2'*F_2*S*V*G'*G}} $$
 
 }
 
-\par{The user-item matrix is typically very sparse with $z \ll nm$ non-zero entries while $k$ is typically
-also much smaller than n, m. By using sparse matrix multiplications and avoiding dense intermediate matrices, the updates can be very efficiently
-and easily implemented. In particular, updating F, S, G each takes $O(k^2 (m + n) + kz)$ , and the algorithm usually reach convergence in less than 200 iterations.}
+\par{The user-item matrix is typically very sparse with $z \ll nm$ non-zero entries while $k$ is also much smaller than n, m. Through using sparse matrix multiplications and avoiding dense intermediate matrices, the update steps can be very efficiently and easily implemented. In particular, updating F, S, G each takes $O(k^2 (m + n) + kz)$ , and the algorithm usually reaches convergence in less than 200 iterations.}
 
 \begin{algorithm}[tb]
 \caption{Algorithm for TRIMF.}
@@ -139,20 +148,22 @@ $\X_{d} \in \mathbb{R}^{m_d\times n_d}$: the click data\\
 \begin{section}{Experiment}
   \begin{subsection}{Datasets}
 
-We select real data from an online shopping site: yixun.com \footnote{http://www.yixun.com}. We collect data for 6 months, the entire dataset consists 5,324,231 users and 643,123 items. The sparsity in click matrix is $0.06\%$, in purchase matrix is $0.0003\%$.
+We select real data from an online shopping site: yixun.com \footnote{http://www.yixun.com}. After collecting data for six months. When a user clicked or purchased an item, we recorded his account-id and the item's id. For clicking behavior, the dataset consists of 2,334,231 users and 423,123 items. For purchasing behavior, we have 1,217,483 users and 169,341 items in total. The sparsity of click matrix is $0.06\%$, with $0.0003\%$ in the purchase matrix.
 
-To check the effectiveness of TRIMF in short time and long time, we construct two smaller datasets.
+To check the effectiveness of TRIMF over both short and long periods of time, we construct two smaller datasets.	
 
 \begin{itemize}
 
-\item \textbf{Yixun short term data}: we select data from two weeks, 20130801-20130814. we sample a fraction of user by random, and remove those whose action frequency is too low(e.g only one click during this period). In the click matrix we have 16240 users and 1932 items. In the purchase matrix we have 2520 users and 1791 items. There are 2029 overlapped users and 1642 overlapped items. We train our model using data from first week and data from second week is used for testing.
-\item \textbf{Yixun long term data}: we select 1012 active users through 6 months. In their long term actions, there are 6021 items which have been clicked and 1973 items boughted. We select the five latest purchasing items per user as test data, others as training data. There are 1503 overlapped items.
+\item \textbf{Yixun short term data}: we select data from two weeks, 20130801-20130814. We randomly sample a fraction of the users, and remove those whose action frequency are too low (e.g. only one click during this period). In the click matrix we have 16240 users and 1932 items. In the purchase matrix we have 2520 users and 1791 items. There are 2029 overlapping users and 1642 overlapping items. We train our model using data from the first week, while data from the second week is used for testing.
+\item \textbf{Yixun long term data}: we select 1012 active users over six months. In their long term actions, there are 6021 items clicked and 1973 items bought. We select the five latest purchased items per user as test data, and the others as training data. There are 1503 overlapping items.
 
 \end{itemize}
 \end{subsection}
 
 \begin{subsection}{Metrics}
-We use $prec@5$ and $prec@10$ as our evaluation meatures. $prec@n$ is the precision of top-n results. Our main goal is to optimize for conversion rate(future purchase matrix), so the test is mainly done in the purchase matrix. However, since TRIMF can also optimize for source domain(click matrix), some test in click matrix is also conducted.
+We use $prec@5$ and $prec@10$ as our evaluation metrics. Precision is the fraction of clicked items that are shown to the user. $$Precision = \frac{\|clicked items\| \cap \|shown items\|}{\|shown items\|}$$Precision takes all retrieved documents into account, but it can also be evaluated at a given cut-off rank, considering only the topmost results returned by the system. This measure is called \textbf{precision at n} or \textbf{$prec@n$}. $prec@n$ is widely used in information retrieval for evaluating the ranked documents over a set of queries. We use it in TRIMF to assess the overall performance based on precisions at different recall levels on a test set. It computes the mean of precision over all users in the test set. 
+
+Our main goal is to optimize for the conversion rate (future purchase matrix), so the test is mainly done in the purchase matrix. However, since TRIMF can also optimize for the source domain (click matrix), some tests in the click matrix are also conducted.
 
   
 \end{subsection}
@@ -178,39 +189,39 @@ We divide baseline methods into non-transfer methods and transfer methods. All b
 \end{table}
 \subsubsection{non-transfer methods}
 \par{
-  For all non-transfer methods, we use 3 combinations of matrix as our training matrix:{deal, click, deal+click}, and report their best performace. We choose parameters by cross validation.
+  For all non-transfer methods, we use three combinations of matrices as our training matrix:{deal, click, deal+click}, and report their \textbf{best} performance. We choose parameters by cross validation.
   \begin{itemize}
-    \item Most Popular: Most popular selects top-n items in global, and provide same recommendation results for each user.
-    \item SVD ~\cite{paterek07}: Singular Value Decomposition(SVD) is a typical method used in recommender system, here PureSVD from Matlab is used.
+    \item Most Popular: selects top-n items globally, and provides the same recommendation results for every user.
+    \item Singular Value Decomposition(SVD) ~\cite{paterek07}:  is a typical method used in recommender system, here PureSVD from Matlab is used.
       \begin{itemize}
       \item rank = \{5,10,20,30,40,50\}
       \end{itemize}
-    \item NMF ~\cite{/computer/yehuda09matrix}: Non-negative Matrix Factorization(NMF) is also a typical method used in recommender system, here NMF from Matlab is used.
+    \item Non-negative Matrix Factorization(NMF)  ~\cite{/computer/yehuda09matrix}: is also a typical method used in recommender system, here NMF from Matlab is used.
       \begin{itemize}
       \item rank = \{10,20,40,60,100\}
       \end{itemize}
-    \item PMF ~\cite{/nips/SalMnih08}:Probabilistic Matrix Factorization(PMF) is a recently proposed method for missing value prediction. Previous work showed that this method worked well on the large, sparse and imbalanced data set.
+    \item Probabilistic Matrix Factorization(PMF) ~\cite{/nips/SalMnih08}: is a recently proposed method for missing value prediction. Previous work showed that this method worked well on the large, sparse and imbalanced dataset.
       \begin{itemize}
       \item rank = \{10,20,30,40,50\}
       \end{itemize}
-    \item BPRMF ~\cite{Rendle:2009:BBP:1795114.1795167}: BPR is a generic optimization criterion for personalized ranking that is the maximum posterior estimator derived from a Bayesian analysis of the problem. Unlike traditional methods whose object function is point-wise, BPR is a pair-wise object function. BPRMF implements BPR using matrix factorization.
+    \item BPRMF ~\cite{Rendle:2009:BBP:1795114.1795167}: BPR is a generic optimization criterion for personalized ranking. It is a maximum posterior estimator derived from a Bayesian analysis of the problem. Unlike traditional methods whose objective function is point-wise, BPR is a pair-wise object function. BPRMF implements BPR using matrix factorization.
       \begin{itemize}
-      \item We initialized BPR with most popular results.
+      \item We initialized BPR with the most popular results.
       \item We set $iteration = \#n * 100$, ($\#n$ in the number of observations)
       \end{itemize}
-    \item WRMF ~\cite{4781145}: One-class collaborative filtering(WRMF) is a weighted low rank approximation method optimized for implicit dataset. 
+    \item WRMF ~\cite{4781145}: One-class collaborative filtering(WRMF) is a weighted low rank approximation method optimized for an implicit dataset. 
       \begin{itemize}
       \item rank = \{5,10,15,20,25\}
     \end{itemize}
 \end{itemize}
 \subsubsection{transfer methods}
 \begin{itemize}
-    \item CMF ~\cite{/kdd/SinghG08}:Collective Matrix Factorization is proposed for jointly factorizing two matrices. Being adopted as a transfer
-learning technique in several recent works, CMF has been proven to be an effective cross-domain recommendation approach. For each training and testing pairs, we make two matrix the same dimension(in order to share a latent factor) by padding rows \& columns.
+    \item Collective Matrix Factorization(CMF) ~\cite{/kdd/SinghG08}: is proposed for jointly factorizing two matrices. Adopted as a transfer
+learning technique in several recent works, CMF has been proven to be an effective cross-domain recommendation approach. For each training and testing pairs, we make two matrices of the same dimensions(in order to share a latent factor) by padding zero rows \& columns.
       \begin{itemize}
       \item Shared latent space dimension = \{5,10,15,20,25\}
       \end{itemize}
-    \item TCF ~\cite{/ijcai/PanLXY11}: TCF is a transfer learning method to predict missing ratings via heterogeneous feedbacks. It's originally designed for rating prediction, so we set the deal matrix with random sampled zeros as the rating matrix, click matrix as the implicit feed back matrix. Zero rows and colomns are also padded to make the two matrix in same dimension.
+    \item TCF ~\cite{/ijcai/PanLXY11}: is a transfer learning method used to predict missing ratings via heterogeneous feedback. It is originally designed for rating prediction, so we set the deal matrix with randomly sampled zeros as the rating matrix, and click matrix as the implicit feedback matrix. Zero rows and columns are also padded to make the two matrices of the same dimensions.
 \item TRIMF: our method.
   \begin{itemize}
   \item We set latent factor = 30, iteration = 200.
@@ -222,8 +233,8 @@ learning technique in several recent works, CMF has been proven to be an effecti
 \end{section}
 \subsection{Results}
   \begin{subsubsection}{Yixun short term data}
-\par{Since the user overlap of deal and click matrix are small, so we perform two test, one on deal matrix $X_d$ and one on click matrix $X_c$.}
-\par{Results are showed in Table \ref{shortdeal} and Table \ref{shortclick}.}
+\par{The user overlap of the deal and click matrix are small, so we perform two tests, one on deal matrix $X_d$ and one on click matrix $X_c$.}
+\par{Results are shown in Tables \ref{shortdeal} and \ref{shortclick}.}
 \begin{table}
 
 
@@ -296,7 +307,7 @@ learning technique in several recent works, CMF has been proven to be an effecti
 
 \begin{subsubsection}
   {Yixun long term data}
-\par{Since the user are manually selected, we only test $X_d$. The result is showed in Table \ref{longterm}.}
+\par{Since the users are manually selected, click matrix and deal matrix have the same number of rows. We only need to conduct a test on $X_d$. The result is shown in Table \ref{longterm}.}
 
 \begin{table}
   \centering
@@ -331,19 +342,28 @@ learning technique in several recent works, CMF has been proven to be an effecti
 
 
 \begin{section}{Performance comparison \& analysis}
-First, we observed that TRIMF out-perform all other baseline non-transfer methods in three tests. In short-term deal test, we can see traditional CF method which aims at rating prediction (e.g SVD, NMF) can't achieve compatible performance than others. Because these methods is designed for matrix with multiple values, not for our binary matrix. while CF method designed for binary matrix(BPRMF, WRMF) can acheive significantly greater result. In long-term test the difference is not so significant, because the data here is less sparse than short-term data, every method has enough data to train a good model.
+First, we observed that TRIMF out-performs all other baseline non-transfer methods in three tests. In the short-term deal test, we can see traditional CF methods which aim at rating prediction (e.g. SVD, NMF) cannot achieve a more compatible performance than others. This is because these methods are designed for matrices with multiple values, not for our binary matrices, while the CF method designed for binary matrices (BPRMF, WRMF) can achieve significantly greater results. In a long term test, the difference is not so significant, because the data here is less sparse than short-term data. In other words, every method has enough data to train a good model.
 
-Second, TRIMF also out-perform other transfer methods. Since CMF, TCF are also designed for rating prediction problems. The information in our training set is limited, so both methods can't transfer enough knowledge from their framework. TRIMF is designed for one-class transfer learning, TRIMF combines one-class and transfer methods, so it inherits advantages from both side.
+Second, TRIMF also out-performs other transfer methods. Since CMF, TCF are also designed for rating prediction problems. The information in our training set is limited, so neither method can transfer enough knowledge based on their framework. TRIMF is designed for one-class transfer learning, which combines one-class and transfer methods, so it inherits advantages from both.
 
-  \subsubsection{The effects of $UV$}
-In our assumption, $UV$ are two mapping matrix that describe the difference in user-cluster and item-category. To see whether $UV$ really reflects the phenomenon, we manually check entries in $UV$ with high and low values.
 
-  We found that high value in $V$ reflects item clusters that people tends to buy after clicking, e.g toothbrush, snacks. While low value of $V$ more reflects that items are popular but people may not buy it immediately, e.g cell phones, laptops. High value in $U$ reflects user-cluster who tends to buy after clicking, while users belong to low value user-clusters are all window-shopping fans.
+  \subsubsection{The effects of cluster-level transformation}
+In our assumption, $U,V$ are two mapping matrices that describe the difference in user clusters and item categories. To see whether $U,V$ really reflect the phenomenon, we manually check entries in $U,V$ with high and low values.
 
-  In Table \ref{shortclick}, we can see if we want to predict future purchasing items on users who have click data, we can map $UV$ back. Thus the learned cluster-pattern $S$ is transformed from click pattern to purchase pattern.
+  We found that high values in $V$ reflect item clusters that people tends to buy after clicking, e.g. toothbrush, snacks. While low values of $V$ more reflects items that are popular but people may not buy immediately, e.g. cell phones and laptops. High values in $U$ reflect users who tend to buy after clicking, while users belonging to low value user-clusters are all window-shoppers.
 
-  \subsubsection{The effects of sharing}
-    To see that sharing $F,G$ really works, we select another 6000 users to test, we tried 'not share','share' and 'random share', the $prec@n$ here are not comparable with the first experiment(Table \ref{shortdeal}). Results show that we must share latent factor carefully, random share may do harm to performance. But sharing latent factor for overlapped users/items can achieve a significantly greater result.
+  In Table \ref{shortclick}, we can see if we want to predict future purchasing items on users who have click data, we can map $UV$ back. Thus the learned cluster-pattern $S$ is transformed from the click pattern to the purchase pattern.
+
+  \subsubsection{The effects of latent vector sharing}
+  	In our method, for the same user the latent vectors are unique. Our intuition is that by making some vector alignments, we can leverage this information to factorize or co-cluster the two matrices in a joint latent space. Making them the same space is the foundation of knowledge transfer which happens during the alignment.
+    To see that sharing $F,G$ really works, we select another 6000 users and 1500 items, make two new matrices $X'_c, X'_d$ to perform another test. We try three sharing schemes: 
+    
+    \begin{itemize}
+    \item share$FG$ : TRIMF
+    \item not share : we update $F_c, G_c, F_d, G_d$ separately, pretending there is no overlapping users or items.
+    \item random share : we randomly choose 3000 users and 800 items, marking them as overlapping,
+    \end{itemize}
+    The $prec@n$ here are not comparable with the first experiment in Table \ref{shortdeal}. Result(Table \ref{sharing}) shows that we must share latent factors carefully as randomly sharing them may harm the performance. However, sharing latent factors for overlapping users/items can achieve a significantly greater result.
 
     \par{
 \begin{table}
@@ -352,7 +372,7 @@ In our assumption, $UV$ are two mapping matrix that describe the difference in u
     \hline
     Method&Prec@5&Prec@10\\
     \hline
-    shareFG&\textbf{\color{red}0.0436}&\textbf{\color{red}0.0350}\\
+    share$FG$&\textbf{\color{red}0.0436}&\textbf{\color{red}0.0350}\\
     \hline
     not share&0.0335&0.0306\\
     \hline
@@ -360,7 +380,7 @@ In our assumption, $UV$ are two mapping matrix that describe the difference in u
     \hline
   \end{tabular}
 \end{center}
-\caption{The effect of sharing}
+\caption{The effect of sharing.}
 \label{sharing}
 \end{table}
 }
