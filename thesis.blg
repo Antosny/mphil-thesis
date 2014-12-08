@@ -30,45 +30,45 @@ Warning--I didn't find a database entry for "DBLP:conf/ijcai/2011"
 Warning--I didn't find a database entry for "2014"
 Warning--empty publisher in /ki/bhaskar06cross
 Warning--empty booktitle in AAAI101649
-You've used 41 entries,
+You've used 44 entries,
             2118 wiz_defined-function locations,
-            752 strings with 12012 characters,
-and the built_in function-call counts, 16351 in all, are:
-= -- 1622
-> -- 706
-< -- 25
-+ -- 278
-- -- 234
-* -- 1071
-:= -- 2499
-add.period$ -- 131
-call.type$ -- 41
-change.case$ -- 238
+            773 strings with 12542 characters,
+and the built_in function-call counts, 17597 in all, are:
+= -- 1754
+> -- 744
+< -- 27
++ -- 294
+- -- 246
+* -- 1148
+:= -- 2678
+add.period$ -- 141
+call.type$ -- 44
+change.case$ -- 253
 chr.to.int$ -- 0
-cite$ -- 43
-duplicate$ -- 711
-empty$ -- 1339
-format.name$ -- 238
-if$ -- 3624
+cite$ -- 46
+duplicate$ -- 772
+empty$ -- 1445
+format.name$ -- 250
+if$ -- 3913
 int.to.chr$ -- 0
-int.to.str$ -- 41
-missing$ -- 39
-newline$ -- 206
-num.names$ -- 86
-pop$ -- 289
+int.to.str$ -- 44
+missing$ -- 42
+newline$ -- 221
+num.names$ -- 92
+pop$ -- 305
 preamble$ -- 1
-purify$ -- 199
+purify$ -- 211
 quote$ -- 0
-skip$ -- 562
+skip$ -- 615
 stack$ -- 0
-substring$ -- 1044
-swap$ -- 251
-text.length$ -- 23
+substring$ -- 1136
+swap$ -- 277
+text.length$ -- 25
 text.prefix$ -- 0
 top$ -- 0
-type$ -- 162
+type$ -- 174
 warning$ -- 2
-while$ -- 147
-width$ -- 43
-write$ -- 456
+while$ -- 159
+width$ -- 46
+write$ -- 492
 (There were 8 error messages)

@@ -20,15 +20,15 @@ Further, to make the method scalable and able to put online, we develop a cluste
 Our main contributions are summarized as follows:
 
 \begin{itemize}[noitemsep,topsep=0pt,parsep=0pt,partopsep=0pt]
-\item First, we find that in implicit datasets, more data must be shared to achieve better performance. To transfer more knowledge, a matrix tri-factorization method is proposed to transfer knowledge from the user side and item side(TRIMF).
+\item First, we find that in implicit datasets, more data must be shared to achieve better performance. To transfer more knowledge, a matrix tri-factorization method is proposed to transfer knowledge from the user side and item side (TRIMF).
 \item Second, implicit datasets consist too much noise. To transfer trustful knowledge, we develop a clustering-pattern transfer function. For each task, we provide a clustering pattern mapping function, which only does cluster-level transformation. Thus we can share knowledge more accurately without losing too much information.
-\item Third, we propose a modified version of TRIMF(CBMF) which can be used for large scale recommendation. It is used in an Internet company, and it's performance is among the best of all online algorithms.
+\item Third, we propose a modified version of TRIMF (CBMF) which can be used for large scale recommendation. It is used in an Internet company, and it's performance is among the best of all online algorithms.
 \end{itemize}
 
 \hspace{0.1in}
 \section{Thesis Outline}
 
-The rest of the thesis is organized as follows: We first provide the background of the research on Collaborative Filtering, Matrix Factorization and Transfer Learning in Chapter \ref{chp:bg}. Then, we discuss the technique of the proposed matrix tri-factorization method(TRIMF) in detail and experiments on real-world datasets in Chapter \ref{chp:trimf}. We present details of our proposed CBMF framework and experiments in an online website in Chapter \ref{chp:cbmf} . Finally, we share our thoughts on possible future work and conclude the thesis in Chapter \ref{chp:conclusion}.
+The rest of the thesis is organized as follows: We first provide the background of the research on Collaborative Filtering, Matrix Factorization and Transfer Learning in Chapter \ref{chp:bg}. Then, we discuss the technique of the proposed matrix tri-factorization method(TRIMF) in detail in Chapter \ref{chp:trimf}. We present details of our proposed CBMF framework in Chapter \ref{chp:cbmf} . We perform two experiments, offline and online, in Chapter \ref{chp:exp}. Finally, we share our thoughts on possible future work and conclude the thesis in Chapter \ref{chp:conclusion}.
 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%

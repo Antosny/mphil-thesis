@@ -119,13 +119,13 @@ Based on the NMTF property, if we get some prior knowledge(e.g word cluster or d
 \subsection{Transfer Learning for Collaborative Filtering}
 Some works on transfer learning are in the context of collaborative filtering.
 Mehta and Hofmann~\cite{/ki/bhaskar06cross} consider the scenario involving two systems with shared users and use manifold alignment methods to jointly build neighborhood models for the two systems. They focus on making use of an auxiliary recommender system when only a percentage of the users are aligned, which does not distinguish the consistency of users' preferences among the aligned users.
-The authors in ~\cite{/kdd/SinghG08} designed a collective matrix factorization framework, where two matrices $M, N$ are factorized into $M = UV^T$, $N = US^T$. The sharing part $U$ can be a bridge to transfer knowledge from M to N(or N to M). Based on which, are some follow-up works in cross-domain collaborative filtering using matrix factorization techniques.
+The authors in ~\cite{/kdd/SinghG08} designed a collective matrix factorization framework, where two matrices $M, N$ are factorized into $M = UV^T$, $N = US^T$. The sharing part $U$ can be a bridge to transfer knowledge from M to N (or N to M). Based on which, are some follow-up works in cross-domain collaborative filtering using matrix factorization techniques.
 Li \etal~\cite{/icml/libin09} designed a regularization framework to transfer knowledge of cluster-level rating patterns, where they use matrix tri-factorization and cluster level rating patterns are shared.
 Pan \etal~\cite{/ijcai/PanLXY11}, ~\cite{AAAI101649} used a matrix factorization framework to transfer knowledge in a latent feature space. Knowledge is transferred from an implicit domain to an explicit domain, but this method can’t handle knowledge transfer between implicit domains.
 Cao \etal~\cite{cao2010transfer} exploited correlations among different CF domains via learning. They factorize each matrix $X_d$ by $X_d = F_d G_d^T$ where $F_d$ and $G_d$ are the user and item latent vectors, respectively. This approach tries to explore the correlations between user domains {$F_d$} and/or item domains {$G_d$} and the knowledge can be
 transferred across domains through the correlation matrices.
 
-Our method(TRIMF) carefully adopts rating patterns and latent feature sharing by designing a matrix tri-factorization framework. It can handle knowledge transfer between implicit domains and can be set to suit different tasks.
+Our method (TRIMF) carefully adopts rating patterns and latent feature sharing by designing a matrix tri-factorization framework. It can handle knowledge transfer between implicit domains and can be set to suit different tasks.
 
 \hspace{0.05in}
 \subsection{Large Scale Transfer Learning}
@@ -138,7 +138,7 @@ MapReduce is a framework for processing parallelizable problems in huge datasets
 \item {\bf ``Sort" step:} The master node sorts all key-value pairs according to their key, thus in the reduce step, the same key appears sequentially.
 \item {\bf ``Reduce" step:} The master node then collects the answers to all the sub-problems and combines them in some way to form the output, that is, the answer to the problem it was originally trying to solve.
 \end{itemize}
-We show that our method(CBMF) can be plugged into the Map-Reduce framework for parallelization in Chapter \ref{}.
+We show that our method (CBMF) can be plugged into the Map-Reduce framework for parallelization in Chapter \ref{chp:cbmf}.
 
 
 

@@ -637,6 +637,16 @@ year=           {2008}
   isbn      = {978-1-59593-793-3},
   bibsource = {DBLP, http://dblp.uni-trier.de}
 }
+@inproceedings{DBLP:dblp_conf/recsys/Aiolli14,
+   author              = {Fabio Aiolli},
+   title               = {Convex AUC optimization for top-N recommendation with implicit feedback.},
+   booktitle           = {RecSys},
+   year                = {2014},
+   pages               = {293-296},
+   ee                  = {http://doi.acm.org/10.1145/2645710.2645770},
+   crossref            = {2014},
+}
+
 
 @inproceedings{DBLP:dblp_conf/recsys/LercheJ14,
    author              = {Lukas Lerche and 
@@ -669,6 +679,49 @@ year=           {2008}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%% ========================================================
 % CF techniques
+
+@INPROCEEDINGS{1565742, 
+author={George, T. and Merugu, S.}, 
+booktitle={Data Mining, Fifth IEEE International Conference on}, 
+title={A scalable collaborative filtering framework based on co-clustering}, 
+year={2005}, 
+month={Nov}, 
+pages={4 pp.-}, 
+keywords={information filtering;information filters;parallel algorithms;real-time systems;collaborative filtering-based recommender system;parallel algorithm;real-time collaborative filtering;weighted coclustering;Algorithm design and analysis;Clustering algorithms;Computational efficiency;Computer science;Information filtering;Information filters;Internet;Online Communities/Technical Collaboration;Real time systems;Recommender systems}, 
+doi={10.1109/ICDM.2005.14}, 
+ISSN={1550-4786},}
+
+@inproceedings{Aiolli:2013:ETR:2507157.2507189,
+ author = {Aiolli, Fabio},
+ title = {Efficient Top-n Recommendation for Very Large Scale Binary Rated Datasets},
+ booktitle = {Proceedings of the 7th ACM Conference on Recommender Systems},
+ series = {RecSys '13},
+ year = {2013},
+ isbn = {978-1-4503-2409-0},
+ location = {Hong Kong, China},
+ pages = {273--280},
+ numpages = {8},
+ url = {http://doi.acm.org/10.1145/2507157.2507189},
+ doi = {10.1145/2507157.2507189},
+ acmid = {2507189},
+ publisher = {ACM},
+ address = {New York, NY, USA},
+ keywords = {collaborative filtering, implicit feedback, million song dataset challenge, top-n recommendation},
+} 
+@ARTICLE{1167344, 
+author={Linden, G. and Smith, B. and York, J.}, 
+journal={Internet Computing, IEEE}, 
+title={Amazon.com recommendations: item-to-item collaborative filtering}, 
+year={2003}, 
+month={Jan}, 
+volume={7}, 
+number={1}, 
+pages={76-80}, 
+keywords={Web sites;electronic commerce;information filters;information retrieval;real-time systems;retail data processing;Amazon.com recommendations;Web sites;cluster models;customer interests;demographic data;e-commerce;item-to-item collaborative filtering;massive data sets;online store;product catalog;real-time;recommendation algorithms;search-based methods;Advertising;Aggregates;Clustering algorithms;Collaboration;Demography;Electronic mail;Filtering algorithms;Information filtering;Information filters;Pediatrics}, 
+doi={10.1109/MIC.2003.1167344}, 
+ISSN={1089-7801},}
+
+
 @inproceedings{Rendle:2009:BBP:1795114.1795167,
  author = {Rendle, Steffen and Freudenthaler, Christoph and Gantner, Zeno and Schmidt-Thieme, Lars},
  title = {BPR: Bayesian Personalized Ranking from Implicit Feedback},

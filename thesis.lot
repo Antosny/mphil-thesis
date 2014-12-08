@@ -3,11 +3,13 @@
 \contentsline {table}{\numberline {2.1}{\ignorespaces Overview of TRIMF in Cross-Domain Collaborative Filtering context.}}{4}
 \addvspace {1pt}
 \contentsline {table}{\numberline {3.1}{\ignorespaces Top 10 click items and purchase items in Yixun.}}{16}
-\contentsline {table}{\numberline {3.2}{\ignorespaces Baseline methods.}}{20}
-\contentsline {table}{\numberline {3.3}{\ignorespaces Performance of TRIMF and other baseline methods on short-term users who have deal data.}}{23}
-\contentsline {table}{\numberline {3.4}{\ignorespaces Performance of TRIMF and other baseline methods on short-term users who have deal data.}}{23}
-\contentsline {table}{\numberline {3.5}{\ignorespaces Performance of TRIMF and other baseline methods on long-term users.}}{24}
-\contentsline {table}{\numberline {3.6}{\ignorespaces The effect of sharing.}}{26}
 \addvspace {1pt}
-\contentsline {table}{\numberline {4.1}{\ignorespaces Average OAPI of online algorithms.}}{40}
+\contentsline {table}{\numberline {5.1}{\ignorespaces Dataset characteristics.}}{26}
+\addvspace {1pt}
+\contentsline {table}{\numberline {5.2}{\ignorespaces Baseline methods.}}{27}
+\contentsline {table}{\numberline {5.3}{\ignorespaces Performance comparision on Yixun users who have deal data.}}{30}
+\contentsline {table}{\numberline {5.4}{\ignorespaces Performance comparision on Yixun users who have click data.}}{30}
+\contentsline {table}{\numberline {5.5}{\ignorespaces Performance comparision on Tmall users.}}{31}
+\contentsline {table}{\numberline {5.6}{\ignorespaces The effect of sharing.}}{33}
+\contentsline {table}{\numberline {5.7}{\ignorespaces Average OAPI of online algorithms.}}{39}
 \addvspace {1pt}

@@ -1,5 +1,12 @@
 \begin{thebibliography}{10}
 
+\bibitem{Aiolli:2013:ETR:2507157.2507189}
+Fabio Aiolli.
+\newblock Efficient top-n recommendation for very large scale binary rated
+  datasets.
+\newblock In {\em Proceedings of the 7th ACM Conference on Recommender
+  Systems}, RecSys '13, pages 273--280, New York, NY, USA, 2013. ACM.
+
 \bibitem{DBLP:dblp_conf/recsys/Aiolli14}
 Fabio Aiolli.
 \newblock Convex auc optimization for top-n recommendation with implicit
@@ -52,6 +59,12 @@ Chris Ding, Xiaofeng He, and Horst~D. Simon.
 Hoda Eldardiry and Jennifer Neville.
 \newblock Across-model collective ensemble classification.
 \newblock In Burgard and Roth \cite{DBLP:conf/aaai/2011}.
+
+\bibitem{1565742}
+T.~George and S.~Merugu.
+\newblock A scalable collaborative filtering framework based on co-clustering.
+\newblock In {\em Data Mining, Fifth IEEE International Conference on}, pages 4
+  pp.--, Nov 2005.
 
 \bibitem{DBLP:conf/icml/2007}
 Zoubin Ghahramani, editor.
@@ -122,6 +135,11 @@ Christopher~H. Lin, Ece Kamar, and Eric Horvitz.
 \newblock Signals in the silence: Models of implicit feedback in a
   recommendation system for crowdsourcing.
 \newblock In {\em AAAI}, pages 908--915, 2014.
+
+\bibitem{1167344}
+G.~Linden, B.~Smith, and J.~York.
+\newblock Amazon.com recommendations: item-to-item collaborative filtering.
+\newblock {\em Internet Computing, IEEE}, 7(1):76--80, Jan 2003.
 
 \bibitem{/tist/Lipczak-TIST11-Tag-Rec}
 Marek Lipczak and Evangelos Milios.

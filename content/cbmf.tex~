@@ -180,22 +180,25 @@ There are three evaluation metrics, all based on reactions to impressions. An im
 \item [3] pay amount per impression(PAPI). The pay amount per impression is the total price paid divided by the total impressions.$$PAPI = \frac{Paid \,\,Money}{Impressions}$$
 \end{itemize}
 
-The difference between OAPI and PAPI is that a user may place an order but not pay (a cancellation can be made at any time).
+These are three typical evaluation metrics in online test. CTR measures the success of an impression. While OAPI and PAPI directly reflect how much money is brought by recommendation. The difference between OAPI and PAPI is that a user may place an order but not pay (a cancellation can be made at any time).
 
 \subsection{Baselines}
 
 There are some others algorithms competing with CBMF, each covers $10\%-20\%$ percentage of the users. An ID is given to every algorithm, the ID of CBMF is 4312. The details of other algorithms are shown below:
 
 \begin{itemize}
-\item 4312: CBMF, updates every hour.
-\item 4313: Locally popular algorithm. Each user belongs to a cluster according to his age and gender, then the most popular items in this cluster are recommended. Real time algorithm.
-\item 4314: Logistic regression algorithm, the feature consists users' demographic data, items' category data and their conjunctions. The algorithm updates per hour.
-\item 4315: Globally popular algorithm. For every user, items with most-clicked are provided. Real time algorithm.
-\item cpsf: Redirecting based algorithm, if a user had some positive(click, pageview, purchase) actions before, recommend popular items in the same category. If the user is new, recommend the most-clicked items in different categories(avoid recommending items all from one category). Real time algorithm.
+
+\item \textbf{Co-clustering CF} \cite{1565742}(4313) is a scalable collaborative filtering framework based on co-clustering. Previous work showed that this method had a fast training time while providing decent accuracy.
+\item \textbf{Factorization Machine} \cite{/tist/LibFM-TIST12}(4314) is a generic approach that allows to mimic most factorization models by feature engineering. It provides high accuracy in several important prediction problems including recommender systems.
+\item \textbf{Item-based CF} \cite{1167344}(4315) is a typical recommending method proposed by Amazon. Cosine distance is used in calculating item similarities.
+\item \textbf{Efficient top-n recommendation} \cite{Aiolli:2013:ETR:2507157.2507189}(cpsf) is a recommendation pipeline, which is the winner of the Million Songs Dataset (MSD) challenge \footnote{http://www.kaggle.com/c/msdchallenge}
+\item \textbf{CBMF}(4312): Our method.
 
 \end{itemize} 
 
-\subsection{Click through rate}
+\subsection{Results}
+
+\subsubsection{Click through rate}
 
 
 \begin{figure}
@@ -216,9 +219,7 @@ There are some others algorithms competing with CBMF, each covers $10\%-20\%$ pe
 
 In Figure \ref{fig:ctr0415} and Figure \ref{fig:ctr0424}, CTR of different online algorithms are shown. The id of CBMF is $4312$, the purple line. It can be seen that CBMF didn't rank first in CTR, but rather among the mid-levels. This is because CBMF didn't optimize for CTR, as it is designed for improving purchase rate. However, there is some similarity between click and purchase, so CBMF's CTR performance can be considered not too bad.
 
-For other algorithms, we can see personalized algorithms perform better than global algorithms. The algorithm 4315 has the lowest CTR because it just provides same recommendations to every user. Redirecting seems to work very well in CTR, since users may like to click items they are familiar with. Particularly in our scenario, when users are chatting and a panel full of viewed item pop up, they may not close them immediately. Instead, they might just review the items they clicked before.	
-
-\subsection{Order amount per impression}
+\subsubsection{Order amount per impression}
 
 \begin{figure}
 \begin{center}
@@ -238,15 +239,15 @@ For other algorithms, we can see personalized algorithms perform better than glo
 \end{center}
 \end{figure}
 
-\begin{figure}
-\begin{center}
+%\begin{figure}
+%\begin{center}
 
 
 
-\includegraphics[width=400px]{fig/yixunexp/cvr0502.png}
-\caption{\label{fig:oapi0426} OAPI of online algorithms  from 0426 to 0501.}
-\end{center}
-\end{figure}
+%\includegraphics[width=400px]{fig/yixunexp/cvr0502.png}
+%\caption{\label{fig:oapi0426} OAPI of online algorithms  from 0426 to 0501.}
+%\end{center}
+%\end{figure}
 
 \begin{table}[h]
 
@@ -277,7 +278,7 @@ In Figure \ref{fig:oapi0415} and Figure \ref{fig:oapi0427}, OAPI of different on
 
 If we look at the figure carefully we can see that, CBMF tends to achieve better performance during holidays( 4-11, 4-12, 5-1, 5-2 are all Chinese holidays). This is because during holidays,  users tend to buy some things they have wanted for a long time. However, on ordinary days users may be inclined to buy only necessities. CBMF captures the users’ desire to buy something they like instead of what they need, so CBMF will achieve a better performance during holidays.
 
-\subsection{Pay amount per impression}
+\subsubsection{Pay amount per impression}
 
 \begin{figure}
 \begin{center}
