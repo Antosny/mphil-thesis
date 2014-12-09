@@ -53,7 +53,7 @@ Our main goal is to optimize for the conversion rate (future purchase matrix), s
   
 \end{subsection}
 
-\begin{subsection}{Baseline methods}  
+\begin{subsection}{Baseline Methods}  
 
 We divide baseline methods into non-transfer methods and transfer methods. All baseline methods are shown in Table \ref{baseline}.
 \begin{table}
@@ -239,7 +239,7 @@ learning technique in several recent works, CMF has been proven to be an effecti
 
 
 
-\begin{subsection}{Performance comparison \& analysis}
+\begin{subsection}{Performance Comparison \& Analysis}
 First, we observed that TRIMF out-performs all other baseline non-transfer methods in three tests. In the Yixun test, we can see traditional CF methods which aim at rating prediction (e.g. SVD, NMF) cannot achieve a more compatible performance than others. This is because these methods are designed for matrices with multiple values, not for our binary matrices, while the CF method designed for binary matrices (BPRMF, WRMF) can achieve significantly greater results. In the Tmall test, the difference is not so significant, because the data here is less sparse than the Yixun data. In other words, every method has enough data to train a good model.
 
 Second, TRIMF also out-performs other transfer methods. Since CMF, TCF are also designed for rating prediction problems. The information in our training set is limited, so neither method can transfer enough knowledge based on their framework. TRIMF is designed for one-class transfer learning, which combines one-class and transfer methods, so it inherits advantages from both. What is more, we observed that CBMF can acheive the second best performance among all methods, very close to TRIMF.

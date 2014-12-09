@@ -1,13 +1,13 @@
 \chapter{Transfer Learning in One Class CF for Shopping Prediction}
 \label{chp:trimf}
-\section{Problem settings}
+\section{Problem Settings}
 \subsection{Background}
 \par{
 In real-world, a person usually has different kinds of behaviors before buying one thing. For online shopping sites, their goal is to let users buy their products, but the user-item matrix for deal is extremely sparse( less than $0.001\%$ ). Therefore, if we only use the available information, we cannot achieve a reliable or even reasonable performance.
 
 In an online shopping site, there are two main actions - click and purchase. Both can form a matrix which consists of only binary data(1-action happened, 0-unknown). Let's denote $X_d$ to be the matrix of deal, $X_c$ to be the matrix of click. We know that deal matrix $X_d$ is very sparse and although click matrix $X_c$ is also sparse, it is much denser than $X_d$. To use more data, we develop a transfer learning algorithm(TRIMF) that leverages click data to predict purchasing. Compared with former methods which only share either rating patterns or latent features , our method shares both rating patterns and latent features through cluster-level transformation and overlapping matrices. Experiments in \ref{sec:offline} show that our algorithm performs better than other baseline(transfer and non-transfer) methods.}
 
-\subsection{Problem definition}
+\subsection{Problem Definition}
   \begin{itemize}
   \item Input: [0-1 matrix:user click matrix $X_C(m_c*n_c)$, user deal matrix $X_d(m_d*n_d)$] , $m_c, m_d$ denote the number of users, $n_c, n_d$ denote the number of items. Users and items partially overlap.
   \item Output: Two prediction matrix $P_C(m_c*n_c), P_d(m_d*n_d)$, which predict users' purchasing behavior.
@@ -16,7 +16,7 @@ In an online shopping site, there are two main actions - click and purchase. Bot
 
 
 \section{TRIMF}
-\subsection{Weighting scheme of TRIMF}
+\subsection{Weighting Scheme of TRIMF}
   \par{Former one-class CF methods ~\cite{4781121}, ~\cite{4781145} use weighted low-rank approximation to tackle the problem that all observed ratings are 1. Given a rating matrix $R = (R_{ij})_{m*n} \in \{0, 1\}^{m*n}$ with $m$ users and $n$ items and a corresponding non-negative weight matrix $W = (W_{ij})_{m*n} \in R^{m*n^+}$ , weighted low-rank approximation aims at finding a low rank matrix $X = (X_{ij})_{m*n} $minimizing the objective of a weighted Frobenius loss function as follows : $L(X) = \|\sum W_{ij}(R_{ij} - X_{ij})\|_2$. 
 
 In ~\cite{4781121}, the authors consider actions that happen more than once(e.g. multiple clicks on an item). Negative entries are ignored; for each positive entry, its weight is proportional to its frequency, since higher frequency can mean that we are more confident about the entry. For example, user $i$ viewed item $j$, $n$ times, then $W_{ij} = 1 + log(n)$. In ~\cite{4781145}, positive entries all have same weight 1, while negative entries are considered differently. According to their experiments, the user-oriented weighting scheme can achieve the best performance. That is, for negative entries $W_{ij} \propto \sum_j{R_{ij}}$, the idea is that if a user has more positive examples, it is more likely that the user does not like the other items, that is, the missing data for this user is negative with higher probability.
@@ -28,7 +28,7 @@ log(\sum_j{R_{ij}}) &  & X_{ij} = 0 \\
 \end{aligned}
 \right.
 $$}
-\subsection{Transfer learning in TRIMF}
+\subsection{Transfer Learning in TRIMF}
 
 Usually users' deal data is very sparse. For instance, users will buy $n_d$ items in one day while clicking $n_c$ items which often results in $n_d \ll n_c$. Therefore, only using deal data is not sufficient. Traditional transfer learning methods use matrix factorization and share a certain part of low-rank matrices to achieve knowledge transfer(e.g. user-latent factor, rating pattern). However, none of them apply the selective-sharing scheme as ours does.
 
@@ -63,7 +63,7 @@ Earphone & Mouse\\
 
 We design two mapping vectors: $U,V$, if we have learnt a rating pattern $S_c$ from a click matrix, then for the deal matrix pattern we have $S_d^{ij} = U_i * S_c^{ij} * V_j$. The transformation is based on $S_c$ to enable knowledge transfer, while after being multiplied by $U$ and $V$ we can capture the difference between them, at the cluster-level. }
 
-\subsection{Object function}
+\subsection{Object Function}
 \par{We use a weighted non-negative matrix tri-factorization method to deal with the problem as illustrated below. 
 \begin{figure}
 
