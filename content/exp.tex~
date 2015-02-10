@@ -447,5 +447,5 @@ If we look at the figure carefully we can see that, CBMF tends to achieve better
 
 In Figure \ref{fig:papi0415} and Figure \ref{fig:papi0501}, the OAPI of different online algorithms are demonstrated. The id of CBMF is $4312$, the blue line. We can see that CBMF outperforms other algorithms during these two periods. Different from the observations in OAPI, users may have a high OAPI on Mondays and Sundays, which might be because users may not have to pay right after they place their order. After thinking more carefully, they might eventually pay which would explain the delayed effect in the OAPI.
 
-\subsection*{Overall evaluation}
+\subsection*{Overall Evaluation}
 From the three evaluation metrics, we can see CBMF can achieve better conversion rates of the moderate click through rate compared to others.

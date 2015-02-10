@@ -1,0 +1,162 @@
+\documentclass[xetex,mathserif,serif]{beamer}
+\usetheme{Madrid}
+\title{TRANSFER LEARNING FOR ONE-CLASS RECOMMENDATION BASED ON MATRIX FACTORIZATION}
+\author{XIE Ruiming}
+\date{2015.02.12}
+\begin{document}
+\frame{\titlepage}
+\begin{frame}
+\frametitle{Outline}
+\tableofcontents
+\end{frame}
+\AtBeginSection[]
+{
+  \begin{frame}
+    \frametitle{Outline}
+    \tableofcontents[currentsection]
+  \end{frame}
+}
+\begin{section}{Background}
+  \begin{frame}{Traditional recommender system}
+        \begin{center}
+    \includegraphics[width=0.7\textwidth]{fig/netflix.jpg}
+    \end{center}
+    The data have multiple values(ratings from 1 to 5).
+  \end{frame}
+  \begin{frame}{One-class recommender system}
+    \begin{center}
+    \includegraphics[width=0.9\textwidth]{fig/amazon.png}
+    \end{center}
+      The data usually are binary. No ratings are available.
+  \end{frame}
+
+  \begin{frame}{Matrix factorization \& Transfer Learning}
+\begin{block}{Matrix factorization}
+    Matrix factorization models map both users and items to a
+joint latent factor space of dimensionality f, such that user-item interactions are modeled as inner products in that space.
+
+\alert{Matrix tri-factoriztion} factorizes a matrix $M$ into three parts : $M = USV^T$. Where $U,V$ stand for user/item clusters and $S$ stands for cluster relationships.
+\end{block}
+
+\begin{block}{Transfer Learning}
+    As a way to transfer knowledge from different domains, transfer learning can be applied in recommender systems to leverage data in different system with shared users.
+
+There exists some research that use transfer learning to tackle CF problems.
+\end{block}
+  \end{frame}
+
+\begin{frame}
+\begin{center}
+\includegraphics[width=\textwidth]{fig/pmf.png}
+\end{center}
+\end{frame}
+
+\end{section}
+
+\begin{section}{Motivation}
+  \begin{frame}
+    \frametitle{Motivation}
+    \begin{itemize}
+    \item Users often have different kinds of actions in one website. We can treat different actions as different domains and adopt transfer learning methods.
+    \item The actions are mostly binary.
+    \item Current methods can't solve transfer learning in one-class recommendation.
+    \end{itemize}
+  \end{frame}
+\end{section}
+
+\begin{section}{Transfer Learning in One Class CF for Shopping Prediction}
+  \begin{frame}
+    \frametitle{TRIMF}
+    \begin{block}{Problem background}
+      \begin{itemize}
+        \item
+      \par{In an online shopping site, there are two main actions - click and purchase. Both can form a matrix which consists of binary data. And the primary goal for the site is to increase \alert{conversion rate}.}
+    \item
+      \par{The matrices are sparse, but add them together into one matrix is too simple to success. So we need to consider a transfer learning method to leverage data better.}
+      \end{itemize}
+    \end{block}
+  \end{frame}
+  \begin{frame}
+    \frametitle{Problem Definition}
+    \begin{itemize}
+    \item Input: click matrix $X_c^{m_c*n_c}$, deal matrix $X_d^{m_d*n_d}$
+
+ $m_c,m_d$ are the number of users in each matrix while $n_c,n_d$ denote the number of items.
+    \item Output: prediction matrices $P_c^{m_c*n_c}, P_d^{m_d*n_d}$.
+    \end{itemize}
+  \end{frame}
+  \begin{frame}
+    \frametitle{Weighting scheme}
+    Former one-class CF methods aim at giving entries different weights. Thus different confidence levels can be set. TRIMF combines two weight schemes together.
+    \begin{itemize}
+    \item Positive entries: $W_{ij} = 1 + log(n)$
+      \begin{itemize}
+      \item Higher frequency can mean that we are more confident about the entry.
+      \end{itemize}
+    \item Negative(Unknown) entries: $W_{ij} = log(\sum_j X_{ij})$
+      \begin{itemize}
+      \item If a user has more positive examples, it is more
+likely that the user does not like the missing items.
+      \end{itemize}
+    \end{itemize}
+  \end{frame}
+  \begin{frame}
+    \frametitle{Clustering effects in shopping site}
+\begin{table}[h]
+\begin{center}
+\begin{tabular}{| c | c |}
+\hline
+Top click items & Top purchase items \\
+\hline
+Iphone 5s & Tissue\\
+Xiaomi 3 & Laundry soap powder\\
+Thinkpad & Xiaomi 3\\
+CPU & Snacks\\
+Hard disk & Battery\\
+Router & Iphone 5s\\
+Earphone & Mouse\\
+\hline
+\end{tabular}
+\caption{Top 10 click items and purchase items in Yixun.}
+\end{center}
+%\end{Large}
+\end{table}
+There are some categories which users tend to buy after click. Also users have different shopping habits, some like window-shopping and some like to buy right after clicking.
+  \end{frame}
+  \begin{frame}
+    \frametitle{Transfer Learning in TRIMF}
+Traditional transfer methods in CF only share a certain part of matrices through \alert{matrix tri-factorization}.
+
+TRIMF shares user-latent factors and rating patterns, while designing a cluster-level mapping function.
+  \end{frame}
+  \begin{frame}
+    \frametitle{TRIMF}
+    \begin{block}
+      {Objective function}
+{$$min_{F,G,S,U,V} W_c\odot ||X_c - (F;F_c)S(G;G_c)'||_2$$ $$+ W_d\odot ||X_d - (F;F_d)(USV)(G;G_d)'||_2 $$}
+    \end{block}
+  \end{frame}
+\begin{frame}
+\frametitle{TRIMF}
+\includegraphics[width=\textwidth]{fig/trimf.jpg}  
+\end{frame}
+
+\end{section}
+
+\begin{section}{Clustering-based Matrix Factorization for Online Shopping Prediction}
+  \begin{frame}
+    \frametitle{Limitation of TRIMF}
+    \begin{itemize}
+    \item 
+    \end{itemize}
+  \end{frame}
+\end{section}
+
+\begin{section}{Experiments}
+  
+\end{section}
+
+\begin{section}{Conclusion}
+  
+\end{section}
+\end{document}

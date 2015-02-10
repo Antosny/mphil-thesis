@@ -1,0 +1,7 @@
+\beamer@endinputifotherversion {3.24pt}
+\beamer@sectionintoc {1}{Background}{3}{0}{1}
+\beamer@sectionintoc {2}{Motivation}{8}{0}{2}
+\beamer@sectionintoc {3}{Transfer Learning in One Class CF for Shopping Prediction}{10}{0}{3}
+\beamer@sectionintoc {4}{Clustering-based Matrix Factorization for Online Shopping Prediction}{18}{0}{4}
+\beamer@sectionintoc {5}{Experiments}{26}{0}{5}
+\beamer@sectionintoc {6}{Conclusion \& Future work}{48}{0}{6}

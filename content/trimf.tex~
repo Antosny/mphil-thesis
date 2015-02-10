@@ -63,7 +63,7 @@ Earphone & Mouse\\
 
 We design two mapping vectors: $U,V$, if we have learnt a rating pattern $S_c$ from a click matrix, then for the deal matrix pattern we have $S_d^{ij} = U_i * S_c^{ij} * V_j$. The transformation is based on $S_c$ to enable knowledge transfer, while after being multiplied by $U$ and $V$ we can capture the difference between them, at the cluster-level. }
 
-\subsection{Object function}
+\subsection{Object Function}
 \par{We use a weighted non-negative matrix tri-factorization method to deal with the problem as illustrated below. 
 \begin{figure}
 
